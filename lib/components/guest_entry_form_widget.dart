@@ -34,8 +34,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
     super.initState();
     _model = createModel(context, () => GuestEntryFormModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textController2 ??= TextEditingController();
+    _model.guestNameController ??= TextEditingController();
+    _model.guestMobileController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -74,9 +74,9 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.5,
                               child: TextFormField(
-                                controller: _model.textController1,
+                                controller: _model.guestNameController,
                                 onChanged: (_) => EasyDebounce.debounce(
-                                  '_model.textController1',
+                                  '_model.guestNameController',
                                   Duration(milliseconds: 2000),
                                   () => setState(() {}),
                                 ),
@@ -123,10 +123,10 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   suffixIcon: _model
-                                          .textController1!.text.isNotEmpty
+                                          .guestNameController!.text.isNotEmpty
                                       ? InkWell(
                                           onTap: () async {
-                                            _model.textController1?.clear();
+                                            _model.guestNameController?.clear();
                                             setState(() {});
                                           },
                                           child: Icon(
@@ -140,7 +140,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 ),
                                 style: FlutterFlowTheme.of(context).labelMedium,
                                 cursorColor: FlutterFlowTheme.of(context).info,
-                                validator: _model.textController1Validator
+                                validator: _model.guestNameControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -162,8 +162,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                               ),
                               FlutterFlowChoiceChips(
                                 options: [ChipData('M'), ChipData('F')],
-                                onChanged: (val) => setState(() =>
-                                    _model.choiceChipsValue1 = val?.first),
+                                onChanged: (val) => setState(
+                                    () => _model.typeChipValue = val?.first),
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
@@ -202,9 +202,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 rowSpacing: 12.0,
                                 multiselect: false,
                                 alignment: WrapAlignment.start,
-                                controller:
-                                    _model.choiceChipsValueController1 ??=
-                                        FormFieldController<List<String>>(
+                                controller: _model.typeChipValueController ??=
+                                    FormFieldController<List<String>>(
                                   [],
                                 ),
                               ),
@@ -233,9 +232,9 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.5,
                               child: TextFormField(
-                                controller: _model.textController2,
+                                controller: _model.guestMobileController,
                                 onChanged: (_) => EasyDebounce.debounce(
-                                  '_model.textController2',
+                                  '_model.guestMobileController',
                                   Duration(milliseconds: 2000),
                                   () => setState(() {}),
                                 ),
@@ -281,11 +280,12 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  suffixIcon: _model
-                                          .textController2!.text.isNotEmpty
+                                  suffixIcon: _model.guestMobileController!.text
+                                          .isNotEmpty
                                       ? InkWell(
                                           onTap: () async {
-                                            _model.textController2?.clear();
+                                            _model.guestMobileController
+                                                ?.clear();
                                             setState(() {});
                                           },
                                           child: Icon(
@@ -300,7 +300,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 style: FlutterFlowTheme.of(context).labelMedium,
                                 keyboardType: TextInputType.number,
                                 cursorColor: FlutterFlowTheme.of(context).info,
-                                validator: _model.textController2Validator
+                                validator: _model.guestMobileControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -326,8 +326,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   ChipData('20 - 40'),
                                   ChipData('Above 40')
                                 ],
-                                onChanged: (val) => setState(() =>
-                                    _model.choiceChipsValue2 = val?.first),
+                                onChanged: (val) => setState(
+                                    () => _model.ageChipValue = val?.first),
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
@@ -366,9 +366,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 rowSpacing: 12.0,
                                 multiselect: false,
                                 alignment: WrapAlignment.start,
-                                controller:
-                                    _model.choiceChipsValueController2 ??=
-                                        FormFieldController<List<String>>(
+                                controller: _model.ageChipValueController ??=
+                                    FormFieldController<List<String>>(
                                   [],
                                 ),
                               ),
@@ -411,7 +410,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   ChipData('Guest')
                                 ],
                                 onChanged: (val) => setState(() =>
-                                    _model.choiceChipsValue3 = val?.first),
+                                    _model.categoryChipValue = val?.first),
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
@@ -451,7 +450,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 multiselect: false,
                                 alignment: WrapAlignment.start,
                                 controller:
-                                    _model.choiceChipsValueController3 ??=
+                                    _model.categoryChipValueController ??=
                                         FormFieldController<List<String>>(
                                   [],
                                 ),
@@ -480,7 +479,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   ChipData('Any')
                                 ],
                                 onChanged: (val) => setState(() =>
-                                    _model.choiceChipsValue4 = val?.first),
+                                    _model.seatAreaChipValue = val?.first),
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
@@ -520,7 +519,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 multiselect: false,
                                 alignment: WrapAlignment.start,
                                 controller:
-                                    _model.choiceChipsValueController4 ??=
+                                    _model.seatAreaChipValueController ??=
                                         FormFieldController<List<String>>(
                                   [],
                                 ),
@@ -571,8 +570,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   ChipData('90'),
                                   ChipData('120')
                                 ],
-                                onChanged: (val) => setState(() =>
-                                    _model.choiceChipsValue5 = val?.first),
+                                onChanged: (val) => setState(
+                                    () => _model.wTChipValue = val?.first),
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
@@ -610,9 +609,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 rowSpacing: 12.0,
                                 multiselect: false,
                                 alignment: WrapAlignment.start,
-                                controller:
-                                    _model.choiceChipsValueController5 ??=
-                                        FormFieldController<List<String>>(
+                                controller: _model.wTChipValueController ??=
+                                    FormFieldController<List<String>>(
                                   [],
                                 ),
                               ),
@@ -646,8 +644,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   ChipData('9'),
                                   ChipData('More')
                                 ],
-                                onChanged: (val) => setState(() =>
-                                    _model.choiceChipsValue6 = val?.first),
+                                onChanged: (val) => setState(
+                                    () => _model.pSChipValue = val?.first),
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
@@ -686,9 +684,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 rowSpacing: 12.0,
                                 multiselect: false,
                                 alignment: WrapAlignment.start,
-                                controller:
-                                    _model.choiceChipsValueController6 ??=
-                                        FormFieldController<List<String>>(
+                                controller: _model.pSChipValueController ??=
+                                    FormFieldController<List<String>>(
                                   [],
                                 ),
                               ),
@@ -710,15 +707,27 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                   await GuestEntryDetailsRecord.collection
                       .doc()
                       .set(createGuestEntryDetailsRecordData(
-                        name: '',
-                        type: '',
-                        mobileNum: '',
-                        age: '',
-                        category: '',
-                        seatingArea: '',
-                        waitingTime: '',
-                        partySize: '',
+                        name: _model.guestNameController.text,
+                        type: _model.typeChipValue,
+                        mobileNum: _model.guestMobileController.text,
+                        age: _model.ageChipValue,
+                        category: _model.categoryChipValue,
+                        seatingArea: _model.seatAreaChipValue,
+                        waitingTime: _model.wTChipValue,
+                        partySize: _model.pSChipValue,
                       ));
+                  setState(() {
+                    _model.guestNameController?.clear();
+                    _model.guestMobileController?.clear();
+                  });
+                  setState(() {
+                    _model.typeChipValueController?.reset();
+                    _model.ageChipValueController?.reset();
+                    _model.categoryChipValueController?.reset();
+                    _model.seatAreaChipValueController?.reset();
+                    _model.wTChipValueController?.reset();
+                    _model.pSChipValueController?.reset();
+                  });
                 },
                 text: 'Add Guest',
                 options: FFButtonOptions(

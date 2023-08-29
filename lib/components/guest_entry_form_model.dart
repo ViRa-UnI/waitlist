@@ -14,38 +14,38 @@ import 'package:provider/provider.dart';
 class GuestEntryFormModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for TextField widget.
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue1;
-  FormFieldController<List<String>>? choiceChipsValueController1;
-  // State field(s) for TextField widget.
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue2;
-  FormFieldController<List<String>>? choiceChipsValueController2;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue3;
-  FormFieldController<List<String>>? choiceChipsValueController3;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue4;
-  FormFieldController<List<String>>? choiceChipsValueController4;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue5;
-  FormFieldController<List<String>>? choiceChipsValueController5;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue6;
-  FormFieldController<List<String>>? choiceChipsValueController6;
+  // State field(s) for GuestName widget.
+  TextEditingController? guestNameController;
+  String? Function(BuildContext, String?)? guestNameControllerValidator;
+  // State field(s) for TypeChip widget.
+  String? typeChipValue;
+  FormFieldController<List<String>>? typeChipValueController;
+  // State field(s) for GuestMobile widget.
+  TextEditingController? guestMobileController;
+  String? Function(BuildContext, String?)? guestMobileControllerValidator;
+  // State field(s) for AgeChip widget.
+  String? ageChipValue;
+  FormFieldController<List<String>>? ageChipValueController;
+  // State field(s) for CategoryChip widget.
+  String? categoryChipValue;
+  FormFieldController<List<String>>? categoryChipValueController;
+  // State field(s) for SeatAreaChip widget.
+  String? seatAreaChipValue;
+  FormFieldController<List<String>>? seatAreaChipValueController;
+  // State field(s) for WTChip widget.
+  String? wTChipValue;
+  FormFieldController<List<String>>? wTChipValueController;
+  // State field(s) for PSChip widget.
+  String? pSChipValue;
+  FormFieldController<List<String>>? pSChipValueController;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
   void dispose() {
-    textController1?.dispose();
-    textController2?.dispose();
+    guestNameController?.dispose();
+    guestMobileController?.dispose();
   }
 
   /// Action blocks are added here.
