@@ -62,7 +62,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.00, 0.00),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -143,7 +143,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.00, 0.00),
                   child: Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 10.0),
@@ -202,11 +202,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
                               color: FlutterFlowTheme.of(context).info,
-                              size: 10.0,
+                              size: 15.0,
                             ),
                           ),
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Montserrat',
+                              color: FlutterFlowTheme.of(context).info,
+                            ),
                         cursorColor: FlutterFlowTheme.of(context).info,
                         validator: _model.passwordFieldControllerValidator
                             .asValidator(context),

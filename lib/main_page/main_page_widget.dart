@@ -33,7 +33,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
       vsync: this,
       length: 2,
       initialIndex: 0,
-    );
+    )..addListener(() => setState(() {}));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -161,7 +161,6 @@ class _MainPageWidgetState extends State<MainPageWidget>
                           ),
                         ],
                         controller: _model.tabBarController,
-                        onTap: (value) => setState(() {}),
                       ),
                     ),
                     Expanded(

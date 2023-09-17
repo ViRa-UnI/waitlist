@@ -120,7 +120,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'MainPage',
               path: 'mainPage',
+              requireAuth: true,
               builder: (context, params) => MainPageWidget(),
+            ),
+            FFRoute(
+              name: 'WaitListTableListView',
+              path: 'waitListTableListView',
+              requireAuth: true,
+              builder: (context, params) => WaitListTableListViewWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

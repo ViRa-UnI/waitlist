@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -53,7 +54,7 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.00, 0.00),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 120.0, 0.0, 0.0),
                   child: Column(
@@ -80,9 +81,45 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                        child: Text(
-                          'Your Table is Ready',
-                          style: FlutterFlowTheme.of(context).headlineMedium,
+                        child: StreamBuilder<List<GuestEntryDetailsRecord>>(
+                          stream: queryGuestEntryDetailsRecord(
+                            singleRecord: true,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      Color(0xFF011D1A),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                            List<GuestEntryDetailsRecord>
+                                textGuestEntryDetailsRecordList =
+                                snapshot.data!;
+                            // Return an empty Container when the item does not exist.
+                            if (snapshot.data!.isEmpty) {
+                              return Container();
+                            }
+                            final textGuestEntryDetailsRecord =
+                                textGuestEntryDetailsRecordList.isNotEmpty
+                                    ? textGuestEntryDetailsRecordList.first
+                                    : null;
+                            return Text(
+                              valueOrDefault<String>(
+                                textGuestEntryDetailsRecord?.waitingTime,
+                                'WT',
+                              ),
+                              style:
+                                  FlutterFlowTheme.of(context).headlineMedium,
+                            );
+                          },
                         ),
                       ),
                       SizedBox(

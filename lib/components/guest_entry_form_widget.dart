@@ -49,7 +49,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(-1.0, 0.0),
+      alignment: AlignmentDirectional(-1.00, 0.00),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(50.0, 50.0, 50.0, 50.0),
         child: Column(
@@ -59,7 +59,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.00, 0.00),
                   child: Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
@@ -88,11 +88,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w600,
                                         lineHeight: 10.0,
                                       ),
                                   hintText: 'Enter Guest Name',
-                                  hintStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
@@ -138,7 +143,12 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         )
                                       : null,
                                 ),
-                                style: FlutterFlowTheme.of(context).labelMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                 cursorColor: FlutterFlowTheme.of(context).info,
                                 validator: _model.guestNameControllerValidator
                                     .asValidator(context),
@@ -167,8 +177,13 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
-                                  textStyle:
-                                      FlutterFlowTheme.of(context).labelSmall,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                   iconColor: FlutterFlowTheme.of(context).info,
                                   iconSize: 18.0,
                                   labelPadding: EdgeInsetsDirectional.fromSTEB(
@@ -187,6 +202,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         fontFamily: 'Montserrat',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                   iconColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -206,6 +223,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                     FormFieldController<List<String>>(
                                   [],
                                 ),
+                                wrapped: true,
                               ),
                             ],
                           ),
@@ -217,7 +235,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.00, 0.00),
                   child: Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
@@ -249,8 +267,12 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         lineHeight: 10.0,
                                       ),
                                   hintText: 'Enter Mobile Num',
-                                  hintStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
@@ -298,7 +320,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       : null,
                                 ),
                                 style: FlutterFlowTheme.of(context).labelMedium,
-                                keyboardType: TextInputType.number,
+                                keyboardType: TextInputType.phone,
                                 cursorColor: FlutterFlowTheme.of(context).info,
                                 validator: _model.guestMobileControllerValidator
                                     .asValidator(context),
@@ -331,8 +353,13 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
-                                  textStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                   iconColor: FlutterFlowTheme.of(context).info,
                                   iconSize: 18.0,
                                   labelPadding: EdgeInsetsDirectional.fromSTEB(
@@ -351,6 +378,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         fontFamily: 'Montserrat',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                   iconColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -370,6 +399,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                     FormFieldController<List<String>>(
                                   [],
                                 ),
+                                wrapped: true,
                               ),
                             ],
                           ),
@@ -381,7 +411,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.00, 0.00),
                   child: Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
@@ -414,8 +444,13 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
-                                  textStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                   iconColor: FlutterFlowTheme.of(context).info,
                                   iconSize: 18.0,
                                   labelPadding: EdgeInsetsDirectional.fromSTEB(
@@ -434,6 +469,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         fontFamily: 'Montserrat',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                   iconColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -454,6 +491,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         FormFieldController<List<String>>(
                                   [],
                                 ),
+                                wrapped: true,
                               ),
                             ],
                           ),
@@ -483,8 +521,13 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
-                                  textStyle:
-                                      FlutterFlowTheme.of(context).titleMedium,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                   iconColor: FlutterFlowTheme.of(context).info,
                                   iconSize: 18.0,
                                   labelPadding: EdgeInsetsDirectional.fromSTEB(
@@ -503,6 +546,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         fontFamily: 'Montserrat',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                   iconColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -523,6 +568,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         FormFieldController<List<String>>(
                                   [],
                                 ),
+                                wrapped: true,
                               ),
                             ],
                           ),
@@ -534,7 +580,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.00, 0.00),
                   child: Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
@@ -575,8 +621,13 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
-                                  textStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                   iconColor: FlutterFlowTheme.of(context).info,
                                   iconSize: 18.0,
                                   labelPadding: EdgeInsetsDirectional.fromSTEB(
@@ -595,6 +646,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         fontFamily: 'Montserrat',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                   iconColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -613,6 +666,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                     FormFieldController<List<String>>(
                                   [],
                                 ),
+                                wrapped: true,
                               ),
                             ],
                           ),
@@ -649,8 +703,13 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                 selectedChipStyle: ChipStyle(
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
-                                  textStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                   iconColor: FlutterFlowTheme.of(context).info,
                                   iconSize: 18.0,
                                   labelPadding: EdgeInsetsDirectional.fromSTEB(
@@ -669,6 +728,8 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         fontFamily: 'Montserrat',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                   iconColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -688,6 +749,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                     FormFieldController<List<String>>(
                                   [],
                                 ),
+                                wrapped: true,
                               ),
                             ],
                           ),
