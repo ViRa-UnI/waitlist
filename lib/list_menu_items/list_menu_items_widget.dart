@@ -239,6 +239,18 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
+                                            'KD: ',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                          Text(
                                             rowRestaurantMenuRecord!.price,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
