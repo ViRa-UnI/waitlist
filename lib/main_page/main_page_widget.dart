@@ -79,6 +79,32 @@ class _MainPageWidgetState extends State<MainPageWidget>
           actions: [
             FFButtonWidget(
               onPressed: () async {
+                context.pushNamed('AppMenuPage');
+              },
+              text: 'Menu',
+              icon: Icon(
+                Icons.menu_rounded,
+                size: 15.0,
+              ),
+              options: FFButtonOptions(
+                height: 40.0,
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: FlutterFlowTheme.of(context).primary,
+                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                    ),
+                elevation: 3.0,
+                borderSide: BorderSide(
+                  color: Colors.transparent,
+                  width: 1.0,
+                ),
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            ),
+            FFButtonWidget(
+              onPressed: () async {
                 GoRouter.of(context).prepareAuthEvent();
                 await authManager.signOut();
                 GoRouter.of(context).clearRedirectLocation();

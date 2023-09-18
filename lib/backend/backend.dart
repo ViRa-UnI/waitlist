@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/util/firestore_util.dart';
 
 import 'schema/guest_entry_details_record.dart';
+import 'schema/restaurant_menu_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -14,6 +15,7 @@ export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
 
 export 'schema/guest_entry_details_record.dart';
+export 'schema/restaurant_menu_record.dart';
 
 /// Functions to query GuestEntryDetailsRecords (as a Stream and as a Future).
 Future<int> queryGuestEntryDetailsRecordCount({
@@ -47,6 +49,43 @@ Future<List<GuestEntryDetailsRecord>> queryGuestEntryDetailsRecordOnce({
     queryCollectionOnce(
       GuestEntryDetailsRecord.collection,
       GuestEntryDetailsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query RestaurantMenuRecords (as a Stream and as a Future).
+Future<int> queryRestaurantMenuRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      RestaurantMenuRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<RestaurantMenuRecord>> queryRestaurantMenuRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      RestaurantMenuRecord.collection,
+      RestaurantMenuRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<RestaurantMenuRecord>> queryRestaurantMenuRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      RestaurantMenuRecord.collection,
+      RestaurantMenuRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
