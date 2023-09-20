@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
 
-
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <application
         android:label="Title Waiting List"
         tools:replace="android:label"
@@ -45,7 +45,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="titlewaitlist" android:host="titlewaitlist.com" />
+                <data android:scheme="http" android:host="waitlist" />
+                <data android:scheme="https" />
             </intent-filter>
 
         </activity>

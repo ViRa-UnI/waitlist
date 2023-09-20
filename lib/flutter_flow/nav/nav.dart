@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '/backend/backend.dart';
@@ -18,6 +19,8 @@ import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
+export '/backend/firebase_dynamic_links/firebase_dynamic_links.dart'
+    show generateCurrentPageLink;
 
 const kTransitionInfoKey = '__transition_info__';
 
@@ -78,8 +81,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? MainPageWidget() : HomePageWidget(),
+      errorBuilder: (context, state) => _RouteErrorBuilder(
+        state: state,
+        child: appStateNotifier.loggedIn ? MainPageWidget() : HomePageWidget(),
+      ),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -114,12 +119,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => MainPageWidget(),
             ),
             FFRoute(
-              name: 'WaitListTableListView',
-              path: 'waitListTableListView',
-              requireAuth: true,
-              builder: (context, params) => WaitListTableListViewWidget(),
-            ),
-            FFRoute(
               name: 'AppMenuPage',
               path: 'AppMenuPage',
               requireAuth: true,
@@ -136,6 +135,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'ListMenuItems',
               requireAuth: true,
               builder: (context, params) => ListMenuItemsWidget(),
+            ),
+            FFRoute(
+              name: 'TestPage',
+              path: 'testPage',
+              builder: (context, params) => TestPageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -360,4 +364,32 @@ class TransitionInfo {
   final Alignment? alignment;
 
   static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+}
+
+class _RouteErrorBuilder extends StatefulWidget {
+  const _RouteErrorBuilder({
+    Key? key,
+    required this.state,
+    required this.child,
+  }) : super(key: key);
+
+  final GoRouterState state;
+  final Widget child;
+
+  @override
+  State<_RouteErrorBuilder> createState() => _RouteErrorBuilderState();
+}
+
+class _RouteErrorBuilderState extends State<_RouteErrorBuilder> {
+  @override
+  void initState() {
+    super.initState();
+    // Handle erroneous links from Firebase Dynamic Links.
+    if (widget.state.location.startsWith('/link?request_ip_version')) {
+      SchedulerBinding.instance.addPostFrameCallback((_) => context.go('/'));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => widget.child;
 }

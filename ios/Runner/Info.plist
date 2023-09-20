@@ -37,10 +37,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>titlewaitlist.com</string>
+        <string>title_wait_list</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>titlewaitlist</string>
+        <string>com.titlekw.title</string>
         </array>
         </dict>
     </array>
@@ -54,7 +54,8 @@
 	<true/>
 
 
-
+	<key>PermissionGroupNotification</key>
+    <string>Allow Notifications ?</string>
 
 
 	<key>UILaunchStoryboardName</key>
