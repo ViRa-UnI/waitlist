@@ -1,11 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -768,18 +766,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
-                  await GuestEntryDetailsRecord.collection
-                      .doc()
-                      .set(createGuestEntryDetailsRecordData(
-                        name: _model.guestNameController.text,
-                        type: _model.typeChipValue,
-                        mobileNum: _model.guestMobileController.text,
-                        age: _model.ageChipValue,
-                        category: _model.categoryChipValue,
-                        seatingArea: _model.seatAreaChipValue,
-                        waitingTime: _model.wTChipValue,
-                        partySize: _model.pSChipValue,
-                      ));
+                  await GuestEntriesTable().insert({
+                    'name': _model.guestNameController.text,
+                    'type': _model.typeChipValue,
+                    'mobile': _model.guestMobileController.text,
+                    'age': _model.ageChipValue,
+                    'category': _model.categoryChipValue,
+                    'seatingArea': _model.seatAreaChipValue,
+                    'waitingTime': _model.wTChipValue,
+                    'partySize': _model.pSChipValue,
+                  });
                   setState(() {
                     _model.guestNameController?.clear();
                     _model.guestMobileController?.clear();

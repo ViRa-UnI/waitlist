@@ -508,145 +508,223 @@ class _WaitListTableWidgetState extends State<WaitListTableWidget> {
                           );
                         },
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Builder(
-                            builder: (context) => Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 5.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await showAlignedDialog(
-                                    context: context,
-                                    isGlobal: true,
-                                    avoidOverflow: false,
-                                    targetAnchor: AlignmentDirectional(0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    followerAnchor: AlignmentDirectional(
-                                            0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    builder: (dialogContext) {
-                                      return Material(
-                                        color: Colors.transparent,
-                                        child: Container(
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.5,
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  0.6,
-                                          child: WaitingTimeEditCompWidget(
-                                            updateWaitingTime: () async {},
+                      StreamBuilder<List<GuestEntryDetailsRecord>>(
+                        stream: queryGuestEntryDetailsRecord(
+                          singleRecord: true,
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    Color(0xFF011D1A),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          List<GuestEntryDetailsRecord>
+                              rowGuestEntryDetailsRecordList = snapshot.data!;
+                          // Return an empty Container when the item does not exist.
+                          if (snapshot.data!.isEmpty) {
+                            return Container();
+                          }
+                          final rowGuestEntryDetailsRecord =
+                              rowGuestEntryDetailsRecordList.isNotEmpty
+                                  ? rowGuestEntryDetailsRecordList.first
+                                  : null;
+                          return Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 5.0, 0.0),
+                                  child: StreamBuilder<
+                                      List<GuestEntryDetailsRecord>>(
+                                    stream: queryGuestEntryDetailsRecord(
+                                      singleRecord: true,
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                Color(0xFF011D1A),
+                                              ),
+                                            ),
                                           ),
+                                        );
+                                      }
+                                      List<GuestEntryDetailsRecord>
+                                          wTIconGuestEntryDetailsRecordList =
+                                          snapshot.data!;
+                                      // Return an empty Container when the item does not exist.
+                                      if (snapshot.data!.isEmpty) {
+                                        return Container();
+                                      }
+                                      final wTIconGuestEntryDetailsRecord =
+                                          wTIconGuestEntryDetailsRecordList
+                                                  .isNotEmpty
+                                              ? wTIconGuestEntryDetailsRecordList
+                                                  .first
+                                              : null;
+                                      return InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await showAlignedDialog(
+                                            context: context,
+                                            isGlobal: true,
+                                            avoidOverflow: false,
+                                            targetAnchor: AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            followerAnchor:
+                                                AlignmentDirectional(0.0, 0.0)
+                                                    .resolve(Directionality.of(
+                                                        context)),
+                                            builder: (dialogContext) {
+                                              return Material(
+                                                color: Colors.transparent,
+                                                child: Container(
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.5,
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.6,
+                                                  child:
+                                                      WaitingTimeEditCompWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then((value) => setState(() {}));
+                                        },
+                                        child: Icon(
+                                          Icons.timer,
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          size: 24.0,
                                         ),
                                       );
                                     },
-                                  ).then((value) => setState(() {}));
-                                },
-                                child: Icon(
-                                  Icons.timer,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                          Builder(
-                            builder: (context) => Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 5.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await showAlignedDialog(
-                                    context: context,
-                                    isGlobal: true,
-                                    avoidOverflow: false,
-                                    targetAnchor: AlignmentDirectional(0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    followerAnchor: AlignmentDirectional(
-                                            0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    builder: (dialogContext) {
-                                      return Material(
-                                        color: Colors.transparent,
-                                        child: Container(
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.5,
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 5.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showAlignedDialog(
+                                        context: context,
+                                        isGlobal: true,
+                                        avoidOverflow: false,
+                                        targetAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        followerAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        builder: (dialogContext) {
+                                          return Material(
+                                            color: Colors.transparent,
+                                            child: Container(
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.5,
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
                                                   0.6,
-                                          child: VisitedCompWidget(
-                                            updateWaitingTime: () async {},
-                                          ),
-                                        ),
-                                      );
+                                              child: VisitedCompWidget(
+                                                updateWaitingTime: () async {},
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
                                     },
-                                  ).then((value) => setState(() {}));
-                                },
-                                child: Icon(
-                                  Icons.restaurant,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
+                                    child: Icon(
+                                      Icons.restaurant,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      size: 24.0,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                          Builder(
-                            builder: (context) => Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 5.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await showAlignedDialog(
-                                    context: context,
-                                    isGlobal: true,
-                                    avoidOverflow: false,
-                                    targetAnchor: AlignmentDirectional(0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    followerAnchor: AlignmentDirectional(
-                                            0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    builder: (dialogContext) {
-                                      return Material(
-                                        color: Colors.transparent,
-                                        child: Container(
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.5,
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 5.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showAlignedDialog(
+                                        context: context,
+                                        isGlobal: true,
+                                        avoidOverflow: false,
+                                        targetAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        followerAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        builder: (dialogContext) {
+                                          return Material(
+                                            color: Colors.transparent,
+                                            child: Container(
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.5,
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
                                                   0.6,
-                                          child: NotVisitedCompWidget(
-                                            updateWaitingTime: () async {},
-                                          ),
-                                        ),
-                                      );
+                                              child: NotVisitedCompWidget(
+                                                updateWaitingTime: () async {},
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
                                     },
-                                  ).then((value) => setState(() {}));
-                                },
-                                child: Icon(
-                                  Icons.no_accounts,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
+                                    child: Icon(
+                                      Icons.no_accounts,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      size: 24.0,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
+                            ],
+                          );
+                        },
                       ),
                     ].map((c) => DataCell(c)).toList())
                 .map((e) => DataRow(cells: e))

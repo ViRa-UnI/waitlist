@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,12 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class WaitingTimeEditCompModel extends FlutterFlowModel {
+class WTEditCompSupabaseModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for WTChip widget.
   String? wTChipValue;
   FormFieldController<List<String>>? wTChipValueController;
+  // Stores action output result for [Backend Call - Update Row] action in Button widget.
+  List<GuestEntriesRow>? newWaitingTime;
 
   /// Initialization and disposal methods.
 

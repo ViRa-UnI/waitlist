@@ -12,3 +12,4 @@ export '/pages/add_menu_item/add_menu_item_widget.dart' show AddMenuItemWidget;
 export '/pages/main_pages/list_menu_items/list_menu_items_widget.dart'
     show ListMenuItemsWidget;
 export '/test_page/test_page_widget.dart' show TestPageWidget;
+export '/pages/w_t_supabase/w_t_supabase_widget.dart' show WTSupabaseWidget;

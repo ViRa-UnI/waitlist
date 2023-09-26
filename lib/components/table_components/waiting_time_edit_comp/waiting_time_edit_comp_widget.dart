@@ -1,12 +1,10 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -14,12 +12,7 @@ import 'waiting_time_edit_comp_model.dart';
 export 'waiting_time_edit_comp_model.dart';
 
 class WaitingTimeEditCompWidget extends StatefulWidget {
-  const WaitingTimeEditCompWidget({
-    Key? key,
-    this.updateWaitingTime,
-  }) : super(key: key);
-
-  final Future<dynamic> Function()? updateWaitingTime;
+  const WaitingTimeEditCompWidget({Key? key}) : super(key: key);
 
   @override
   _WaitingTimeEditCompWidgetState createState() =>
@@ -157,7 +150,7 @@ class _WaitingTimeEditCompWidgetState extends State<WaitingTimeEditCompWidget> {
                                     10.0, 10.0, 10.0, 10.0),
                                 child: FlutterFlowChoiceChips(
                                   options: [
-                                    ChipData('5'),
+                                    ChipData('15'),
                                     ChipData('10'),
                                     ChipData('20'),
                                     ChipData('30'),
@@ -169,13 +162,8 @@ class _WaitingTimeEditCompWidgetState extends State<WaitingTimeEditCompWidget> {
                                     ChipData('90'),
                                     ChipData('120')
                                   ],
-                                  onChanged: (val) async {
-                                    setState(
-                                        () => _model.wTChipValue = val?.first);
-                                    await queryGuestEntryDetailsRecordOnce(
-                                      singleRecord: true,
-                                    ).then((s) => s.firstOrNull);
-                                  },
+                                  onChanged: (val) => setState(
+                                      () => _model.wTChipValue = val?.first),
                                   selectedChipStyle: ChipStyle(
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
@@ -239,31 +227,59 @@ class _WaitingTimeEditCompWidgetState extends State<WaitingTimeEditCompWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 150.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        await optionsGuestEntryDetailsRecord!.reference
-                            .update(createGuestEntryDetailsRecordData());
-                      },
-                      text: 'Update',
-                      options: FFButtonOptions(
-                        height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
+                    child: FutureBuilder<List<GuestEntriesRow>>(
+                      future: GuestEntriesTable().queryRows(
+                        queryFn: (q) => q,
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  Color(0xFF011D1A),
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<GuestEntriesRow> buttonGuestEntriesRowList =
+                            snapshot.data!;
+                        return FFButtonWidget(
+                          onPressed: () async {
+                            await GuestEntriesTable().update(
+                              data: {
+                                'waitingTime': _model.wTChipValue,
+                              },
+                              matchingRows: (rows) => rows,
+                            );
+                          },
+                          text: 'Update',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
                                   fontFamily: 'Montserrat',
                                   color: Colors.white,
                                 ),
-                        elevation: 3.0,
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
+                            elevation: 3.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],

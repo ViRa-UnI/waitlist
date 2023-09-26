@@ -5,4 +5,7 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
-export 'tables/authentication.dart';
+export 'tables/guest_entries.dart';
+export 'tables/food_items.dart';
+export 'tables/category.dart';
+export 'tables/users.dart';

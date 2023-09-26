@@ -1,3 +1,4 @@
+import '/components/wait_list_table_supabase_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -9,13 +10,19 @@ class TestPageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Model for WaitListTable_Supabase component.
+  late WaitListTableSupabaseModel waitListTableSupabaseModel;
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    waitListTableSupabaseModel =
+        createModel(context, () => WaitListTableSupabaseModel());
+  }
 
   void dispose() {
     unfocusNode.dispose();
+    waitListTableSupabaseModel.dispose();
   }
 
   /// Action blocks are added here.

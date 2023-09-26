@@ -109,8 +109,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'GuestDetailsPage',
-              path: 'guestDetailsPage',
-              builder: (context, params) => GuestDetailsPageWidget(),
+              path: 'guestDetails',
+              builder: (context, params) => GuestDetailsPageWidget(
+                guestId: params.getParam('guestId', ParamType.int),
+              ),
             ),
             FFRoute(
               name: 'MainPage',
@@ -133,13 +135,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'ListMenuItems',
               path: 'ListMenuItems',
-              requireAuth: true,
               builder: (context, params) => ListMenuItemsWidget(),
             ),
             FFRoute(
               name: 'TestPage',
               path: 'testPage',
               builder: (context, params) => TestPageWidget(),
+            ),
+            FFRoute(
+              name: 'WTSupabase',
+              path: 'WaitListSupabase',
+              requireAuth: true,
+              builder: (context, params) => WTSupabaseWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
