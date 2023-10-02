@@ -46,7 +46,9 @@ class _GuestEntryWidgetState extends State<GuestEntryWidget> {
         title: 'guestEntry',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondary,
@@ -58,10 +60,10 @@ class _GuestEntryWidgetState extends State<GuestEntryWidget> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/title-png-white.png',
-                    width: 336.0,
+                    'assets/images/logo-waiting-list.png',
+                    width: 450.0,
                     height: 200.0,
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),

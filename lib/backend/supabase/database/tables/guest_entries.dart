@@ -46,4 +46,11 @@ class GuestEntriesRow extends SupabaseDataRow {
 
   String get uniqueID => getField<String>('uniqueID')!;
   set uniqueID(String value) => setField<String>('uniqueID', value);
+
+  String? get messageContent => getField<String>('messageContent');
+  set messageContent(String? value) =>
+      setField<String>('messageContent', value);
+
+  bool? get smsStatus => getField<bool>('smsStatus');
+  set smsStatus(bool? value) => setField<bool>('smsStatus', value);
 }

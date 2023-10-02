@@ -1,21 +1,14 @@
-import '/backend/backend.dart';
-import '/components/table_components/not_visited_comp/not_visited_comp_widget.dart';
-import '/components/table_components/visited_comp/visited_comp_widget.dart';
-import '/components/table_components/waiting_time_edit_comp/waiting_time_edit_comp_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:data_table_2/data_table_2.dart';
+import 'wait_list_table_widget.dart' show WaitListTableWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class WaitListTableModel extends FlutterFlowModel {
+class WaitListTableModel extends FlutterFlowModel<WaitListTableWidget> {
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {
-    dataTableShowLogs = false; // Disables noisy DataTable2 debug statements.
-  }
+  void initState(BuildContext context) {}
 
   void dispose() {}
 

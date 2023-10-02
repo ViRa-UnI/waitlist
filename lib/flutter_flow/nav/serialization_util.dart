@@ -243,12 +243,26 @@ dynamic deserializeParam<T>(
         switch (T) {
           case GuestEntriesRow:
             return GuestEntriesRow(data);
+          case GuestEntriesVisitedRow:
+            return GuestEntriesVisitedRow(data);
           case FoodItemsRow:
             return FoodItemsRow(data);
           case CategoryRow:
             return CategoryRow(data);
+          case ItemsDuplicateRow:
+            return ItemsDuplicateRow(data);
+          case ItemscategoryRow:
+            return ItemscategoryRow(data);
           case UsersRow:
             return UsersRow(data);
+          case ItemsRow:
+            return ItemsRow(data);
+          case GuestentriesformRow:
+            return GuestentriesformRow(data);
+          case CustomersDetailsRow:
+            return CustomersDetailsRow(data);
+          case GuestEntriesNotVisitedRow:
+            return GuestEntriesNotVisitedRow(data);
           default:
             return null;
         }

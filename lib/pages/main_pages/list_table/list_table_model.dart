@@ -1,13 +1,13 @@
-import '/backend/backend.dart';
 import '/components/table_components/wait_list_table/wait_list_table_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'list_table_widget.dart' show ListTableWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class ListTableModel extends FlutterFlowModel {
+class ListTableModel extends FlutterFlowModel<ListTableWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

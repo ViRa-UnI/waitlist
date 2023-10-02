@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '/backend/supabase/supabase.dart';
@@ -147,6 +148,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'WaitListSupabase',
               requireAuth: true,
               builder: (context, params) => WTSupabaseWidget(),
+            ),
+            FFRoute(
+              name: 'TestPageCopy',
+              path: 'testPageCopy',
+              builder: (context, params) => TestPageCopyWidget(),
+            ),
+            FFRoute(
+              name: 'vistedNotVisitedPage',
+              path: 'previousDetails',
+              requireAuth: true,
+              builder: (context, params) => VistedNotVisitedPageWidget(),
+            ),
+            FFRoute(
+              name: 'customersTable',
+              path: 'customersTable',
+              requireAuth: true,
+              builder: (context, params) => CustomersTableWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -399,4 +417,24 @@ class _RouteErrorBuilderState extends State<_RouteErrorBuilder> {
 
   @override
   Widget build(BuildContext context) => widget.child;
+}
+
+class RootPageContext {
+  const RootPageContext(this.isRootPage, [this.errorRoute]);
+  final bool isRootPage;
+  final String? errorRoute;
+
+  static bool isInactiveRootPage(BuildContext context) {
+    final rootPageContext = context.read<RootPageContext?>();
+    final isRootPage = rootPageContext?.isRootPage ?? false;
+    final location = GoRouter.of(context).location;
+    return isRootPage &&
+        location != '/' &&
+        location != rootPageContext?.errorRoute;
+  }
+
+  static Widget wrap(Widget child, {String? errorRoute}) => Provider.value(
+        value: RootPageContext(true, errorRoute),
+        child: child,
+      );
 }

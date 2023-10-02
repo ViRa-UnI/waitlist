@@ -13,3 +13,8 @@ export '/pages/main_pages/list_menu_items/list_menu_items_widget.dart'
     show ListMenuItemsWidget;
 export '/test_page/test_page_widget.dart' show TestPageWidget;
 export '/pages/w_t_supabase/w_t_supabase_widget.dart' show WTSupabaseWidget;
+export '/test_page_copy/test_page_copy_widget.dart' show TestPageCopyWidget;
+export '/pages/main_pages/visted_not_visited_page/visted_not_visited_page_widget.dart'
+    show VistedNotVisitedPageWidget;
+export '/pages/main_pages/customers_table/customers_table_widget.dart'
+    show CustomersTableWidget;

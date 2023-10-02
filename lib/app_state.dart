@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
+import 'backend/api_requests/api_manager.dart';
 import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
@@ -40,6 +41,24 @@ class FFAppState extends ChangeNotifier {
   String get VisitedID => _VisitedID;
   set VisitedID(String _value) {
     _VisitedID = _value;
+  }
+
+  String _selectedCategory = '';
+  String get selectedCategory => _selectedCategory;
+  set selectedCategory(String _value) {
+    _selectedCategory = _value;
+  }
+
+  String _guestCategorySelected = '';
+  String get guestCategorySelected => _guestCategorySelected;
+  set guestCategorySelected(String _value) {
+    _guestCategorySelected = _value;
+  }
+
+  String _guestTypeSelected = '';
+  String get guestTypeSelected => _guestTypeSelected;
+  set guestTypeSelected(String _value) {
+    _guestTypeSelected = _value;
   }
 }
 

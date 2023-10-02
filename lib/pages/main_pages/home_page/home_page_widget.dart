@@ -45,7 +45,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         title: 'HomePage',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondary,
@@ -77,7 +79,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
-                          'assets/images/title-png-white.png',
+                          'assets/images/logo-waiting-list.png',
                           width: 150.0,
                           fit: BoxFit.fitWidth,
                         ),

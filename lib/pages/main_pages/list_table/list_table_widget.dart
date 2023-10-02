@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/components/table_components/wait_list_table/wait_list_table_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -40,93 +39,62 @@ class _ListTableWidgetState extends State<ListTableWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return StreamBuilder<List<GuestEntryDetailsRecord>>(
-      stream: queryGuestEntryDetailsRecord(
-        singleRecord: true,
-      ),
-      builder: (context, snapshot) {
-        // Customize what your widget looks like when it's loading.
-        if (!snapshot.hasData) {
-          return Scaffold(
+    return Title(
+        title: 'ListTable',
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        child: GestureDetector(
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
+          child: Scaffold(
+            key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: Center(
-              child: SizedBox(
-                width: 50.0,
-                height: 50.0,
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                    Color(0xFF011D1A),
-                  ),
-                ),
-              ),
-            ),
-          );
-        }
-        List<GuestEntryDetailsRecord> listTableGuestEntryDetailsRecordList =
-            snapshot.data!;
-        // Return an empty Container when the item does not exist.
-        if (snapshot.data!.isEmpty) {
-          return Container();
-        }
-        final listTableGuestEntryDetailsRecord =
-            listTableGuestEntryDetailsRecordList.isNotEmpty
-                ? listTableGuestEntryDetailsRecordList.first
-                : null;
-        return Title(
-            title: 'ListTable',
-            color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
-            child: GestureDetector(
-              onTap: () =>
-                  FocusScope.of(context).requestFocus(_model.unfocusNode),
-              child: Scaffold(
-                key: scaffoldKey,
-                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-                appBar: AppBar(
-                  backgroundColor: FlutterFlowTheme.of(context).primary,
-                  automaticallyImplyLeading: false,
-                  leading: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        'assets/images/title-png-white.png',
-                        width: 300.0,
-                        height: 200.0,
-                        fit: BoxFit.fitWidth,
-                      ),
+            appBar: AppBar(
+              backgroundColor: FlutterFlowTheme.of(context).primary,
+              automaticallyImplyLeading: false,
+              leading: Align(
+                alignment: AlignmentDirectional(0.00, 0.00),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/logo-waiting-list.png',
+                      width: 500.0,
+                      height: 200.0,
+                      fit: BoxFit.contain,
                     ),
                   ),
-                  title: Text(
-                    'Waiting List',
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Open Sans',
-                          color: Colors.white,
-                          fontSize: 22.0,
-                        ),
-                  ),
-                  actions: [],
-                  centerTitle: true,
-                  elevation: 2.0,
-                ),
-                body: SafeArea(
-                  top: true,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: wrapWithModel(
-                          model: _model.waitListTableModel,
-                          updateCallback: () => setState(() {}),
-                          child: WaitListTableWidget(),
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
               ),
-            ));
-      },
-    );
+              title: Text(
+                'Waiting List',
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Open Sans',
+                      color: Colors.white,
+                      fontSize: 22.0,
+                    ),
+              ),
+              actions: [],
+              centerTitle: true,
+              elevation: 2.0,
+            ),
+            body: SafeArea(
+              top: true,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: wrapWithModel(
+                      model: _model.waitListTableModel,
+                      updateCallback: () => setState(() {}),
+                      child: WaitListTableWidget(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }

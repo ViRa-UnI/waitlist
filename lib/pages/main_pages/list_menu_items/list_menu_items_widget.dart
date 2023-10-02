@@ -46,27 +46,49 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
         title: 'ListMenuItems',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primary,
-              automaticallyImplyLeading: false,
-              leading: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/title-png-white.png',
-                    width: 300.0,
-                    height: 200.0,
-                    fit: BoxFit.fitWidth,
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(50.0),
+              child: AppBar(
+                backgroundColor: FlutterFlowTheme.of(context).primary,
+                automaticallyImplyLeading: false,
+                leading: Align(
+                  alignment: AlignmentDirectional(0.00, 0.00),
+                  child: Container(
+                    decoration: BoxDecoration(),
+                    alignment: AlignmentDirectional(0.00, 0.00),
+                    child: Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.asset(
+                                'assets/images/logo-waiting-list.png',
+                                width: 226.0,
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
+                actions: [],
+                centerTitle: true,
+                elevation: 2.0,
               ),
-              actions: [],
-              centerTitle: true,
-              elevation: 2.0,
             ),
             body: SafeArea(
               top: true,
@@ -74,6 +96,32 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                 padding: EdgeInsets.zero,
                 scrollDirection: Axis.vertical,
                 children: [
+                  Container(
+                    width: 20.0,
+                    height: 50.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                    child: Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Chops Restaurant',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -119,46 +167,64 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                       final listViewCategoryRow =
                                           listViewCategoryRowList[
                                               listViewIndex];
-                                      return Card(
-                                        clipBehavior:
-                                            Clip.antiAliasWithSaveLayer,
-                                        elevation: 1.0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Flexible(
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  listViewCategoryRow.image!,
-                                                  width: 100.0,
-                                                  height: 200.0,
-                                                  fit: BoxFit.scaleDown,
+                                      return InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          setState(() {
+                                            FFAppState().selectedCategory =
+                                                listViewCategoryRow.category!;
+                                          });
+                                        },
+                                        child: Card(
+                                          clipBehavior:
+                                              Clip.antiAliasWithSaveLayer,
+                                          elevation: 1.0,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Flexible(
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.network(
+                                                    valueOrDefault<String>(
+                                                      listViewCategoryRow.image,
+                                                      'https://media.finedinemenu.com/filters:strip_exif()/filters:format(webp)/360x240/Ci27lbBw/bf40ff19-319f-44a9-b063-fc26cdd2b20d.jpg',
+                                                    ),
+                                                    height: 200.0,
+                                                    fit: BoxFit.scaleDown,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Text(
-                                              listViewCategoryRow.category!
-                                                  .maybeHandleOverflow(
-                                                      maxChars: 10),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                          ],
+                                              Text(
+                                                listViewCategoryRow.category!
+                                                    .maybeHandleOverflow(
+                                                        maxChars: 10),
+                                                maxLines: 3,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       );
                                     },
@@ -181,7 +247,7 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 15.0),
                             child: Text(
-                              'Menu Items',
+                              FFAppState().selectedCategory,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -214,7 +280,10 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                 ),
                                 child: FutureBuilder<List<FoodItemsRow>>(
                                   future: FoodItemsTable().queryRows(
-                                    queryFn: (q) => q,
+                                    queryFn: (q) => q.eq(
+                                      'Category',
+                                      FFAppState().selectedCategory,
+                                    ),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -392,9 +461,9 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
-                                                                  0.0,
+                                                                  5.0,
                                                                   10.0,
-                                                                  0.0),
+                                                                  5.0),
                                                       child: InkWell(
                                                         splashColor:
                                                             Colors.transparent,
@@ -413,10 +482,9 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                                                       .fade,
                                                               child:
                                                                   FlutterFlowExpandedImageView(
-                                                                image: Image
-                                                                    .network(
-                                                                  listViewFoodItemsRow
-                                                                      .image!,
+                                                                image:
+                                                                    Image.asset(
+                                                                  'assets/images/gif.gif',
                                                                   fit: BoxFit
                                                                       .contain,
                                                                   alignment:
@@ -427,8 +495,7 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                                                 allowRotation:
                                                                     false,
                                                                 tag:
-                                                                    listViewFoodItemsRow
-                                                                        .image!,
+                                                                    'itemImageTag',
                                                                 useHeroAnimation:
                                                                     true,
                                                               ),
@@ -436,9 +503,7 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                                           );
                                                         },
                                                         child: Hero(
-                                                          tag:
-                                                              listViewFoodItemsRow
-                                                                  .image!,
+                                                          tag: 'itemImageTag',
                                                           transitionOnUserGestures:
                                                               true,
                                                           child: ClipRRect(
@@ -446,14 +511,11 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                                                 BorderRadius
                                                                     .circular(
                                                                         8.0),
-                                                            child:
-                                                                Image.network(
-                                                              listViewFoodItemsRow
-                                                                  .image!,
-                                                              width: 100.0,
-                                                              height: 150.0,
+                                                            child: Image.asset(
+                                                              'assets/images/gif.gif',
+                                                              height: 200.0,
                                                               fit: BoxFit
-                                                                  .scaleDown,
+                                                                  .contain,
                                                               alignment:
                                                                   Alignment(
                                                                       0.00,

@@ -39,4 +39,13 @@ class FoodItemsRow extends SupabaseDataRow {
 
   String? get category => getField<String>('Category');
   set category(String? value) => setField<String>('Category', value);
+
+  String? get image1x => getField<String>('Image 1x');
+  set image1x(String? value) => setField<String>('Image 1x', value);
+
+  String? get image2x => getField<String>('Image 2x');
+  set image2x(String? value) => setField<String>('Image 2x', value);
+
+  String? get image3x => getField<String>('Image 3x');
+  set image3x(String? value) => setField<String>('Image 3x', value);
 }
