@@ -59,7 +59,7 @@ class _ListTableWidgetState extends State<ListTableWidget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/logo-waiting-list.png',
+                      'assets/images/chops-png-03.png',
                       width: 500.0,
                       height: 200.0,
                       fit: BoxFit.contain,

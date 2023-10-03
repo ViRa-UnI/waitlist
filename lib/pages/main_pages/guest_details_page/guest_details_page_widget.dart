@@ -116,14 +116,19 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Text(
-                                'Sharq, Kuwait City',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context).info,
-                                    ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 20.0, 0.0, 0.0),
+                                child: Text(
+                                  'Sharq, Kuwait City',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
+                                      ),
+                                ),
                               ),
                               SizedBox(
                                 width: 300.0,
@@ -391,9 +396,9 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
-                            'assets/images/chops-png-01.png',
-                            width: 228.0,
-                            height: 90.0,
+                            'assets/images/chops-png-03.png',
+                            width: 200.0,
+                            height: 100.0,
                             fit: BoxFit.fitWidth,
                           ),
                         ),

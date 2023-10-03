@@ -98,7 +98,7 @@ class _TypeFilterWidgetState extends State<TypeFilterWidget> {
               ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.00, 0.00),
+                  alignment: AlignmentDirectional(0.00, -1.00),
                   child: Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),

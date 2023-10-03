@@ -74,7 +74,7 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
-                                'assets/images/logo-waiting-list.png',
+                                'assets/images/chops-png-03.png',
                                 width: 226.0,
                                 fit: BoxFit.fitWidth,
                               ),

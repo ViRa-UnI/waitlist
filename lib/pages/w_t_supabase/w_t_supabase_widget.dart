@@ -60,7 +60,7 @@ class _WTSupabaseWidgetState extends State<WTSupabaseWidget> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/logo-waiting-list.png',
+                    'assets/images/chops-png-03.png',
                     width: 300.0,
                     fit: BoxFit.contain,
                   ),

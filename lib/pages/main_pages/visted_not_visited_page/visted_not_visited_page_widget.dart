@@ -67,7 +67,7 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/title-png-white.png',
+                    'assets/images/chops-png-03.png',
                     width: 300.0,
                     height: 200.0,
                     fit: BoxFit.fitWidth,
