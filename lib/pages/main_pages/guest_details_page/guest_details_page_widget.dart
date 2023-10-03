@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -35,7 +36,8 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {});
+      setState(() => _model.requestCompleter = null);
+      await _model.waitForRequestCompleted(minWait: 30000, maxWait: 60000);
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -53,12 +55,14 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
     context.watch<FFAppState>();
 
     return FutureBuilder<List<GuestEntriesRow>>(
-      future: GuestEntriesTable().querySingleRow(
-        queryFn: (q) => q.eq(
-          'id',
-          widget.guestId,
-        ),
-      ),
+      future: (_model.requestCompleter ??= Completer<List<GuestEntriesRow>>()
+            ..complete(GuestEntriesTable().querySingleRow(
+              queryFn: (q) => q.eq(
+                'id',
+                widget.guestId,
+              ),
+            )))
+          .future,
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -83,7 +87,7 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                 ? guestDetailsPageGuestEntriesRowList.first
                 : null;
         return Title(
-            title: 'GuestDetailsPage',
+            title: 'Guest Details',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => _model.unfocusNode.canRequestFocus

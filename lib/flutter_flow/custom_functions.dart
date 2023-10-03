@@ -17,30 +17,44 @@ int calculateRemainingTime(
   DateTime createdTime,
   String waitingTime,
 ) {
-// Convert waiting time (in minutes) to Duration
+  // Convert waiting time (in minutes) to Duration
   int waitingTimeInMinutes = int.parse(waitingTime);
   Duration waitingDuration = Duration(minutes: waitingTimeInMinutes);
 
   // Calculate the expiry time
   DateTime expiryTime = createdTime.add(waitingDuration);
 
-  // Calculate the remaining time
-  // Duration remainingTime = expiryTime.difference(DateTime.now());
-  Duration remainingTime = expiryTime.difference(DateTime.now().toUtc());
+  // Manually calculate the difference in days, hours and minutes
+  int diffDays = expiryTime.day - DateTime.now().day;
+  int diffHours = expiryTime.hour - DateTime.now().hour;
+  int diffMinutes = expiryTime.minute - DateTime.now().minute;
+
+  // Adjust for negative minutes
+  if (diffMinutes < 0) {
+    diffHours -= 1;
+    diffMinutes += 60;
+  }
+
+  // Adjust for negative hours
+  if (diffHours < 0) {
+    diffDays -= 1;
+    diffHours += 24;
+  }
+
+  // Convert the difference to total minutes
+  int totalDiffMinutes = (diffDays * 24 * 60) + (diffHours * 60) + diffMinutes;
+
+  // Ensure the result doesn't go below zero
+  totalDiffMinutes = math.max(0, totalDiffMinutes);
 
   // Log the values
   print('Created Time: $createdTime');
   print('Waiting Time: $waitingTime');
   print('Expiry Time: $expiryTime');
   print('Current Time: ${DateTime.now()}');
-  print('Remaining Time: ${remainingTime.inMinutes}');
+  print('Manually Calculated Remaining Time: $totalDiffMinutes');
 
-  // If the remaining time is negative, return 0
-  if (remainingTime.isNegative) {
-    return 0;
-  }
-
-  return remainingTime.inMinutes;
+  return totalDiffMinutes;
 }
 
 int calculateRemainingTimeInMinutes(

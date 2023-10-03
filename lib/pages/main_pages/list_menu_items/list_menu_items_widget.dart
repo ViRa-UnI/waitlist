@@ -513,7 +513,8 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                                                         8.0),
                                                             child: Image.asset(
                                                               'assets/images/gif.gif',
-                                                              height: 200.0,
+                                                              width: 150.0,
+                                                              height: 150.0,
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:

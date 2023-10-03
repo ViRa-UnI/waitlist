@@ -46,6 +46,7 @@ class FCCChopsIDCall {
     String? s = 'Chops',
     int? g = 96594080660,
     String? m = 'Hello',
+    String? l = 'L',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'FCC Chops ID',
@@ -59,6 +60,7 @@ class FCCChopsIDCall {
         'S': s,
         'G': g,
         'M': m,
+        'L': l,
       },
       returnBody: true,
       encodeBodyUtf8: false,

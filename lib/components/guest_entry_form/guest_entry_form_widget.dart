@@ -999,156 +999,170 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 8.0, 0.0),
-                                  child: TextFormField(
-                                    controller: _model.countryCodeController,
-                                    onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.countryCodeController',
-                                      Duration(milliseconds: 2000),
-                                      () => setState(() {}),
+                                if (responsiveVisibility(
+                                  context: context,
+                                  phone: false,
+                                  tablet: false,
+                                  tabletLandscape: false,
+                                  desktop: false,
+                                ))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller: _model.countryCodeController,
+                                      onChanged: (_) => EasyDebounce.debounce(
+                                        '_model.countryCodeController',
+                                        Duration(milliseconds: 2000),
+                                        () => setState(() {}),
+                                      ),
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Country Code',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium,
+                                        hintText: 'Country Code',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium,
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: FlutterFlowTheme.of(context)
+                                                .info,
+                                          ),
+                                      keyboardType: TextInputType.multiline,
+                                      validator: _model
+                                          .countryCodeControllerValidator
+                                          .asValidator(context),
                                     ),
-                                    autofocus: true,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelText: 'Country Code',
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium,
-                                      hintText: 'Country Code',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium,
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                    keyboardType: TextInputType.multiline,
-                                    validator: _model
-                                        .countryCodeControllerValidator
-                                        .asValidator(context),
                                   ),
-                                ),
                               ],
                             ),
                           ),
-                          Expanded(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 8.0, 0.0),
-                                  child: TextFormField(
-                                    controller: _model.fullMobilenoController,
-                                    onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.fullMobilenoController',
-                                      Duration(milliseconds: 2000),
-                                      () => setState(() {}),
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                            tablet: false,
+                            tabletLandscape: false,
+                            desktop: false,
+                          ))
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller: _model.fullMobilenoController,
+                                      onChanged: (_) => EasyDebounce.debounce(
+                                        '_model.fullMobilenoController',
+                                        Duration(milliseconds: 2000),
+                                        () => setState(() {}),
+                                      ),
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Full Mobile Num',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium,
+                                        hintText:
+                                            'Mobile Num Dynamically Populated',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium,
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: FlutterFlowTheme.of(context)
+                                                .info,
+                                          ),
+                                      keyboardType: TextInputType.multiline,
+                                      validator: _model
+                                          .fullMobilenoControllerValidator
+                                          .asValidator(context),
                                     ),
-                                    autofocus: true,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelText: 'Full Mobile Num',
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium,
-                                      hintText:
-                                          'Mobile Num Dynamically Populated',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium,
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                    keyboardType: TextInputType.multiline,
-                                    validator: _model
-                                        .fullMobilenoControllerValidator
-                                        .asValidator(context),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -1340,7 +1354,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                 onPressed: () async {
                   setState(() {
                     _model.messageContentController?.text =
-                        'Hey ${_model.guestNameController.text}, Title Oven Edition added your name to the waiting list for ${_model.pSChipValue} Persons. Please click the link to check your status: https://360.titlekw.com/guestDetails?guestId=${_model.submissionIdController.text}';
+                        'Hey ${_model.guestNameController.text}, Title Oven Edition added your name to the waiting list for ${_model.pSChipValue} Persons. Please click the link to check your status: https://360.titlekw.com/gd?guestId=${_model.submissionIdController.text}';
                   });
                   setState(() {
                     _model.fullMobilenoController?.text =

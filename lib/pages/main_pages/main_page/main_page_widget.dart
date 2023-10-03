@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
@@ -224,723 +225,722 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                   ),
                                 ],
                               ),
-                              Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 5.0, 0.0, 5.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: 'Category Filter',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        color: Colors.white,
-                                                      ),
-                                              elevation: 3.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: 'Type Filter',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        color: Colors.white,
-                                                      ),
-                                              elevation: 3.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: 'Sort List',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        color: Colors.white,
-                                                      ),
-                                              elevation: 3.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: 'Sort WT',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        color: Colors.white,
-                                                      ),
-                                              elevation: 3.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            decoration: BoxDecoration(),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Padding(
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  setState(
+                                      () => _model.requestCompleter = null);
+                                  await _model.waitForRequestCompleted(
+                                      minWait: 30000, maxWait: 60000);
+                                },
+                                child: Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 5.0, 5.0, 0.0),
-                                        child: FutureBuilder<
-                                            List<GuestEntriesRow>>(
-                                          future: GuestEntriesTable().queryRows(
-                                            queryFn: (q) => q,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      Color(0xFF011D1A),
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                            List<GuestEntriesRow>
-                                                dataTableGuestEntriesRowList =
-                                                snapshot.data!;
-                                            return DataTable2(
-                                              columns: [
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'Name',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.1,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'Type',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.07,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'Mobile',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.12,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'Category',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.13,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'Seating Area',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.11,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: SelectionArea(
-                                                        child: Text(
-                                                      'WT',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    )),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.08,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'RT',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.08,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'PS',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.07,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'SMS Status',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.12,
-                                                ),
-                                                DataColumn2(
-                                                  label: DefaultTextStyle.merge(
-                                                    softWrap: true,
-                                                    child: Text(
-                                                      'Actions',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
-                                                    ),
-                                                  ),
-                                                  fixedWidth:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.09,
-                                                ),
-                                              ],
-                                              rows: dataTableGuestEntriesRowList
-                                                  .mapIndexed((dataTableIndex,
-                                                          dataTableGuestEntriesRow) =>
-                                                      [
-                                                        Text(
-                                                          dataTableGuestEntriesRow
-                                                              .name!,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge,
+                                            0.0, 5.0, 0.0, 5.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            FFButtonWidget(
+                                              onPressed: () {
+                                                print('Button pressed ...');
+                                              },
+                                              text: 'Category Filter',
+                                              options: FFButtonOptions(
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: Colors.white,
                                                         ),
-                                                        Text(
-                                                          dataTableGuestEntriesRow
-                                                              .type!,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge,
-                                                        ),
-                                                        Text(
-                                                          dataTableGuestEntriesRow
-                                                              .mobile!,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge,
-                                                        ),
-                                                        Text(
-                                                          dataTableGuestEntriesRow
-                                                              .category!,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge,
-                                                        ),
-                                                        InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            setState(() {
-                                                              FFAppState()
-                                                                      .editingRowID =
-                                                                  dataTableGuestEntriesRow
-                                                                      .id
-                                                                      .toString();
-                                                            });
-                                                          },
-                                                          child: Text(
-                                                            dataTableGuestEntriesRow
-                                                                .seatingArea!,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            dataTableGuestEntriesRow
-                                                                .waitingTime,
-                                                            'waittime',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge,
-                                                        ),
-                                                        TimeCalculationWidget(
-                                                          key: Key(
-                                                              'Keyslr_${dataTableIndex}_of_${dataTableGuestEntriesRowList.length}'),
-                                                          parameter1:
-                                                              dataTableGuestEntriesRow
-                                                                  .createdAt,
-                                                          parameter2:
-                                                              dataTableGuestEntriesRow
-                                                                  .waitingTime,
-                                                        ),
-                                                        Text(
-                                                          dataTableGuestEntriesRow
-                                                              .partySize!,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge,
-                                                        ),
-                                                        Text(
-                                                          true.toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge,
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Builder(
-                                                              builder:
-                                                                  (context) =>
-                                                                      Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await showAlignedDialog(
-                                                                      context:
-                                                                          context,
-                                                                      isGlobal:
-                                                                          true,
-                                                                      avoidOverflow:
-                                                                          false,
-                                                                      targetAnchor: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0)
-                                                                          .resolve(
-                                                                              Directionality.of(context)),
-                                                                      followerAnchor: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0)
-                                                                          .resolve(
-                                                                              Directionality.of(context)),
-                                                                      builder:
-                                                                          (dialogContext) {
-                                                                        return Material(
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          child:
-                                                                              GestureDetector(
-                                                                            onTap: () => _model.unfocusNode.canRequestFocus
-                                                                                ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                                                                                : FocusScope.of(context).unfocus(),
-                                                                            child:
-                                                                                Container(
-                                                                              height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                              width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                              child: WTEditCompSupabaseWidget(
-                                                                                uID: dataTableGuestEntriesRow,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      },
-                                                                    ).then((value) =>
-                                                                        setState(
-                                                                            () {}));
-                                                                  },
-                                                                  child: Icon(
-                                                                    Icons.timer,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Builder(
-                                                              builder:
-                                                                  (context) =>
-                                                                      Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await showAlignedDialog(
-                                                                      context:
-                                                                          context,
-                                                                      isGlobal:
-                                                                          true,
-                                                                      avoidOverflow:
-                                                                          false,
-                                                                      targetAnchor: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0)
-                                                                          .resolve(
-                                                                              Directionality.of(context)),
-                                                                      followerAnchor: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0)
-                                                                          .resolve(
-                                                                              Directionality.of(context)),
-                                                                      builder:
-                                                                          (dialogContext) {
-                                                                        return Material(
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          child:
-                                                                              GestureDetector(
-                                                                            onTap: () => _model.unfocusNode.canRequestFocus
-                                                                                ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                                                                                : FocusScope.of(context).unfocus(),
-                                                                            child:
-                                                                                Container(
-                                                                              height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                              width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                              child: VisitedCompWidget(
-                                                                                rowDetails: dataTableGuestEntriesRow,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      },
-                                                                    ).then((value) =>
-                                                                        setState(
-                                                                            () {}));
-                                                                  },
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .restaurant,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Builder(
-                                                              builder:
-                                                                  (context) =>
-                                                                      Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await showAlignedDialog(
-                                                                      context:
-                                                                          context,
-                                                                      isGlobal:
-                                                                          true,
-                                                                      avoidOverflow:
-                                                                          false,
-                                                                      targetAnchor: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0)
-                                                                          .resolve(
-                                                                              Directionality.of(context)),
-                                                                      followerAnchor: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0)
-                                                                          .resolve(
-                                                                              Directionality.of(context)),
-                                                                      builder:
-                                                                          (dialogContext) {
-                                                                        return Material(
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          child:
-                                                                              GestureDetector(
-                                                                            onTap: () => _model.unfocusNode.canRequestFocus
-                                                                                ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                                                                                : FocusScope.of(context).unfocus(),
-                                                                            child:
-                                                                                Container(
-                                                                              height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                              width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                              child: NotVisitedCompWidget(
-                                                                                rowDetailsNotVisited: dataTableGuestEntriesRow,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      },
-                                                                    ).then((value) =>
-                                                                        setState(
-                                                                            () {}));
-                                                                  },
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .no_accounts,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ]
-                                                          .map((c) =>
-                                                              DataCell(c))
-                                                          .toList())
-                                                  .map((e) => DataRow(cells: e))
-                                                  .toList(),
-                                              headingRowColor:
-                                                  MaterialStateProperty.all(
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                              ),
-                                              headingRowHeight: 58.0,
-                                              dataRowColor:
-                                                  MaterialStateProperty.all(
-                                                FlutterFlowTheme.of(context)
-                                                    .secondary,
-                                              ),
-                                              dataRowHeight: 56.0,
-                                              border: TableBorder(
+                                                elevation: 3.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
+                                                ),
                                                 borderRadius:
-                                                    BorderRadius.circular(10.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              dividerThickness: 2.0,
-                                              columnSpacing: 5.0,
-                                              showBottomBorder: true,
-                                              minWidth: 49.0,
-                                            );
-                                          },
+                                            ),
+                                            FFButtonWidget(
+                                              onPressed: () {
+                                                print('Button pressed ...');
+                                              },
+                                              text: 'Type Filter',
+                                              options: FFButtonOptions(
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: Colors.white,
+                                                        ),
+                                                elevation: 3.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                            ),
+                                            FFButtonWidget(
+                                              onPressed: () {
+                                                print('Button pressed ...');
+                                              },
+                                              text: 'Sort List',
+                                              options: FFButtonOptions(
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: Colors.white,
+                                                        ),
+                                                elevation: 3.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                            ),
+                                            FFButtonWidget(
+                                              onPressed: () {
+                                                print('Button pressed ...');
+                                              },
+                                              text: 'Sort WT',
+                                              options: FFButtonOptions(
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: Colors.white,
+                                                        ),
+                                                elevation: 3.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 5.0, 5.0, 0.0),
+                                          child: FutureBuilder<
+                                              List<GuestEntriesRow>>(
+                                            future: (_model.requestCompleter ??=
+                                                    Completer<
+                                                        List<GuestEntriesRow>>()
+                                                      ..complete(
+                                                          GuestEntriesTable()
+                                                              .queryRows(
+                                                        queryFn: (q) => q,
+                                                      )))
+                                                .future,
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        Color(0xFF011D1A),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<GuestEntriesRow>
+                                                  dataTableGuestEntriesRowList =
+                                                  snapshot.data!;
+                                              return InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  setState(() => _model
+                                                      .requestCompleter = null);
+                                                  await _model
+                                                      .waitForRequestCompleted(
+                                                          minWait: 30000);
+                                                },
+                                                child: DataTable2(
+                                                  columns: [
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'Name',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.1,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'Type',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.07,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'Mobile',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.12,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'Category',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.13,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'Seating Area',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.11,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: SelectionArea(
+                                                            child: Text(
+                                                          'WT',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        )),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.08,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'RT',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.08,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'PS',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.07,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'SMS Status',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.12,
+                                                    ),
+                                                    DataColumn2(
+                                                      label: DefaultTextStyle
+                                                          .merge(
+                                                        softWrap: true,
+                                                        child: Text(
+                                                          'Actions',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge,
+                                                        ),
+                                                      ),
+                                                      fixedWidth:
+                                                          MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width *
+                                                              0.09,
+                                                    ),
+                                                  ],
+                                                  rows:
+                                                      dataTableGuestEntriesRowList
+                                                          .mapIndexed((dataTableIndex,
+                                                                  dataTableGuestEntriesRow) =>
+                                                              [
+                                                                Text(
+                                                                  dataTableGuestEntriesRow
+                                                                      .name!,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge,
+                                                                ),
+                                                                Text(
+                                                                  dataTableGuestEntriesRow
+                                                                      .type!,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge,
+                                                                ),
+                                                                Text(
+                                                                  dataTableGuestEntriesRow
+                                                                      .mobile!,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge,
+                                                                ),
+                                                                Text(
+                                                                  dataTableGuestEntriesRow
+                                                                      .category!,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge,
+                                                                ),
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    setState(
+                                                                        () {
+                                                                      FFAppState()
+                                                                              .editingRowID =
+                                                                          dataTableGuestEntriesRow
+                                                                              .id
+                                                                              .toString();
+                                                                    });
+                                                                  },
+                                                                  child: Text(
+                                                                    dataTableGuestEntriesRow
+                                                                        .seatingArea!,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge,
+                                                                  ),
+                                                                ),
+                                                                Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    dataTableGuestEntriesRow
+                                                                        .waitingTime,
+                                                                    'waittime',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge,
+                                                                ),
+                                                                TimeCalculationWidget(
+                                                                  key: Key(
+                                                                      'Keyslr_${dataTableIndex}_of_${dataTableGuestEntriesRowList.length}'),
+                                                                  parameter1:
+                                                                      dataTableGuestEntriesRow
+                                                                          .createdAt,
+                                                                  parameter2:
+                                                                      dataTableGuestEntriesRow
+                                                                          .waitingTime,
+                                                                ),
+                                                                Text(
+                                                                  dataTableGuestEntriesRow
+                                                                      .partySize!,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge,
+                                                                ),
+                                                                Text(
+                                                                  true.toString(),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge,
+                                                                ),
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Builder(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            await showAlignedDialog(
+                                                                              context: context,
+                                                                              isGlobal: true,
+                                                                              avoidOverflow: false,
+                                                                              targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              builder: (dialogContext) {
+                                                                                return Material(
+                                                                                  color: Colors.transparent,
+                                                                                  child: GestureDetector(
+                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                    child: Container(
+                                                                                      height: MediaQuery.sizeOf(context).height * 0.5,
+                                                                                      width: MediaQuery.sizeOf(context).width * 0.6,
+                                                                                      child: WTEditCompSupabaseWidget(
+                                                                                        uID: dataTableGuestEntriesRow,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ).then((value) =>
+                                                                                setState(() {}));
+                                                                          },
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.timer,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).info,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Builder(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            await showAlignedDialog(
+                                                                              context: context,
+                                                                              isGlobal: true,
+                                                                              avoidOverflow: false,
+                                                                              targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              builder: (dialogContext) {
+                                                                                return Material(
+                                                                                  color: Colors.transparent,
+                                                                                  child: GestureDetector(
+                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                    child: Container(
+                                                                                      height: MediaQuery.sizeOf(context).height * 0.5,
+                                                                                      width: MediaQuery.sizeOf(context).width * 0.6,
+                                                                                      child: VisitedCompWidget(
+                                                                                        rowDetails: dataTableGuestEntriesRow,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ).then((value) =>
+                                                                                setState(() {}));
+                                                                          },
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.restaurant,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).info,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Builder(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            await showAlignedDialog(
+                                                                              context: context,
+                                                                              isGlobal: true,
+                                                                              avoidOverflow: false,
+                                                                              targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              builder: (dialogContext) {
+                                                                                return Material(
+                                                                                  color: Colors.transparent,
+                                                                                  child: GestureDetector(
+                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                    child: Container(
+                                                                                      height: MediaQuery.sizeOf(context).height * 0.5,
+                                                                                      width: MediaQuery.sizeOf(context).width * 0.6,
+                                                                                      child: NotVisitedCompWidget(
+                                                                                        rowDetailsNotVisited: dataTableGuestEntriesRow,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ).then((value) =>
+                                                                                setState(() {}));
+                                                                          },
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.no_accounts,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).info,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ]
+                                                                  .map((c) =>
+                                                                      DataCell(
+                                                                          c))
+                                                                  .toList())
+                                                          .map((e) =>
+                                                              DataRow(cells: e))
+                                                          .toList(),
+                                                  headingRowColor:
+                                                      MaterialStateProperty.all(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
+                                                  headingRowHeight: 58.0,
+                                                  dataRowColor:
+                                                      MaterialStateProperty.all(
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                                  ),
+                                                  dataRowHeight: 56.0,
+                                                  border: TableBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10.0),
+                                                  ),
+                                                  dividerThickness: 2.0,
+                                                  columnSpacing: 5.0,
+                                                  showBottomBorder: true,
+                                                  minWidth: 49.0,
+                                                ),
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],

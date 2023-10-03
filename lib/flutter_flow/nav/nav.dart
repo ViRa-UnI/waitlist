@@ -110,7 +110,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'GuestDetailsPage',
-              path: 'guestDetails',
+              path: 'gd',
               builder: (context, params) => GuestDetailsPageWidget(
                 guestId: params.getParam('guestId', ParamType.int),
               ),

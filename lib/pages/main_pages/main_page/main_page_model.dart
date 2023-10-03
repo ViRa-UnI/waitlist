@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'main_page_widget.dart' show MainPageWidget;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:data_table_2/data_table_2.dart';
@@ -27,6 +28,7 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
 
   // Model for GuestEntryForm component.
   late GuestEntryFormModel guestEntryFormModel;
+  Completer<List<GuestEntriesRow>>? requestCompleter;
 
   /// Initialization and disposal methods.
 
@@ -44,4 +46,19 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   /// Action blocks are added here.
 
   /// Additional helper methods are added here.
+
+  Future waitForRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
 }

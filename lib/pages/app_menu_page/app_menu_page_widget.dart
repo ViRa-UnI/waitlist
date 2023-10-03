@@ -131,181 +131,25 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed('vistedNotVisitedPage');
-                                    },
-                                    text: 'Removed Entries',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.white,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Customers',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.white,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed('ListMenuItems');
-                                    },
-                                    text: 'Menu List',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.white,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed('ListMenuItems');
-                                    },
-                                    text: 'Menu List',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.white,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  if (responsiveVisibility(
-                                    context: context,
-                                    phone: false,
-                                    tablet: false,
-                                    tabletLandscape: false,
-                                    desktop: false,
-                                  ))
+                        Align(
+                          alignment: AlignmentDirectional(0.00, 0.00),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed('AddMenuItem');
+                                        context
+                                            .pushNamed('vistedNotVisitedPage');
                                       },
-                                      text: 'Add Menu Item',
+                                      text: 'Removed Entries',
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -330,28 +174,195 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  if (responsiveVisibility(
-                                    context: context,
-                                    phone: false,
-                                    tablet: false,
-                                    tabletLandscape: false,
-                                    desktop: false,
-                                  ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        context.pushNamed('customersTable');
+                                      },
+                                      text: 'Customers',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              color: Colors.white,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        context.pushNamed('ListMenuItems');
+                                      },
+                                      text: 'Menu List',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              color: Colors.white,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    if (responsiveVisibility(
+                                      context: context,
+                                      phone: false,
+                                      tablet: false,
+                                      tabletLandscape: false,
+                                      desktop: false,
+                                    ))
+                                      FFButtonWidget(
+                                        onPressed: () async {
+                                          context.pushNamed('AddMenuItem');
+                                        },
+                                        text: 'Add Menu Item',
+                                        options: FFButtonOptions(
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Montserrat',
+                                                    color: Colors.white,
+                                                  ),
+                                          elevation: 3.0,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    if (responsiveVisibility(
+                                      context: context,
+                                      phone: false,
+                                      tablet: false,
+                                      tabletLandscape: false,
+                                      desktop: false,
+                                    ))
+                                      FFButtonWidget(
+                                        onPressed: () {
+                                          print('Button pressed ...');
+                                        },
+                                        text: 'Add Staff',
+                                        options: FFButtonOptions(
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Montserrat',
+                                                    color: Colors.white,
+                                                  ),
+                                          elevation: 3.0,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
                                     FFButtonWidget(
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'Add Staff',
+                                      text: 'Reports',
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -376,125 +387,50 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Roles & Permissions',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.white,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FFButtonWidget(
+                                      onPressed: () {
+                                        print('Button pressed ...');
+                                      },
+                                      text: 'Settings',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              color: Colors.white,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Reports',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.white,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Settings',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.white,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ]
                           .divide(SizedBox(height: 10.0))
