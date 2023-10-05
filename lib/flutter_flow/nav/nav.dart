@@ -349,7 +349,7 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/waitlist-bg-web-scaled.jpg',
+                    'assets/images/bg.jpg',
                     fit: BoxFit.cover,
                   ),
                 )

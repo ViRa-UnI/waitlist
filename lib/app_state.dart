@@ -43,7 +43,7 @@ class FFAppState extends ChangeNotifier {
     _VisitedID = _value;
   }
 
-  String _selectedCategory = '';
+  String _selectedCategory = 'Appetizers';
   String get selectedCategory => _selectedCategory;
   set selectedCategory(String _value) {
     _selectedCategory = _value;

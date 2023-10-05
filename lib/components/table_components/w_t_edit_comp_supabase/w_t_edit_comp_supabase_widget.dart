@@ -234,6 +234,8 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
                           ),
                           returnRows: true,
                         );
+                        Navigator.pop(context);
+                        _model.updatePage(() {});
 
                         setState(() {});
                       },

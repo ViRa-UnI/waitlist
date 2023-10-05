@@ -111,8 +111,8 @@ class _VisitedCompWidgetState extends State<VisitedCompWidget> {
                       padding: EdgeInsets.zero,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
-                        crossAxisSpacing: 8.0,
-                        mainAxisSpacing: 10.0,
+                        crossAxisSpacing: 5.0,
+                        mainAxisSpacing: 8.0,
                         childAspectRatio: 1.0,
                       ),
                       shrinkWrap: true,
@@ -219,6 +219,8 @@ class _VisitedCompWidgetState extends State<VisitedCompWidget> {
                         widget.rowDetails?.id,
                       ),
                     );
+                    Navigator.pop(context);
+                    _model.updatePage(() {});
                   },
                   text: 'Update',
                   options: FFButtonOptions(

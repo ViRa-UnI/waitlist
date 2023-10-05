@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 const _kDynamicLinksUrl = 'https://waitlist';
 const _kAppBundleId = 'com.titlekw.title';
+const _kIosAppId = '6468676356';
 
 Future<String> generateCurrentPageLink(
   BuildContext context, {
@@ -21,6 +22,7 @@ Future<String> generateCurrentPageLink(
     androidParameters: const AndroidParameters(packageName: _kAppBundleId),
     iosParameters: const IOSParameters(
       bundleId: _kAppBundleId,
+      appStoreId: _kIosAppId,
     ),
     socialMetaTagParameters: SocialMetaTagParameters(
       title: title,

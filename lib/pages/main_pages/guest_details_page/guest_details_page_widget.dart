@@ -1,9 +1,11 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -37,7 +39,6 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       setState(() => _model.requestCompleter = null);
-      await _model.waitForRequestCompleted(minWait: 30000, maxWait: 60000);
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -145,16 +146,26 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
-                                child: Text(
-                                  functions
-                                      .calculateRemainingTime(
-                                          guestDetailsPageGuestEntriesRow!
-                                              .createdAt,
-                                          guestDetailsPageGuestEntriesRow!
-                                              .waitingTime!)
-                                      .toString(),
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineMedium,
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    setState(
+                                        () => _model.requestCompleter = null);
+                                  },
+                                  child: Text(
+                                    functions
+                                        .calculateRemainingTime(
+                                            guestDetailsPageGuestEntriesRow!
+                                                .createdAt,
+                                            guestDetailsPageGuestEntriesRow!
+                                                .waitingTime!)
+                                        .toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium,
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -249,6 +260,27 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                                             ),
                                           ),
                                         ),
+                                        FlutterFlowTimer(
+                                          initialTime: _model.refreshPage!,
+                                          getDisplayTime: (value) =>
+                                              StopWatchTimer.getDisplayTime(
+                                            value,
+                                            hours: false,
+                                            milliSecond: false,
+                                          ),
+                                          controller: _model.timerController,
+                                          updateStateInterval:
+                                              Duration(milliseconds: 1000),
+                                          onChanged: (value, displayTime,
+                                              shouldUpdate) {
+                                            _model.timerMilliseconds = value;
+                                            _model.timerValue = displayTime;
+                                            if (shouldUpdate) setState(() {});
+                                          },
+                                          textAlign: TextAlign.start,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall,
+                                        ),
                                       ],
                                     ),
                                     Column(
@@ -274,7 +306,7 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                                                 ),
                                                 TextSpan(
                                                   text: dateTimeFormat(
-                                                    'MMMEd',
+                                                    'MMM dd',
                                                     guestDetailsPageGuestEntriesRow!
                                                         .createdAt,
                                                     locale: FFLocalizations.of(
@@ -380,7 +412,7 @@ class _GuestDetailsPageWidgetState extends State<GuestDetailsPageWidget> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.asset(
-                                      'assets/images/WhatsApp_Image_2023-08-21_at_10.46.20.jpg',
+                                      'assets/images/qr-code.png',
                                       height: 200.0,
                                       fit: BoxFit.fill,
                                     ),

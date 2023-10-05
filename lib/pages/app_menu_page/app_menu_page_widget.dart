@@ -55,13 +55,31 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
               automaticallyImplyLeading: false,
               leading: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/chops-png-03.png',
-                    width: 300.0,
-                    height: 200.0,
-                    fit: BoxFit.fitWidth,
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed(
+                      'MainPage',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.scale,
+                          alignment: Alignment.bottomCenter,
+                        ),
+                      },
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/chops-png-03.png',
+                      width: 300.0,
+                      height: 200.0,
+                      fit: BoxFit.fitWidth,
+                    ),
                   ),
                 ),
               ),

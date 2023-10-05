@@ -1354,7 +1354,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                 onPressed: () async {
                   setState(() {
                     _model.messageContentController?.text =
-                        'Hey ${_model.guestNameController.text}, Title Oven Edition added your name to the waiting list for ${_model.pSChipValue} Persons. Please click the link to check your status: https://360.titlekw.com/gd?guestId=${_model.submissionIdController.text}';
+                        'Hey ${_model.guestNameController.text}, Chops added your name to the waiting list for ${_model.pSChipValue} Persons. Please click the link to check your status: https://city.chopskw.com/gd?guestId=${_model.submissionIdController.text}';
                   });
                   setState(() {
                     _model.fullMobilenoController?.text =
@@ -1398,14 +1398,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                       ),
                       '1234567',
                     );
+                    _model.fullMobilenoController?.clear();
+                    _model.smsStatusController?.text = 'Status';
                   });
                   setState(() {
-                    _model.typeChipValueController?.reset();
-                    _model.ageChipValueController?.reset();
-                    _model.categoryChipValueController?.reset();
-                    _model.seatAreaChipValueController?.reset();
-                    _model.wTChipValueController?.reset();
                     _model.pSChipValueController?.reset();
+                    _model.wTChipValueController?.reset();
+                    _model.seatAreaChipValueController?.reset();
+                    _model.categoryChipValueController?.reset();
+                    _model.ageChipValueController?.reset();
+                    _model.typeChipValueController?.reset();
                   });
                 },
                 text: 'Add Guest',

@@ -220,6 +220,8 @@ class _NotVisitedCompWidgetState extends State<NotVisitedCompWidget> {
                         widget.rowDetailsNotVisited?.id,
                       ),
                     );
+                    Navigator.pop(context);
+                    _model.updatePage(() {});
                   },
                   text: 'Update',
                   options: FFButtonOptions(
