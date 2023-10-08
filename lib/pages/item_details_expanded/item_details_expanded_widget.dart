@@ -15,7 +15,7 @@ class ItemDetailsExpandedWidget extends StatefulWidget {
     required this.itemDetails,
   }) : super(key: key);
 
-  final FoodItemsRow? itemDetails;
+  final FoodItemsChopsRow? itemDetails;
 
   @override
   _ItemDetailsExpandedWidgetState createState() =>

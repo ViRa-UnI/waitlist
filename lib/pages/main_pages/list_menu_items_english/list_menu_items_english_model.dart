@@ -1,17 +1,17 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
-import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'list_menu_items_widget.dart' show ListMenuItemsWidget;
+import 'list_menu_items_english_widget.dart' show ListMenuItemsEnglishWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
-class ListMenuItemsModel extends FlutterFlowModel<ListMenuItemsWidget> {
+class ListMenuItemsEnglishModel
+    extends FlutterFlowModel<ListMenuItemsEnglishWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

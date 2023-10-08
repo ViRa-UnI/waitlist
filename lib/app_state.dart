@@ -43,7 +43,7 @@ class FFAppState extends ChangeNotifier {
     _VisitedID = _value;
   }
 
-  String _selectedCategory = 'Appetizers';
+  String _selectedCategory = 'All';
   String get selectedCategory => _selectedCategory;
   set selectedCategory(String _value) {
     _selectedCategory = _value;
@@ -59,6 +59,12 @@ class FFAppState extends ChangeNotifier {
   String get guestTypeSelected => _guestTypeSelected;
   set guestTypeSelected(String _value) {
     _guestTypeSelected = _value;
+  }
+
+  String _selectedCategoryArabic = 'الجميع';
+  String get selectedCategoryArabic => _selectedCategoryArabic;
+  set selectedCategoryArabic(String _value) {
+    _selectedCategoryArabic = _value;
   }
 }
 

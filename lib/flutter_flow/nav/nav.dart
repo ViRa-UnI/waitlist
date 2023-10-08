@@ -134,9 +134,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => AddMenuItemWidget(),
             ),
             FFRoute(
-              name: 'ListMenuItems',
-              path: 'ListMenuItems',
-              builder: (context, params) => ListMenuItemsWidget(),
+              name: 'ListMenuItemsEnglish',
+              path: 'ListMenuItemsEnglish',
+              builder: (context, params) => ListMenuItemsEnglishWidget(),
             ),
             FFRoute(
               name: 'TestPage',
@@ -170,9 +170,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ItemDetailsExpanded',
               path: 'ChopsMenuExpanded',
               builder: (context, params) => ItemDetailsExpandedWidget(
-                itemDetails: params.getParam<FoodItemsRow>(
+                itemDetails: params.getParam<FoodItemsChopsRow>(
                     'itemDetails', ParamType.SupabaseRow),
               ),
+            ),
+            FFRoute(
+              name: 'ListMenuItemsArabic',
+              path: 'ListMenuItemsArabic',
+              builder: (context, params) => ListMenuItemsArabicWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

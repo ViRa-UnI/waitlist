@@ -7,10 +7,12 @@ export 'table.dart';
 
 export 'tables/guest_entries.dart';
 export 'tables/guest_entries_visited.dart';
+export 'tables/food_items_chops.dart';
 export 'tables/food_items.dart';
 export 'tables/category.dart';
 export 'tables/items_duplicate.dart';
 export 'tables/itemscategory.dart';
+export 'tables/category_chops_restaurant.dart';
 export 'tables/users.dart';
 export 'tables/items.dart';
 export 'tables/guestentriesform.dart';

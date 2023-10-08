@@ -315,11 +315,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Actions',
       'ar': '',
     },
-    '2oqfbxox': {
+    'v50kjoux': {
       'en': 'Visited',
       'ar': '',
     },
-    'wuyoe71t': {
+    '4wwjwaqk': {
       'en': 'Not Visited',
       'ar': '',
     },
@@ -490,10 +490,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
   },
-  // ListMenuItems
+  // ListMenuItemsEnglish
   {
     'q33av81p': {
-      'en': 'Chops Restaurant',
+      'en': 'Menu',
+      'ar': '',
+    },
+    '5qqzaz2u': {
+      'en': 'Arabic',
       'ar': '',
     },
     'faecrgjh': {
@@ -787,6 +791,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
     'ifkppwl9': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // ListMenuItemsArabic
+  {
+    'j7hdgy5x': {
+      'en': 'English',
+      'ar': '',
+    },
+    '45bhdg9z': {
+      'en': 'قائمة طعام',
+      'ar': '',
+    },
+    '4guvje9m': {
       'en': 'Home',
       'ar': '',
     },

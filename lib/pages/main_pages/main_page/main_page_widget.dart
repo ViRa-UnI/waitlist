@@ -1249,7 +1249,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                           },
                                                                           text:
                                                                               FFLocalizations.of(context).getText(
-                                                                            '2oqfbxox' /* Visited */,
+                                                                            'v50kjoux' /* Visited */,
                                                                           ),
                                                                           options:
                                                                               FFButtonOptions(
@@ -1315,7 +1315,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                           },
                                                                           text:
                                                                               FFLocalizations.of(context).getText(
-                                                                            'wuyoe71t' /* Not Visited */,
+                                                                            '4wwjwaqk' /* Not Visited */,
                                                                           ),
                                                                           options:
                                                                               FFButtonOptions(

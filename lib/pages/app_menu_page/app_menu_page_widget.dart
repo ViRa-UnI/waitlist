@@ -251,7 +251,8 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                   children: [
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed('ListMenuItems');
+                                        context
+                                            .pushNamed('ListMenuItemsEnglish');
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'j82oq3sx' /* Menu List */,
