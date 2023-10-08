@@ -53,8 +53,14 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
     ));
     _model.smsStatusController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.countryCodeController?.text = '965';
-          _model.smsStatusController?.text = 'Status';
+          _model.countryCodeController?.text =
+              FFLocalizations.of(context).getText(
+            '3b50vz18' /* 965 */,
+          );
+          _model.smsStatusController?.text =
+              FFLocalizations.of(context).getText(
+            'docton1p' /* Status */,
+          );
         }));
   }
 
@@ -108,7 +114,10 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   textCapitalization: TextCapitalization.words,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Guest Name',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '7dp0t92y' /* Guest Name */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -116,7 +125,10 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                           fontWeight: FontWeight.w600,
                                           lineHeight: 10.0,
                                         ),
-                                    hintText: 'Enter Guest Name',
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'o2vzrpd8' /* Enter Guest Name */,
+                                    ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -196,24 +208,41 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
-                                    'Type',
+                                    FFLocalizations.of(context).getText(
+                                      '1h34zazm' /* Type */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                   ),
                                 ),
                                 FlutterFlowChoiceChips(
-                                  options: [ChipData('M'), ChipData('F')],
+                                  options: [
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'oqszde7d' /* M */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '0vpajpbv' /* F */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'y3exx9qq' /* Couple */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'h95v3vqz' /* Family */,
+                                    ))
+                                  ],
                                   onChanged: (val) => setState(
                                       () => _model.typeChipValue = val?.first),
                                   selectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    backgroundColor: Color(0xFFF15D2A),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .labelSmall
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: Colors.white,
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -224,20 +253,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).info,
-                                    borderWidth: 1.0,
+                                    borderColor: Color(0xFFF15D2A),
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   unselectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    backgroundColor: Colors.white,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
+                                          color: Color(0xFFF15D2A),
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -248,8 +273,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    borderColor: Colors.white,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   chipSpacing: 12.0,
@@ -352,14 +376,20 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Mobile Num',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'swdd6w9y' /* Mobile Num */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Montserrat',
                                               lineHeight: 10.0,
                                             ),
-                                        hintText: 'Enter Guest Mobile No.',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'j8e78cz3' /* Enter Guest Mobile No. */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -449,28 +479,37 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
-                                    'Age',
+                                    FFLocalizations.of(context).getText(
+                                      'ujj2xced' /* Age */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                   ),
                                 ),
                                 FlutterFlowChoiceChips(
                                   options: [
-                                    ChipData('Below 20'),
-                                    ChipData('20 - 40'),
-                                    ChipData('Above 40')
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '3fopjsib' /* Below 20 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'ffy29gob' /* 20 - 40 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'l0popp1o' /* Above 40 */,
+                                    ))
                                   ],
                                   onChanged: (val) => setState(
                                       () => _model.ageChipValue = val?.first),
                                   selectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    backgroundColor: Color(0xFFF15D2A),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondary,
+                                          color: Colors.white,
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -481,20 +520,18 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    borderColor: Color(0xFFF15D2A),
                                     borderWidth: 1.0,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   unselectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    backgroundColor: Colors.white,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
+                                          color: Color(0xFFF15D2A),
+                                          fontWeight: FontWeight.w600,
                                         ),
                                     iconColor:
                                         FlutterFlowTheme.of(context).info,
@@ -503,8 +540,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    borderColor: Colors.white,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   chipSpacing: 12.0,
@@ -544,28 +580,37 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
-                                    'Category',
+                                    FFLocalizations.of(context).getText(
+                                      'mkcr80hj' /* Category */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                   ),
                                 ),
                                 FlutterFlowChoiceChips(
                                   options: [
-                                    ChipData('Regular'),
-                                    ChipData('Registered'),
-                                    ChipData('Guest')
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '6u4c06al' /* Visitor */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'lmgkpyyj' /* Guest */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '00gtxl69' /* Client */,
+                                    ))
                                   ],
                                   onChanged: (val) => setState(() =>
                                       _model.categoryChipValue = val?.first),
                                   selectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    backgroundColor: Color(0xFFF15D2A),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: Colors.white,
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -576,20 +621,17 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    borderColor: Color(0xFFF15D2A),
                                     borderWidth: 1.0,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   unselectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    backgroundColor: Colors.white,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
+                                          color: Color(0xFFF15D2A),
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -600,8 +642,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    borderColor: Colors.white,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   chipSpacing: 12.0,
@@ -627,28 +668,37 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
-                                    'Seating Area',
+                                    FFLocalizations.of(context).getText(
+                                      '3ec1rasv' /* Seating Area */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                   ),
                                 ),
                                 FlutterFlowChoiceChips(
                                   options: [
-                                    ChipData('Indoor'),
-                                    ChipData('Outdoor'),
-                                    ChipData('Any')
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'tm1cqi4d' /* Indoor */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'z7pjodtk' /* Outdoor */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'sbecnpf8' /* Any */,
+                                    ))
                                   ],
                                   onChanged: (val) => setState(() =>
                                       _model.seatAreaChipValue = val?.first),
                                   selectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    backgroundColor: Color(0xFFF15D2A),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: Colors.white,
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -659,20 +709,17 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    borderColor: Color(0xFFF15D2A),
                                     borderWidth: 1.0,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   unselectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    backgroundColor: Colors.white,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
+                                          color: Color(0xFFF15D2A),
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -683,8 +730,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    borderColor: Colors.white,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   chipSpacing: 12.0,
@@ -725,36 +771,69 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
-                                    'Waiting Time',
+                                    FFLocalizations.of(context).getText(
+                                      'u64sysoi' /* Waiting Time */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                   ),
                                 ),
                                 FlutterFlowChoiceChips(
                                   options: [
-                                    ChipData('5'),
-                                    ChipData('10'),
-                                    ChipData('20'),
-                                    ChipData('30'),
-                                    ChipData('40'),
-                                    ChipData('50'),
-                                    ChipData('60'),
-                                    ChipData('70'),
-                                    ChipData('80'),
-                                    ChipData('90'),
-                                    ChipData('120')
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'rktz9ge1' /* 5 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'j2sdaarp' /* 10 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'c3cglqlu' /* 20 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'ux287fyi' /* 30 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'ee0xtlax' /* 40 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'fypb26bm' /* 50 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '5485r8d6' /* 60 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '4djyujbp' /* 70 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '98qgomar' /* 80 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'p034eopr' /* 90 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '52zxnjjy' /* 120 */,
+                                    ))
                                   ],
                                   onChanged: (val) => setState(
                                       () => _model.wTChipValue = val?.first),
                                   selectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    backgroundColor: Color(0xFFF15D2A),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: Colors.white,
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -765,20 +844,18 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             15.0, 5.0, 15.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    borderColor: Color(0xFFF15D2A),
                                     borderWidth: 1.0,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   unselectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    backgroundColor: Colors.white,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
+                                          color: Color(0xFFF15D2A),
+                                          fontWeight: FontWeight.w600,
                                         ),
                                     iconColor:
                                         FlutterFlowTheme.of(context).primary,
@@ -787,8 +864,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             15.0, 5.0, 15.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    borderColor: Colors.white,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   chipSpacing: 12.0,
@@ -813,35 +889,65 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
-                                    'Party Size',
+                                    FFLocalizations.of(context).getText(
+                                      't4wvr16a' /* Party Size */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                   ),
                                 ),
                                 FlutterFlowChoiceChips(
                                   options: [
-                                    ChipData('1'),
-                                    ChipData('2'),
-                                    ChipData('3'),
-                                    ChipData('4'),
-                                    ChipData('5'),
-                                    ChipData('6'),
-                                    ChipData('7'),
-                                    ChipData('8'),
-                                    ChipData('9'),
-                                    ChipData('More')
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '6v9te9kw' /* 1 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '5991fmn1' /* 2 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'ds7dcz5n' /* 3 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'ez9fknrc' /* 4 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'dhgudukj' /* 5 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'v2hvf2v0' /* 6 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'wgkkb6fv' /* 7 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '17874gw6' /* 8 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'pn9okaq0' /* 9 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'fj5bv83h' /* More */,
+                                    ))
                                   ],
                                   onChanged: (val) => setState(
                                       () => _model.pSChipValue = val?.first),
                                   selectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    backgroundColor: Color(0xFFF15D2A),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: Colors.white,
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -852,20 +958,17 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).info,
+                                    borderColor: Color(0xFFF15D2A),
                                     borderWidth: 1.0,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   unselectedChipStyle: ChipStyle(
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    backgroundColor: Colors.white,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
+                                          color: Color(0xFFF15D2A),
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -876,8 +979,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                         EdgeInsetsDirectional.fromSTEB(
                                             20.0, 5.0, 20.0, 5.0),
                                     elevation: 0.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    borderColor: Colors.white,
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   chipSpacing: 12.0,
@@ -934,11 +1036,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Message Content',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'mfndj13t' /* Message Content */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         hintText:
-                                            'Message Content will be conbined here',
+                                            FFLocalizations.of(context).getText(
+                                          'v5i6ir79' /* Message Content will be conbin... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -1019,10 +1126,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Country Code',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'p0ly6i4o' /* Country Code */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText: 'Country Code',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'n144xyyr' /* Country Code */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -1103,11 +1216,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Full Mobile Num',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          '661t3yr6' /* Full Mobile Num */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         hintText:
-                                            'Mobile Num Dynamically Populated',
+                                            FFLocalizations.of(context).getText(
+                                          'wpemdmeh' /* Mobile Num Dynamically Populat... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -1190,11 +1308,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Message Content',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          '5vgq62hp' /* Message Content */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         hintText:
-                                            'Message Content will be conbined here',
+                                            FFLocalizations.of(context).getText(
+                                          'xam1ri6i' /* Message Content will be conbin... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -1278,11 +1401,16 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Message Content',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'sf6hpgvi' /* Message Content */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         hintText:
-                                            'Message Content will be conbined here',
+                                            FFLocalizations.of(context).getText(
+                                          '5tni2z99' /* Message Content will be conbin... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -1354,7 +1482,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                 onPressed: () async {
                   setState(() {
                     _model.messageContentController?.text =
-                        'Hey ${_model.guestNameController.text}, Chops added your name to the waiting list for ${_model.pSChipValue} Persons. Please click the link to check your status: https://city.chopskw.com/gd?guestId=${_model.submissionIdController.text}';
+                        'Hi ${_model.guestNameController.text}, Chops Restaurant added you to the waiting list.  Please click the link to check your waiting time: https://city.chopskw.com/gd?guestId=${_model.submissionIdController.text}';
                   });
                   setState(() {
                     _model.fullMobilenoController?.text =
@@ -1376,6 +1504,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                     'id': int.tryParse(_model.submissionIdController.text),
                     'created_at': supaSerialize<DateTime>(getCurrentTimestamp),
                     'messageContent': _model.messageContentController.text,
+                    'onlyMobile': _model.guestMobileController.text,
                   });
                   await CustomersDetailsTable().insert({
                     'name': _model.guestNameController.text,
@@ -1399,7 +1528,10 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                       '1234567',
                     );
                     _model.fullMobilenoController?.clear();
-                    _model.smsStatusController?.text = 'Status';
+                    _model.smsStatusController?.text =
+                        FFLocalizations.of(context).getText(
+                      'docton1p' /* Status */,
+                    );
                   });
                   setState(() {
                     _model.pSChipValueController?.reset();
@@ -1410,7 +1542,9 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                     _model.typeChipValueController?.reset();
                   });
                 },
-                text: 'Add Guest',
+                text: FFLocalizations.of(context).getText(
+                  'bbwy7u5y' /* Add Guest */,
+                ),
                 options: FFButtonOptions(
                   height: 40.0,
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),

@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/guest_entry_form/guest_entry_form_widget.dart';
 import '/components/table_components/not_visited_comp/not_visited_comp_widget.dart';
-import '/components/table_components/visited_comp/visited_comp_widget.dart';
 import '/components/table_components/w_t_edit_comp_supabase/w_t_edit_comp_supabase_widget.dart';
 import '/components/time_calculation_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
@@ -96,14 +95,16 @@ class _MainPageWidgetState extends State<MainPageWidget>
                     child: Image.asset(
                       'assets/images/chops-png-03.png',
                       width: 300.0,
-                      height: 200.0,
+                      height: 300.0,
                       fit: BoxFit.fitWidth,
                     ),
                   ),
                 ),
               ),
               title: Text(
-                'Waiting List',
+                FFLocalizations.of(context).getText(
+                  'x2fol8mp' /* Waiting List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -117,7 +118,9 @@ class _MainPageWidgetState extends State<MainPageWidget>
                   onPressed: () async {
                     context.pushNamed('AppMenuPage');
                   },
-                  text: 'Menu',
+                  text: FFLocalizations.of(context).getText(
+                    'igvfiu0e' /* Menu */,
+                  ),
                   icon: Icon(
                     Icons.menu_rounded,
                     size: 15.0,
@@ -149,7 +152,9 @@ class _MainPageWidgetState extends State<MainPageWidget>
 
                     context.goNamedAuth('HomePage', context.mounted);
                   },
-                  text: 'Log Out',
+                  text: FFLocalizations.of(context).getText(
+                    'yxugh615' /* Log Out */,
+                  ),
                   icon: Icon(
                     Icons.login,
                     color: FlutterFlowTheme.of(context).info,
@@ -206,17 +211,14 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                     fontWeight: FontWeight.bold,
                                   ),
                               unselectedLabelStyle: TextStyle(),
-                              labelColor: FlutterFlowTheme.of(context).info,
-                              unselectedLabelColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).primary,
-                              unselectedBackgroundColor:
-                                  FlutterFlowTheme.of(context).alternate,
+                              labelColor: Colors.white,
+                              unselectedLabelColor: Color(0xFFF15D2A),
+                              backgroundColor: Color(0xFFF15D2A),
+                              unselectedBackgroundColor: Colors.white,
                               borderColor: FlutterFlowTheme.of(context).primary,
                               unselectedBorderColor:
                                   FlutterFlowTheme.of(context).alternate,
-                              borderWidth: 2.0,
+                              borderWidth: 0.0,
                               borderRadius: 8.0,
                               elevation: 0.0,
                               buttonMargin: EdgeInsetsDirectional.fromSTEB(
@@ -225,13 +227,17 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                   4.0, 4.0, 4.0, 4.0),
                               tabs: [
                                 Tab(
-                                  text: 'Add Guest',
+                                  text: FFLocalizations.of(context).getText(
+                                    'n14giklv' /* Add Guest */,
+                                  ),
                                   icon: Icon(
                                     Icons.group_add,
                                   ),
                                 ),
                                 Tab(
-                                  text: 'Waiting List',
+                                  text: FFLocalizations.of(context).getText(
+                                    'aw0x9oaj' /* Waiting List */,
+                                  ),
                                   icon: Icon(
                                     Icons.now_widgets,
                                   ),
@@ -319,7 +325,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                         print(
                                                             'Button pressed ...');
                                                       },
-                                                      text: 'Sort List',
+                                                      text: FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'xaqmu1ap' /* Sort List */,
+                                                      ),
                                                       options: FFButtonOptions(
                                                         height: 40.0,
                                                         padding:
@@ -373,7 +383,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                         print(
                                                             'Button pressed ...');
                                                       },
-                                                      text: 'Sort WT',
+                                                      text: FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '2amsnl9a' /* Sort WT */,
+                                                      ),
                                                       options: FFButtonOptions(
                                                         height: 40.0,
                                                         padding:
@@ -420,7 +434,18 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             .dropDownValueController1 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: ['M', 'F'],
+                                                    options: [
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'pvq5tvrq' /* M */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'owcfwnn2' /* F */,
+                                                      )
+                                                    ],
                                                     onChanged: (val) =>
                                                         setState(() => _model
                                                                 .dropDownValue1 =
@@ -431,7 +456,12 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                         FlutterFlowTheme.of(
                                                                 context)
                                                             .bodyMedium,
-                                                    hintText: 'Select Type',
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'vl56mmm3' /* Select Type */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -465,9 +495,21 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                         FormFieldController<
                                                             String>(null),
                                                     options: [
-                                                      'Regular',
-                                                      'Registered',
-                                                      'Guest'
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'y2pydc0j' /* Regular */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'nkftjdrr' /* Registered */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'q2kbe0fe' /* Guest */,
+                                                      )
                                                     ],
                                                     onChanged: (val) =>
                                                         setState(() => _model
@@ -479,7 +521,12 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                         FlutterFlowTheme.of(
                                                                 context)
                                                             .bodyMedium,
-                                                    hintText: 'Select Category',
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      '11ezbycu' /* Select Category */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -515,7 +562,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             ?.reset();
                                                       });
                                                     },
-                                                    text: 'Reset',
+                                                    text: FFLocalizations.of(
+                                                            context)
+                                                        .getText(
+                                                      'ub8cgmep' /* Reset */,
+                                                    ),
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
@@ -672,7 +723,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'Name',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'z61ny2k0' /* Name */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
@@ -700,7 +755,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'Type',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'cky0kle8' /* Type */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
@@ -728,7 +787,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'Mobile',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              '2gso5gao' /* Mobile */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
@@ -749,14 +812,18 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .width *
-                                                                0.12,
+                                                                0.08,
                                                       ),
                                                       DataColumn2(
                                                         label: DefaultTextStyle
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'Category',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'jlmnm0cg' /* Category */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
@@ -777,14 +844,18 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .width *
-                                                                0.13,
+                                                                0.08,
                                                       ),
                                                       DataColumn2(
                                                         label: DefaultTextStyle
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'Seating Area',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'qnreduih' /* Seating Area */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
@@ -813,7 +884,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                           softWrap: true,
                                                           child: SelectionArea(
                                                               child: Text(
-                                                            'WT',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              '7xc28b78' /* WT */,
+                                                            ),
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
@@ -843,7 +918,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'RT',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              '0i6xtjd2' /* RT */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
@@ -871,7 +950,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'PS',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'zcelkjzu' /* PS */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
@@ -899,7 +982,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'SMS Status',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'gb0lfzes' /* SMS  */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
@@ -920,35 +1007,47 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .width *
-                                                                0.12,
+                                                                0.08,
                                                       ),
                                                       DataColumn2(
                                                         label: DefaultTextStyle
                                                             .merge(
                                                           softWrap: true,
-                                                          child: Text(
-                                                            'Actions',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  fontSize:
-                                                                      15.0,
-                                                                  letterSpacing:
-                                                                      1.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.00, 0.00),
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'oc0tl23k' /* Actions */,
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    fontSize:
+                                                                        15.0,
+                                                                    letterSpacing:
+                                                                        1.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                            ),
                                                           ),
                                                         ),
                                                         fixedWidth:
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .width *
-                                                                0.09,
+                                                                0.2,
                                                       ),
                                                     ],
                                                     rows:
@@ -1043,7 +1142,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                         .bodyLarge,
                                                                   ),
                                                                   Text(
-                                                                    'Sent',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'muq2r4tc' /* Sent */,
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge,
@@ -1052,6 +1155,9 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                     mainAxisSize:
                                                                         MainAxisSize
                                                                             .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceEvenly,
                                                                     children: [
                                                                       Builder(
                                                                         builder:
@@ -1106,109 +1212,111 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                      Builder(
-                                                                        builder:
-                                                                            (context) =>
-                                                                                Padding(
+                                                                      FFButtonWidget(
+                                                                        onPressed:
+                                                                            () async {},
+                                                                        text: FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'ep7udogh' /* Visited */,
+                                                                        ),
+                                                                        options:
+                                                                            FFButtonOptions(
+                                                                          height:
+                                                                              40.0,
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
+                                                                              5.0,
                                                                               0.0,
                                                                               5.0,
                                                                               0.0),
-                                                                          child:
-                                                                              InkWell(
-                                                                            splashColor:
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: 'Montserrat',
+                                                                                color: Colors.white,
+                                                                              ),
+                                                                          elevation:
+                                                                              3.0,
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
                                                                                 Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              await showAlignedDialog(
-                                                                                context: context,
-                                                                                isGlobal: true,
-                                                                                avoidOverflow: false,
-                                                                                targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                builder: (dialogContext) {
-                                                                                  return Material(
-                                                                                    color: Colors.transparent,
-                                                                                    child: GestureDetector(
-                                                                                      onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                      child: Container(
-                                                                                        height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                                        width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                                        child: VisitedCompWidget(
-                                                                                          rowDetails: dataTableGuestEntriesRow,
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                },
-                                                                              ).then((value) => setState(() {}));
-                                                                            },
-                                                                            child:
-                                                                                Icon(
-                                                                              Icons.restaurant,
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              size: 24.0,
-                                                                            ),
+                                                                            width:
+                                                                                1.0,
                                                                           ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
                                                                         ),
                                                                       ),
                                                                       Builder(
                                                                         builder:
                                                                             (context) =>
-                                                                                Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              5.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              await showAlignedDialog(
-                                                                                context: context,
-                                                                                isGlobal: true,
-                                                                                avoidOverflow: false,
-                                                                                targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                builder: (dialogContext) {
-                                                                                  return Material(
-                                                                                    color: Colors.transparent,
-                                                                                    child: GestureDetector(
-                                                                                      onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                      child: Container(
-                                                                                        height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                                        width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                                        child: NotVisitedCompWidget(
-                                                                                          rowDetailsNotVisited: dataTableGuestEntriesRow,
-                                                                                        ),
+                                                                                FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            await showAlignedDialog(
+                                                                              context: context,
+                                                                              isGlobal: true,
+                                                                              avoidOverflow: false,
+                                                                              targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              builder: (dialogContext) {
+                                                                                return Material(
+                                                                                  color: Colors.transparent,
+                                                                                  child: GestureDetector(
+                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                    child: Container(
+                                                                                      height: MediaQuery.sizeOf(context).height * 0.5,
+                                                                                      width: MediaQuery.sizeOf(context).width * 0.6,
+                                                                                      child: NotVisitedCompWidget(
+                                                                                        rowDetailsNotVisited: dataTableGuestEntriesRow,
                                                                                       ),
                                                                                     ),
-                                                                                  );
-                                                                                },
-                                                                              ).then((value) => setState(() {}));
-                                                                            },
-                                                                            child:
-                                                                                Icon(
-                                                                              Icons.no_accounts,
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              size: 24.0,
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ).then((value) =>
+                                                                                setState(() {}));
+                                                                          },
+                                                                          text:
+                                                                              FFLocalizations.of(context).getText(
+                                                                            'f9vn5sk5' /* Not Visited */,
+                                                                          ),
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                40.0,
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                0.0),
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  color: Colors.white,
+                                                                                ),
+                                                                            elevation:
+                                                                                3.0,
+                                                                            borderSide:
+                                                                                BorderSide(
+                                                                              color: Colors.transparent,
+                                                                              width: 1.0,
                                                                             ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
                                                                       ),

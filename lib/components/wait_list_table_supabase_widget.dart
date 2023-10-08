@@ -122,7 +122,9 @@ class _WaitListTableSupabaseWidgetState
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
                           Text(
-                            'RT',
+                            FFLocalizations.of(context).getText(
+                              'jdaxkm22' /* RT */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Montserrat',

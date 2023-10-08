@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
+import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -51,45 +52,6 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            appBar: PreferredSize(
-              preferredSize: Size.fromHeight(50.0),
-              child: AppBar(
-                backgroundColor: FlutterFlowTheme.of(context).primary,
-                automaticallyImplyLeading: false,
-                leading: Align(
-                  alignment: AlignmentDirectional(0.00, 0.00),
-                  child: Container(
-                    decoration: BoxDecoration(),
-                    alignment: AlignmentDirectional(0.00, 0.00),
-                    child: Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.asset(
-                                'assets/images/chops-png-03.png',
-                                width: 226.0,
-                                fit: BoxFit.fitWidth,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                actions: [],
-                centerTitle: true,
-                elevation: 2.0,
-              ),
-            ),
             body: SafeArea(
               top: true,
               child: ListView(
@@ -98,25 +60,83 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                 children: [
                   Container(
                     width: 20.0,
+                    height: 70.0,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 3.0, 0.0, 2.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/Asset_1.png',
+                              width: 300.0,
+                              height: 200.0,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 20.0,
                     height: 50.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
-                    child: Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            'Chops Restaurant',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
+                          Align(
+                            alignment: AlignmentDirectional(0.00, 0.00),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'q33av81p' /* Chops Restaurant */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color: Colors.black,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                 ),
+                              ],
+                            ),
+                          ),
+                          FlutterFlowLanguageSelector(
+                            width: 130.0,
+                            backgroundColor: Color(0xFFF15D2A),
+                            borderColor: Colors.transparent,
+                            dropdownIconColor: Colors.white,
+                            borderRadius: 8.0,
+                            textStyle: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13.0,
+                            ),
+                            hideFlags: false,
+                            flagSize: 24.0,
+                            flagTextGap: 8.0,
+                            currentLanguage:
+                                FFLocalizations.of(context).languageCode,
+                            languages: FFLocalizations.languages(),
+                            onChanged: (lang) => setAppLanguage(context, lang),
                           ),
                         ],
                       ),
@@ -138,7 +158,8 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                               ),
                               child: FutureBuilder<List<CategoryRow>>(
                                 future: CategoryTable().queryRows(
-                                  queryFn: (q) => q,
+                                  queryFn: (q) =>
+                                      q.order('Category', ascending: true),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -219,6 +240,7 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Montserrat',
+                                                          color: Colors.black,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -252,6 +274,7 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Montserrat',
+                                    color: Colors.black,
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -318,217 +341,246 @@ class _ListMenuItemsWidgetState extends State<ListMenuItemsWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 5.0),
-                                          child: Card(
-                                            clipBehavior:
-                                                Clip.antiAliasWithSaveLayer,
-                                            color: FlutterFlowTheme.of(context)
-                                                .info,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                5.0, 0.0),
-                                                    child:
-                                                        SingleChildScrollView(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        10.0,
-                                                                        0.0,
-                                                                        10.0),
-                                                            child: Text(
-                                                              listViewFoodItemsRow
-                                                                  .name!,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Montserrat',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        5.0,
-                                                                        10.0),
-                                                            child: RichText(
-                                                              textScaleFactor:
-                                                                  MediaQuery.of(
-                                                                          context)
-                                                                      .textScaleFactor,
-                                                              text: TextSpan(
-                                                                children: [
-                                                                  TextSpan(
-                                                                    text: listViewFoodItemsRow
-                                                                        .shortDescription!,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          fontWeight:
-                                                                              FontWeight.normal,
-                                                                        ),
-                                                                  )
-                                                                ],
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'ItemDetailsExpanded',
+                                                queryParameters: {
+                                                  'itemDetails': serializeParam(
+                                                    listViewFoodItemsRow,
+                                                    ParamType.SupabaseRow,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
+                                            child: Card(
+                                              clipBehavior:
+                                                  Clip.antiAliasWithSaveLayer,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .info,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child:
+                                                          SingleChildScrollView(
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          10.0),
+                                                              child: Text(
+                                                                listViewFoodItemsRow
+                                                                    .name!,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
                                                                           'Montserrat',
+                                                                      color: Colors
+                                                                          .black,
                                                                       fontWeight:
                                                                           FontWeight
-                                                                              .w500,
+                                                                              .bold,
                                                                     ),
                                                               ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .start,
-                                                              maxLines: 3,
                                                             ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0),
-                                                            child: Text(
-                                                              listViewFoodItemsRow
-                                                                  .price!
-                                                                  .maybeHandleOverflow(
-                                                                      maxChars:
-                                                                          20),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Montserrat',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                  ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          10.0),
+                                                              child: RichText(
+                                                                textScaleFactor:
+                                                                    MediaQuery.of(
+                                                                            context)
+                                                                        .textScaleFactor,
+                                                                text: TextSpan(
+                                                                  children: [
+                                                                    TextSpan(
+                                                                      text: listViewFoodItemsRow
+                                                                          .shortDescription!,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            color:
+                                                                                Colors.black,
+                                                                            fontWeight:
+                                                                                FontWeight.normal,
+                                                                          ),
+                                                                    )
+                                                                  ],
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Montserrat',
+                                                                        color: Colors
+                                                                            .black,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                maxLines: 3,
+                                                              ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
+                                                              child: Text(
+                                                                listViewFoodItemsRow
+                                                                    .price!
+                                                                    .maybeHandleOverflow(
+                                                                        maxChars:
+                                                                            20),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Montserrat',
+                                                                      color: Colors
+                                                                          .black,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  5.0,
-                                                                  10.0,
-                                                                  5.0),
-                                                      child: InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await Navigator.push(
-                                                            context,
-                                                            PageTransition(
-                                                              type:
-                                                                  PageTransitionType
-                                                                      .fade,
-                                                              child:
-                                                                  FlutterFlowExpandedImageView(
-                                                                image:
-                                                                    Image.asset(
-                                                                  'assets/images/gif.gif',
-                                                                  fit: BoxFit
-                                                                      .contain,
-                                                                  alignment:
-                                                                      Alignment(
-                                                                          0.00,
-                                                                          0.00),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    5.0,
+                                                                    10.0,
+                                                                    5.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await Navigator
+                                                                .push(
+                                                              context,
+                                                              PageTransition(
+                                                                type:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                                child:
+                                                                    FlutterFlowExpandedImageView(
+                                                                  image: Image
+                                                                      .asset(
+                                                                    'assets/images/ezgif-3-cbfca200ec.gif',
+                                                                    fit: BoxFit
+                                                                        .contain,
+                                                                    alignment:
+                                                                        Alignment(
+                                                                            0.00,
+                                                                            0.00),
+                                                                  ),
+                                                                  allowRotation:
+                                                                      false,
+                                                                  tag:
+                                                                      'itemImageTag',
+                                                                  useHeroAnimation:
+                                                                      true,
                                                                 ),
-                                                                allowRotation:
-                                                                    false,
-                                                                tag:
-                                                                    'itemImageTag',
-                                                                useHeroAnimation:
-                                                                    true,
                                                               ),
-                                                            ),
-                                                          );
-                                                        },
-                                                        child: Hero(
-                                                          tag: 'itemImageTag',
-                                                          transitionOnUserGestures:
-                                                              true,
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                            child: Image.asset(
-                                                              'assets/images/gif.gif',
-                                                              width: 150.0,
-                                                              height: 150.0,
-                                                              fit: BoxFit
-                                                                  .contain,
-                                                              alignment:
-                                                                  Alignment(
-                                                                      0.00,
-                                                                      0.00),
+                                                            );
+                                                          },
+                                                          child: Hero(
+                                                            tag: 'itemImageTag',
+                                                            transitionOnUserGestures:
+                                                                true,
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/ezgif-3-cbfca200ec.gif',
+                                                                width: 150.0,
+                                                                height: 150.0,
+                                                                fit: BoxFit
+                                                                    .contain,
+                                                                alignment:
+                                                                    Alignment(
+                                                                        0.00,
+                                                                        0.00),
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         );

@@ -53,7 +53,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               title: Text(
-                'Test Page',
+                FFLocalizations.of(context).getText(
+                  'ugp3lxmp' /* Test Page */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -93,7 +95,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Text(
-                                    'Name',
+                                    FFLocalizations.of(context).getText(
+                                      'zi2ucelg' /* Name */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -102,7 +106,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Type',
+                                    FFLocalizations.of(context).getText(
+                                      'kkv06y7x' /* Type */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -111,7 +117,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Mobile',
+                                    FFLocalizations.of(context).getText(
+                                      'b6zh9jyo' /* Mobile */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -120,7 +128,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Category',
+                                    FFLocalizations.of(context).getText(
+                                      '2gm4t1tw' /* Category */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -129,7 +139,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Seating Area',
+                                    FFLocalizations.of(context).getText(
+                                      'a2ve9qh2' /* Seating Area */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -138,7 +150,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'WT',
+                                    FFLocalizations.of(context).getText(
+                                      'u152gdmt' /* WT */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -147,7 +161,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'RT',
+                                    FFLocalizations.of(context).getText(
+                                      'v0h6bmex' /* RT */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -156,7 +172,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'PS',
+                                    FFLocalizations.of(context).getText(
+                                      'i9beu763' /* PS */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -165,7 +183,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'SMS Status',
+                                    FFLocalizations.of(context).getText(
+                                      '3kk2lm3x' /* SMS Status */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -174,7 +194,9 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Actions',
+                                    FFLocalizations.of(context).getText(
+                                      '3fdnoryy' /* Actions */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(

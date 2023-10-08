@@ -67,7 +67,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                 ),
               ),
               title: Text(
-                'Waiting List',
+                FFLocalizations.of(context).getText(
+                  'k7i8t6pu' /* Waiting List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -81,7 +83,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                   onPressed: () async {
                     context.pushNamed('AppMenuPage');
                   },
-                  text: 'Menu',
+                  text: FFLocalizations.of(context).getText(
+                    'vpw56q8m' /* Menu */,
+                  ),
                   icon: Icon(
                     Icons.menu_rounded,
                     size: 15.0,
@@ -113,7 +117,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
 
                     context.goNamedAuth('HomePage', context.mounted);
                   },
-                  text: 'Log Out',
+                  text: FFLocalizations.of(context).getText(
+                    'ewidmxxk' /* Log Out */,
+                  ),
                   icon: Icon(
                     Icons.login,
                     color: FlutterFlowTheme.of(context).info,
@@ -164,7 +170,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                             onPressed: () {
                               print('Button pressed ...');
                             },
-                            text: 'Category Filter',
+                            text: FFLocalizations.of(context).getText(
+                              'j7jjskfv' /* Category Filter */,
+                            ),
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -190,7 +198,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                             onPressed: () {
                               print('Button pressed ...');
                             },
-                            text: 'Type Filter',
+                            text: FFLocalizations.of(context).getText(
+                              '9wn4ras5' /* Type Filter */,
+                            ),
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -223,7 +233,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Sort List',
+                              text: FFLocalizations.of(context).getText(
+                                'cdhf37va' /* Sort List */,
+                              ),
                               options: FFButtonOptions(
                                 height: 40.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -256,7 +268,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Sort WT',
+                              text: FFLocalizations.of(context).getText(
+                                'ftstcauc' /* Sort WT */,
+                              ),
                               options: FFButtonOptions(
                                 height: 40.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -325,7 +339,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                                   label: DefaultTextStyle.merge(
                                     softWrap: true,
                                     child: Text(
-                                      'Name',
+                                      FFLocalizations.of(context).getText(
+                                        '5go17gbv' /* Name */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge,
                                     ),
@@ -337,7 +353,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                                   label: DefaultTextStyle.merge(
                                     softWrap: true,
                                     child: Text(
-                                      'Type',
+                                      FFLocalizations.of(context).getText(
+                                        'o21nlup4' /* Type */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge,
                                     ),
@@ -349,7 +367,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                                   label: DefaultTextStyle.merge(
                                     softWrap: true,
                                     child: Text(
-                                      'Age',
+                                      FFLocalizations.of(context).getText(
+                                        'pvzy8iq6' /* Age */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge,
                                     ),
@@ -361,7 +381,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                                   label: DefaultTextStyle.merge(
                                     softWrap: true,
                                     child: Text(
-                                      'Mobile',
+                                      FFLocalizations.of(context).getText(
+                                        '0frsh8jj' /* Mobile */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge,
                                     ),
@@ -373,7 +395,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                                   label: DefaultTextStyle.merge(
                                     softWrap: true,
                                     child: Text(
-                                      'Category',
+                                      FFLocalizations.of(context).getText(
+                                        'oi1h05gz' /* Category */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge,
                                     ),
@@ -385,7 +409,9 @@ class _CustomersTableWidgetState extends State<CustomersTableWidget> {
                                   label: DefaultTextStyle.merge(
                                     softWrap: true,
                                     child: Text(
-                                      'Actions',
+                                      FFLocalizations.of(context).getText(
+                                        '8tdqg2gy' /* Actions */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge,
                                     ),

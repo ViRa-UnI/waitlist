@@ -94,7 +94,9 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                 ),
               ),
               title: Text(
-                'Waiting List',
+                FFLocalizations.of(context).getText(
+                  't2m7suib' /* Waiting List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -108,7 +110,9 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                   onPressed: () async {
                     context.pushNamed('AppMenuPage');
                   },
-                  text: 'Menu',
+                  text: FFLocalizations.of(context).getText(
+                    'vadm9jo5' /* Menu */,
+                  ),
                   icon: Icon(
                     Icons.menu_rounded,
                     size: 15.0,
@@ -140,7 +144,9 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
 
                     context.goNamedAuth('HomePage', context.mounted);
                   },
-                  text: 'Log Out',
+                  text: FFLocalizations.of(context).getText(
+                    '646jubc0' /* Log Out */,
+                  ),
                   icon: Icon(
                     Icons.login,
                     color: FlutterFlowTheme.of(context).info,
@@ -206,13 +212,17 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                 4.0, 4.0, 4.0, 4.0),
                             tabs: [
                               Tab(
-                                text: 'Not Visited',
+                                text: FFLocalizations.of(context).getText(
+                                  '5n5iwxgz' /* Not Visited */,
+                                ),
                                 icon: Icon(
                                   Icons.no_meals,
                                 ),
                               ),
                               Tab(
-                                text: 'Visited List',
+                                text: FFLocalizations.of(context).getText(
+                                  'k58wgg7c' /* Visited List */,
+                                ),
                                 icon: Icon(
                                   Icons.restaurant,
                                 ),
@@ -255,7 +265,10 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'Category Filter',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'bwo3w3v2' /* Category Filter */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -289,7 +302,10 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'Type Filter',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                '2a1luwxi' /* Type Filter */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -323,7 +339,10 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'Sort List',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'o128xsws' /* Sort List */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -364,7 +383,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                 onPressed: () {
                                                   print('Button pressed ...');
                                                 },
-                                                text: 'Sort WT',
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ybdy6boe' /* Sort WT */,
+                                                ),
                                                 options: FFButtonOptions(
                                                   height: 40.0,
                                                   padding: EdgeInsetsDirectional
@@ -449,7 +472,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Name',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'kw5vdhtt' /* Name */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -465,7 +492,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Type',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'vyjuwwnq' /* Type */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -481,7 +512,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Mobile',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'ryxo3re4' /* Mobile */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -497,7 +532,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Category',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'zhg0tlie' /* Category */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -513,7 +552,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Seating Area',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '2zrdn5w3' /* Seating Area */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -530,7 +573,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                     softWrap: true,
                                                     child: SelectionArea(
                                                         child: Text(
-                                                      'WT',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'fia2lgmu' /* WT */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -546,7 +593,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Reason',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'dl530drm' /* Reason */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -562,7 +613,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'PS',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'xxh0odyw' /* PS */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -578,7 +633,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Message Content',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        's4cc0o7h' /* Message Content */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -594,7 +653,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Actions',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'nleuebur' /* Actions */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -898,7 +961,10 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'Category Filter',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'sp58kqtr' /* Category Filter */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -932,7 +998,10 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'Type Filter',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'avx7p07t' /* Type Filter */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -966,7 +1035,10 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'Sort List',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'dci2srjb' /* Sort List */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -1007,7 +1079,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                 onPressed: () {
                                                   print('Button pressed ...');
                                                 },
-                                                text: 'Sort WT',
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'pqdosw35' /* Sort WT */,
+                                                ),
                                                 options: FFButtonOptions(
                                                   height: 40.0,
                                                   padding: EdgeInsetsDirectional
@@ -1098,7 +1174,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Name',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'dp2t4r92' /* Name */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1114,7 +1194,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Type',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '5u9qcgnt' /* Type */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1130,7 +1214,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Mobile',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'k3txlkab' /* Mobile */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1146,7 +1234,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Category',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'x5n46vk7' /* Category */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1162,7 +1254,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Seating Area',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'wd57pdy1' /* Seating Area */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1179,7 +1275,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                     softWrap: true,
                                                     child: SelectionArea(
                                                         child: Text(
-                                                      'WT',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '5e9dsen4' /* WT */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1195,7 +1295,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Notes',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '34q70wlk' /* Notes */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1211,7 +1315,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'PS',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'e13reshv' /* PS */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1227,7 +1335,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Message Content',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'ltm3lrqt' /* Message Content */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1243,7 +1355,11 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
                                                     child: Text(
-                                                      'Actions',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'yujyofnk' /* Actions */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)

@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/guest_entry_form/guest_entry_form_widget.dart';
 import '/components/table_components/not_visited_comp/not_visited_comp_widget.dart';
-import '/components/table_components/visited_comp/visited_comp_widget.dart';
 import '/components/table_components/w_t_edit_comp_supabase/w_t_edit_comp_supabase_widget.dart';
 import '/components/time_calculation_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';

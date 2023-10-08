@@ -46,7 +46,9 @@ class _AppMenuCompWidgetState extends State<AppMenuCompWidget> {
       onPressed: () {
         print('Button pressed ...');
       },
-      text: 'Menu',
+      text: FFLocalizations.of(context).getText(
+        '14h45ylf' /* Menu */,
+      ),
       icon: Icon(
         Icons.menu_rounded,
         size: 15.0,

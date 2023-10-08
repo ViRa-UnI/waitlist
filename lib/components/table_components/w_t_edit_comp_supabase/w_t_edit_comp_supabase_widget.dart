@@ -87,7 +87,9 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Text(
-                      'Choose the Waiting Time',
+                      FFLocalizations.of(context).getText(
+                        'wuiihres' /* Choose the Waiting Time */,
+                      ),
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Open Sans',
@@ -108,8 +110,6 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
                       padding: EdgeInsets.zero,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
-                        crossAxisSpacing: 8.0,
-                        mainAxisSpacing: 10.0,
                         childAspectRatio: 1.0,
                       ),
                       shrinkWrap: true,
@@ -122,17 +122,39 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
                                 10.0, 10.0, 10.0, 10.0),
                             child: FlutterFlowChoiceChips(
                               options: [
-                                ChipData('5'),
-                                ChipData('10'),
-                                ChipData('20'),
-                                ChipData('30'),
-                                ChipData('40'),
-                                ChipData('50'),
-                                ChipData('60'),
-                                ChipData('70'),
-                                ChipData('80'),
-                                ChipData('90'),
-                                ChipData('120')
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'am5zhhg2' /* 5 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'p941su5j' /* 10 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'k44a2kor' /* 20 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'agep7nob' /* 30 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'dz7q4b1g' /* 40 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  't3ze16ut' /* 50 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'xm8i1ldg' /* 60 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  '3yskyq3s' /* 70 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  '240xganf' /* 80 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  '40ogtxe2' /* 90 */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'nn482yt9' /* 120 */,
+                                ))
                               ],
                               onChanged: (val) => setState(
                                   () => _model.wTChipValue = val?.first),
@@ -239,7 +261,9 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
 
                         setState(() {});
                       },
-                      text: 'Update',
+                      text: FFLocalizations.of(context).getText(
+                        't5vzv1l5' /* Update */,
+                      ),
                       options: FFButtonOptions(
                         height: 40.0,
                         padding: EdgeInsetsDirectional.fromSTEB(

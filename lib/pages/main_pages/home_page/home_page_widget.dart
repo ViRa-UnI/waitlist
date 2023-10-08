@@ -55,7 +55,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               title: Text(
-                'Login to Waiting List',
+                FFLocalizations.of(context).getText(
+                  'jr625coq' /* Login to Waiting List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -95,7 +97,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           autofocus: true,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Email',
+                            labelText: FFLocalizations.of(context).getText(
+                              'dxwf68b6' /* Email */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -103,7 +107,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                 ),
-                            hintText: 'Enter your Email',
+                            hintText: FFLocalizations.of(context).getText(
+                              '5s2i3jdy' /* Enter your Email */,
+                            ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -166,10 +172,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             autofocus: true,
                             obscureText: !_model.passwordFieldVisibility,
                             decoration: InputDecoration(
-                              labelText: 'Password',
+                              labelText: FFLocalizations.of(context).getText(
+                                'ptqiss50' /* Password */,
+                              ),
                               labelStyle:
                                   FlutterFlowTheme.of(context).labelMedium,
-                              hintText: 'Enter your Password',
+                              hintText: FFLocalizations.of(context).getText(
+                                'ot0jna7e' /* Enter your Password */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -251,7 +261,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
                           context.goNamedAuth('MainPage', context.mounted);
                         },
-                        text: 'Login',
+                        text: FFLocalizations.of(context).getText(
+                          'jshnhtij' /* Login */,
+                        ),
                         icon: Icon(
                           Icons.lock_rounded,
                           size: 15.0,

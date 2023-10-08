@@ -52,7 +52,9 @@ class _TestPageCopyWidgetState extends State<TestPageCopyWidget> {
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               title: Text(
-                'Test Page',
+                FFLocalizations.of(context).getText(
+                  '242lc6iz' /* Test Page */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,

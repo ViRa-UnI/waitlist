@@ -84,7 +84,9 @@ class _TypeFilterWidgetState extends State<TypeFilterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Text(
-                        'Select Type',
+                        FFLocalizations.of(context).getText(
+                          'b6bgglc0' /* Select Type */,
+                        ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
                                   fontFamily: 'Open Sans',
@@ -116,7 +118,14 @@ class _TypeFilterWidgetState extends State<TypeFilterWidget> {
                         Align(
                           alignment: AlignmentDirectional(0.00, 0.00),
                           child: FlutterFlowChoiceChips(
-                            options: [ChipData('M'), ChipData('F')],
+                            options: [
+                              ChipData(FFLocalizations.of(context).getText(
+                                '02qbc1g1' /* M */,
+                              )),
+                              ChipData(FFLocalizations.of(context).getText(
+                                'hx3edql0' /* F */,
+                              ))
+                            ],
                             onChanged: (val) => setState(
                                 () => _model.typeChipValue = val?.first),
                             selectedChipStyle: ChipStyle(
@@ -180,7 +189,9 @@ class _TypeFilterWidgetState extends State<TypeFilterWidget> {
                   onPressed: () {
                     print('Button pressed ...');
                   },
-                  text: 'Update',
+                  text: FFLocalizations.of(context).getText(
+                    'q7yruk4g' /* Update */,
+                  ),
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:

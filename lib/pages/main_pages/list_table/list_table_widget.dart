@@ -1,4 +1,3 @@
-import '/components/table_components/wait_list_table/wait_list_table_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -68,7 +67,9 @@ class _ListTableWidgetState extends State<ListTableWidget> {
                 ),
               ),
               title: Text(
-                'Waiting List',
+                FFLocalizations.of(context).getText(
+                  'cgr7vcxa' /* Waiting List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -78,21 +79,6 @@ class _ListTableWidgetState extends State<ListTableWidget> {
               actions: [],
               centerTitle: true,
               elevation: 2.0,
-            ),
-            body: SafeArea(
-              top: true,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: wrapWithModel(
-                      model: _model.waitListTableModel,
-                      updateCallback: () => setState(() {}),
-                      child: WaitListTableWidget(),
-                    ),
-                  ),
-                ],
-              ),
             ),
           ),
         ));

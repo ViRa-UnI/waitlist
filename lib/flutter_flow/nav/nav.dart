@@ -165,6 +165,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'customersTable',
               requireAuth: true,
               builder: (context, params) => CustomersTableWidget(),
+            ),
+            FFRoute(
+              name: 'ItemDetailsExpanded',
+              path: 'ChopsMenuExpanded',
+              builder: (context, params) => ItemDetailsExpandedWidget(
+                itemDetails: params.getParam<FoodItemsRow>(
+                    'itemDetails', ParamType.SupabaseRow),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -349,7 +357,7 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/bg.jpg',
+                    'assets/images/bg-waiting.png',
                     fit: BoxFit.cover,
                   ),
                 )

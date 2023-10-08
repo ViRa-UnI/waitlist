@@ -34,7 +34,6 @@ class _VisitedCompWidgetState extends State<VisitedCompWidget> {
     super.initState();
     _model = createModel(context, () => VisitedCompModel());
 
-    _model.textController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -75,20 +74,23 @@ class _VisitedCompWidgetState extends State<VisitedCompWidget> {
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
           child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                       child: Text(
-                        ' Note/Table Seated (Optional)',
+                        FFLocalizations.of(context).getText(
+                          'x0z6vt11' /* Are you sure to seat the Guest... */,
+                        ),
                         maxLines: 2,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
@@ -99,99 +101,6 @@ class _VisitedCompWidgetState extends State<VisitedCompWidget> {
                       ),
                     ),
                   ],
-                ),
-              ),
-              Expanded(
-                child: Align(
-                  alignment: AlignmentDirectional(0.00, 0.00),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
-                    child: GridView(
-                      padding: EdgeInsets.zero,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
-                        crossAxisSpacing: 5.0,
-                        mainAxisSpacing: 8.0,
-                        childAspectRatio: 1.0,
-                      ),
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(0.00, -1.00),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 8.0, 0.0),
-                            child: Container(
-                              width: double.infinity,
-                              child: TextFormField(
-                                controller: _model.textController,
-                                autofocus: true,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelText: 'Details',
-                                  labelStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                  hintText: 'Enter the details...',
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                maxLines: 5,
-                                validator: _model.textControllerValidator
-                                    .asValidator(context),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
               ),
               Padding(
@@ -210,8 +119,8 @@ class _VisitedCompWidgetState extends State<VisitedCompWidget> {
                       'seatingArea': widget.rowDetails?.seatingArea,
                       'waitingTime': widget.rowDetails?.waitingTime,
                       'partySize': widget.rowDetails?.partySize,
-                      'messageContent': widget.rowDetails?.messageContent,
-                      'vistedNotes': _model.textController.text,
+                      'messageContent':
+                          widget.rowDetails?.createdAt?.toString(),
                     });
                     await GuestEntriesTable().delete(
                       matchingRows: (rows) => rows.eq(
@@ -220,9 +129,10 @@ class _VisitedCompWidgetState extends State<VisitedCompWidget> {
                       ),
                     );
                     Navigator.pop(context);
-                    _model.updatePage(() {});
                   },
-                  text: 'Update',
+                  text: FFLocalizations.of(context).getText(
+                    'k9rbz14f' /* Update */,
+                  ),
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:

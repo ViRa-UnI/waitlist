@@ -67,7 +67,9 @@ class _WTSupabaseWidgetState extends State<WTSupabaseWidget> {
                 ),
               ),
               title: Text(
-                'Waiting List',
+                FFLocalizations.of(context).getText(
+                  'uzxer13y' /* Waiting List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -90,7 +92,9 @@ class _WTSupabaseWidgetState extends State<WTSupabaseWidget> {
 
                     context.goNamedAuth('HomePage', context.mounted);
                   },
-                  text: 'Log Out',
+                  text: FFLocalizations.of(context).getText(
+                    'yg1ae0oh' /* Log Out */,
+                  ),
                   icon: Icon(
                     Icons.login,
                     color: FlutterFlowTheme.of(context).info,

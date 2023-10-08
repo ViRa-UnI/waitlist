@@ -8,19 +8,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class VisitedCompModel extends FlutterFlowModel<VisitedCompWidget> {
-  ///  State fields for stateful widgets in this component.
-
-  // State field(s) for TextField widget.
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
-
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
-  void dispose() {
-    textController?.dispose();
-  }
+  void dispose() {}
 
   /// Action blocks are added here.
 

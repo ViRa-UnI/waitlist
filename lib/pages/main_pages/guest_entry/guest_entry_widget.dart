@@ -68,7 +68,9 @@ class _GuestEntryWidgetState extends State<GuestEntryWidget> {
                 ),
               ),
               title: Text(
-                'Enter Guest Details',
+                FFLocalizations.of(context).getText(
+                  '1tq2hf13' /* Enter Guest Details */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -89,7 +91,17 @@ class _GuestEntryWidgetState extends State<GuestEntryWidget> {
                   child: FlutterFlowDropDown<String>(
                     controller: _model.dropDownValueController ??=
                         FormFieldController<String>(null),
-                    options: ['Waiting List', 'Add Guest', 'Log Out'],
+                    options: [
+                      FFLocalizations.of(context).getText(
+                        'fpmmz20k' /* Waiting List */,
+                      ),
+                      FFLocalizations.of(context).getText(
+                        'x2ft0rek' /* Add Guest */,
+                      ),
+                      FFLocalizations.of(context).getText(
+                        '5pif64kp' /* Log Out */,
+                      )
+                    ],
                     onChanged: (val) =>
                         setState(() => _model.dropDownValue = val),
                     width: 150.0,
@@ -98,7 +110,9 @@ class _GuestEntryWidgetState extends State<GuestEntryWidget> {
                           fontFamily: 'Montserrat',
                           color: FlutterFlowTheme.of(context).info,
                         ),
-                    hintText: 'Menu',
+                    hintText: FFLocalizations.of(context).getText(
+                      'kjswjqq5' /* Menu */,
+                    ),
                     icon: FaIcon(
                       FontAwesomeIcons.chevronCircleDown,
                       color: FlutterFlowTheme.of(context).info,

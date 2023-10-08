@@ -84,7 +84,9 @@ class _CategoryFilterWidgetState extends State<CategoryFilterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Text(
-                        'Select Category',
+                        FFLocalizations.of(context).getText(
+                          'r22m7yjf' /* Select Category */,
+                        ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
                                   fontFamily: 'Open Sans',
@@ -115,9 +117,15 @@ class _CategoryFilterWidgetState extends State<CategoryFilterWidget> {
                       children: [
                         FlutterFlowChoiceChips(
                           options: [
-                            ChipData('Regular'),
-                            ChipData('Registered'),
-                            ChipData('Guest')
+                            ChipData(FFLocalizations.of(context).getText(
+                              'n2e75ap8' /* Regular */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              '3ewdpwun' /* Registered */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'qj21rl3y' /* Guest */,
+                            ))
                           ],
                           onChanged: (val) async {
                             setState(
@@ -190,7 +198,9 @@ class _CategoryFilterWidgetState extends State<CategoryFilterWidget> {
                       ];
                     });
                   },
-                  text: 'Update',
+                  text: FFLocalizations.of(context).getText(
+                    'yf4i3gmn' /* Update */,
+                  ),
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:

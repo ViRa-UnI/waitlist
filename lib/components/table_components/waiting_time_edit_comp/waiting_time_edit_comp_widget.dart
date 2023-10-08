@@ -113,7 +113,9 @@ class _WaitingTimeEditCompWidgetState extends State<WaitingTimeEditCompWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          'Choose the Waiting Time',
+                          FFLocalizations.of(context).getText(
+                            '48ob6ln4' /* Choose the Waiting Time */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
@@ -150,17 +152,50 @@ class _WaitingTimeEditCompWidgetState extends State<WaitingTimeEditCompWidget> {
                                     10.0, 10.0, 10.0, 10.0),
                                 child: FlutterFlowChoiceChips(
                                   options: [
-                                    ChipData('15'),
-                                    ChipData('10'),
-                                    ChipData('20'),
-                                    ChipData('30'),
-                                    ChipData('40'),
-                                    ChipData('50'),
-                                    ChipData('60'),
-                                    ChipData('70'),
-                                    ChipData('80'),
-                                    ChipData('90'),
-                                    ChipData('120')
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'dlcxs5u9' /* 15 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '32urlqku' /* 10 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'o2r10zv3' /* 20 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'vzifw31c' /* 30 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'i9lizj1y' /* 40 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '4xbpxej6' /* 50 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'sckg6l7s' /* 60 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '2995kwp3' /* 70 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'x41raz08' /* 80 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '4c5139g9' /* 90 */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '2l9yqka5' /* 120 */,
+                                    ))
                                   ],
                                   onChanged: (val) => setState(
                                       () => _model.wTChipValue = val?.first),
@@ -257,7 +292,9 @@ class _WaitingTimeEditCompWidgetState extends State<WaitingTimeEditCompWidget> {
                               matchingRows: (rows) => rows,
                             );
                           },
-                          text: 'Update',
+                          text: FFLocalizations.of(context).getText(
+                            'oirw1fze' /* Update */,
+                          ),
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: EdgeInsetsDirectional.fromSTEB(

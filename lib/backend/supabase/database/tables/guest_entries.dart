@@ -53,4 +53,7 @@ class GuestEntriesRow extends SupabaseDataRow {
 
   bool? get smsStatus => getField<bool>('smsStatus');
   set smsStatus(bool? value) => setField<bool>('smsStatus', value);
+
+  String? get onlyMobile => getField<String>('onlyMobile');
+  set onlyMobile(String? value) => setField<String>('onlyMobile', value);
 }

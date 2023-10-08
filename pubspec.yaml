@@ -35,6 +35,7 @@ dependencies:
   data_table_2: 2.3.12
   dropdown_button2: 2.0.0
   easy_debounce: 2.0.1
+  emoji_flag_converter: 1.1.0
   equatable: 2.0.5
   firebase_auth: 4.6.2
   firebase_auth_platform_interface: 6.15.2
@@ -149,6 +150,20 @@ flutter:
     - assets/rive_animations/
     - assets/pdfs/
 
+  fonts:
+    - family: 'Sweet Sans Pro Regular'
+      fonts:
+        - asset: assets/fonts/SweetSansProRegular.otf
+    - family: 'Sweet Sans Pro'
+      fonts:
+        - asset: assets/fonts/SweetSansProThin.otf
+          weight: 100
+        - asset: assets/fonts/SweetSansProLight.otf
+          weight: 300
+        - asset: assets/fonts/SweetSansProMedium.otf
+          weight: 500
+        - asset: assets/fonts/SweetSansProBold.otf
+          weight: 700
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

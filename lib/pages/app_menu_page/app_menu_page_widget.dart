@@ -84,7 +84,9 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                 ),
               ),
               title: Text(
-                'Waiting List',
+                FFLocalizations.of(context).getText(
+                  'm7ts6obq' /* Waiting List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -107,7 +109,9 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
 
                     context.goNamedAuth('HomePage', context.mounted);
                   },
-                  text: 'Log Out',
+                  text: FFLocalizations.of(context).getText(
+                    '5t0si5ze' /* Log Out */,
+                  ),
                   icon: Icon(
                     Icons.login,
                     color: FlutterFlowTheme.of(context).info,
@@ -167,7 +171,9 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                         context
                                             .pushNamed('vistedNotVisitedPage');
                                       },
-                                      text: 'Removed Entries',
+                                      text: FFLocalizations.of(context).getText(
+                                        'iewqrfc4' /* Removed Entries */,
+                                      ),
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -206,7 +212,9 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                       onPressed: () async {
                                         context.pushNamed('customersTable');
                                       },
-                                      text: 'Customers',
+                                      text: FFLocalizations.of(context).getText(
+                                        '881u7hsj' /* Customers */,
+                                      ),
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -245,7 +253,9 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                       onPressed: () async {
                                         context.pushNamed('ListMenuItems');
                                       },
-                                      text: 'Menu List',
+                                      text: FFLocalizations.of(context).getText(
+                                        'j82oq3sx' /* Menu List */,
+                                      ),
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -291,7 +301,10 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                         onPressed: () async {
                                           context.pushNamed('AddMenuItem');
                                         },
-                                        text: 'Add Menu Item',
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'iwf7x5yh' /* Add Menu Item */,
+                                        ),
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
@@ -339,7 +352,10 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                         onPressed: () {
                                           print('Button pressed ...');
                                         },
-                                        text: 'Add Staff',
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          '9353p42z' /* Add Staff */,
+                                        ),
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
@@ -380,7 +396,9 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'Reports',
+                                      text: FFLocalizations.of(context).getText(
+                                        '0444iu49' /* Reports */,
+                                      ),
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -419,7 +437,9 @@ class _AppMenuPageWidgetState extends State<AppMenuPageWidget> {
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'Settings',
+                                      text: FFLocalizations.of(context).getText(
+                                        'k8fm0fqy' /* Settings */,
+                                      ),
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(

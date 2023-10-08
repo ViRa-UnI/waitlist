@@ -74,7 +74,9 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                 ),
               ),
               title: Text(
-                'Waiting List',
+                FFLocalizations.of(context).getText(
+                  '26v2ch6a' /* Waiting List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -109,7 +111,9 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
 
                     context.goNamedAuth('HomePage', context.mounted);
                   },
-                  text: 'Log Out',
+                  text: FFLocalizations.of(context).getText(
+                    'sd7zq3eg' /* Log Out */,
+                  ),
                   icon: Icon(
                     Icons.login,
                     color: FlutterFlowTheme.of(context).info,
@@ -151,7 +155,9 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Add Menu',
+                        FFLocalizations.of(context).getText(
+                          'b0bjn7ug' /* Add Menu */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Montserrat',
                               fontSize: 20.0,
@@ -174,10 +180,15 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Item Name',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'p830ty0i' /* Item Name */,
+                                  ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
-                                  hintText: 'Enter Item',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'yfeekuqc' /* Enter Item */,
+                                  ),
                                   hintStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
                                   enabledBorder: OutlineInputBorder(
@@ -226,10 +237,15 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Item Desc.',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    '1qedhrfb' /* Item Desc. */,
+                                  ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
-                                  hintText: 'Enter Item Desc.',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'risd28b3' /* Enter Item Desc. */,
+                                  ),
                                   hintStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
                                   enabledBorder: OutlineInputBorder(
@@ -278,10 +294,15 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Item Price',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'irysqprh' /* Item Price */,
+                                  ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
-                                  hintText: 'Enter Item Price',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'esfdsc8t' /* Enter Item Price */,
+                                  ),
                                   hintStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
                                   enabledBorder: OutlineInputBorder(
@@ -330,10 +351,15 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Item Image.',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'gxjyxw7j' /* Item Image. */,
+                                  ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
-                                  hintText: 'Enter Image URL.',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'yebnt2nh' /* Enter Image URL. */,
+                                  ),
                                   hintStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
                                   enabledBorder: OutlineInputBorder(
@@ -378,7 +404,9 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 0.0, 10.0),
                                 child: Text(
-                                  'Choose Category',
+                                  FFLocalizations.of(context).getText(
+                                    'juebzd5f' /* Choose Category */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
@@ -398,16 +426,36 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                                   controller: _model.dropDownValueController ??=
                                       FormFieldController<String>(null),
                                   options: [
-                                    'Salads',
-                                    'Appetizers',
-                                    'Main Course',
-                                    'Pasta & Risotto',
-                                    'Sliders',
-                                    'Deserts',
-                                    'Soups',
-                                    'Sides',
-                                    'Water & Soft Drinks',
-                                    'Drinks'
+                                    FFLocalizations.of(context).getText(
+                                      'hai9w47m' /* Salads */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '4uqdbsv4' /* Appetizers */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'nf4j20vn' /* Main Course */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'nra3xvo5' /* Pasta & Risotto */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '2e7r8d3y' /* Sliders */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '81kh7jpw' /* Deserts */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'py749ll5' /* Soups */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '8um0309x' /* Sides */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '639s1agy' /* Water & Soft Drinks */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '5tbm96h6' /* Drinks */,
+                                    )
                                   ],
                                   onChanged: (val) => setState(
                                       () => _model.dropDownValue = val),
@@ -417,8 +465,13 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                                       FlutterFlowTheme.of(context).labelMedium,
                                   textStyle:
                                       FlutterFlowTheme.of(context).bodyLarge,
-                                  hintText: 'Please select...',
-                                  searchHintText: 'Search for an item...',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'dnkhw8xs' /* Please select... */,
+                                  ),
+                                  searchHintText:
+                                      FFLocalizations.of(context).getText(
+                                    'vzmysrfn' /* Search for an item... */,
+                                  ),
                                   searchCursorColor:
                                       FlutterFlowTheme.of(context).info,
                                   icon: Icon(
@@ -476,7 +529,9 @@ class _AddMenuItemWidgetState extends State<AddMenuItemWidget> {
                               _model.dropDownValueController?.reset();
                             });
                           },
-                          text: 'ADD ITEM',
+                          text: FFLocalizations.of(context).getText(
+                            'x5v9irk5' /* ADD ITEM */,
+                          ),
                           icon: Icon(
                             Icons.fastfood_sharp,
                             size: 16.0,
