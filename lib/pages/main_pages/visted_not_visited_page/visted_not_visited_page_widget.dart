@@ -194,12 +194,10 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                   fontWeight: FontWeight.bold,
                                 ),
                             unselectedLabelStyle: TextStyle(),
-                            labelColor: FlutterFlowTheme.of(context).primary,
-                            unselectedLabelColor:
-                                FlutterFlowTheme.of(context).info,
-                            backgroundColor: FlutterFlowTheme.of(context).info,
-                            unselectedBackgroundColor:
-                                FlutterFlowTheme.of(context).primary,
+                            labelColor: Colors.white,
+                            unselectedLabelColor: Color(0xFFF15D2A),
+                            backgroundColor: Color(0xFFF15D2A),
+                            unselectedBackgroundColor: Colors.white,
                             borderColor: FlutterFlowTheme.of(context).primary,
                             unselectedBorderColor:
                                 FlutterFlowTheme.of(context).alternate,

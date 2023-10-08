@@ -315,11 +315,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Actions',
       'ar': '',
     },
-    'ep7udogh': {
+    'b89c1yly': {
       'en': 'Visited',
       'ar': '',
     },
-    'f9vn5sk5': {
+    '85u4nuse': {
       'en': 'Not Visited',
       'ar': '',
     },
