@@ -22,3 +22,5 @@ export '/pages/item_details_expanded/item_details_expanded_widget.dart'
     show ItemDetailsExpandedWidget;
 export '/pages/main_pages/list_menu_items_arabic/list_menu_items_arabic_widget.dart'
     show ListMenuItemsArabicWidget;
+export '/pages/item_details_expanded_arabic/item_details_expanded_arabic_widget.dart'
+    show ItemDetailsExpandedArabicWidget;

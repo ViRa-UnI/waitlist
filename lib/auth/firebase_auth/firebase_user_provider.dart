@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class TitleWaitListFirebaseUser extends BaseAuthUser {
-  TitleWaitListFirebaseUser(this.user);
+class ChopsFirebaseUser extends BaseAuthUser {
+  ChopsFirebaseUser(this.user);
   User? user;
   bool get loggedIn => user != null;
 
@@ -47,18 +47,17 @@ class TitleWaitListFirebaseUser extends BaseAuthUser {
 
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
-  static BaseAuthUser fromFirebaseUser(User? user) =>
-      TitleWaitListFirebaseUser(user);
+  static BaseAuthUser fromFirebaseUser(User? user) => ChopsFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> titleWaitListFirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> chopsFirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = TitleWaitListFirebaseUser(user);
+        currentUser = ChopsFirebaseUser(user);
         return currentUser!;
       },
     );

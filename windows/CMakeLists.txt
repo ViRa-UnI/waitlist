@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(title_wait_list LANGUAGES CXX)
+project(chops LANGUAGES CXX)
 
-set(BINARY_NAME "title_wait_list")
+set(BINARY_NAME "chops")
 
 cmake_policy(SET CMP0063 NEW)
 

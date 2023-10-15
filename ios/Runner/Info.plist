@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Title Waiting List</string>
+	<string>Waiting List</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>TitleWaitList</string>
+	<string>Chops</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleLocalizations</key>
@@ -42,7 +42,7 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>title_wait_list</string>
+        <string>chops</string>
         <key>CFBundleURLSchemes</key>
         <array>
         <string>com.titlekw.title</string>

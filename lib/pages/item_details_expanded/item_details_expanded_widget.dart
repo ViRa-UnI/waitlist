@@ -15,7 +15,7 @@ class ItemDetailsExpandedWidget extends StatefulWidget {
     required this.itemDetails,
   }) : super(key: key);
 
-  final FoodItemsChopsRow? itemDetails;
+  final ChopsFoodItemsFinalRow? itemDetails;
 
   @override
   _ItemDetailsExpandedWidgetState createState() =>
@@ -100,8 +100,11 @@ class _ItemDetailsExpandedWidgetState extends State<ItemDetailsExpandedWidget> {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
-                              child: Image.asset(
-                                'assets/images/ezgif-3-cbfca200ec.gif',
+                              child: Image.network(
+                                valueOrDefault<String>(
+                                  widget.itemDetails?.image,
+                                  'https://epicfilestore.s3.me-south-1.amazonaws.com/cat+images+-+chops/steaks.webp',
+                                ),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -132,8 +135,8 @@ class _ItemDetailsExpandedWidgetState extends State<ItemDetailsExpandedWidget> {
                                                   10.0, 10.0, 0.0, 10.0),
                                           child: Text(
                                             valueOrDefault<String>(
-                                              widget.itemDetails?.name,
-                                              'ItemName',
+                                              widget.itemDetails?.nameEnglish,
+                                              'name',
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -157,8 +160,8 @@ class _ItemDetailsExpandedWidgetState extends State<ItemDetailsExpandedWidget> {
                                                 TextSpan(
                                                   text: valueOrDefault<String>(
                                                     widget.itemDetails
-                                                        ?.shortDescription,
-                                                    'Item Description',
+                                                        ?.shortdescription,
+                                                    'desc',
                                                   ),
                                                   style: TextStyle(),
                                                 )
@@ -181,9 +184,10 @@ class _ItemDetailsExpandedWidgetState extends State<ItemDetailsExpandedWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 10.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'v1bqxsf0' /* Hello World */,
-                                            ),
+                                            valueOrDefault<String>(
+                                              widget.itemDetails?.price,
+                                              'Price',
+                                            ).maybeHandleOverflow(maxChars: 20),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(

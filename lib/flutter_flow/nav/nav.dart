@@ -135,7 +135,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'ListMenuItemsEnglish',
-              path: 'ListMenuItemsEnglish',
+              path: 'menu-en',
               builder: (context, params) => ListMenuItemsEnglishWidget(),
             ),
             FFRoute(
@@ -170,14 +170,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ItemDetailsExpanded',
               path: 'ChopsMenuExpanded',
               builder: (context, params) => ItemDetailsExpandedWidget(
-                itemDetails: params.getParam<FoodItemsChopsRow>(
+                itemDetails: params.getParam<ChopsFoodItemsFinalRow>(
                     'itemDetails', ParamType.SupabaseRow),
               ),
             ),
             FFRoute(
               name: 'ListMenuItemsArabic',
-              path: 'ListMenuItemsArabic',
+              path: 'menu-ar',
               builder: (context, params) => ListMenuItemsArabicWidget(),
+            ),
+            FFRoute(
+              name: 'ItemDetailsExpandedArabic',
+              path: 'ChopsMenuExpandedArabic',
+              builder: (context, params) => ItemDetailsExpandedArabicWidget(
+                itemDetails: params.getParam<ChopsFoodItemsFinalRow>(
+                    'itemDetails', ParamType.SupabaseRow),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -362,7 +370,7 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/bg-waiting.png',
+                    'assets/images/splash.png',
                     fit: BoxFit.cover,
                   ),
                 )

@@ -138,7 +138,7 @@ class _ListMenuItemsEnglishWidgetState
                               );
                             },
                             text: FFLocalizations.of(context).getText(
-                              '5qqzaz2u' /* Arabic */,
+                              'ssv585u2' /* Arabic */,
                             ),
                             options: FFButtonOptions(
                               height: 40.0,
@@ -332,10 +332,11 @@ class _ListMenuItemsEnglishWidgetState
                                     width: 3.0,
                                   ),
                                 ),
-                                child: FutureBuilder<List<FoodItemsChopsRow>>(
-                                  future: FoodItemsChopsTable().queryRows(
+                                child:
+                                    FutureBuilder<List<ChopsFoodItemsFinalRow>>(
+                                  future: ChopsFoodItemsFinalTable().queryRows(
                                     queryFn: (q) => q.eq(
-                                      'Category',
+                                      'category',
                                       FFAppState().selectedCategory,
                                     ),
                                   ),
@@ -355,19 +356,17 @@ class _ListMenuItemsEnglishWidgetState
                                         ),
                                       );
                                     }
-                                    List<FoodItemsChopsRow>
-                                        listViewFoodItemsChopsRowList =
+                                    List<ChopsFoodItemsFinalRow>
+                                        columnChopsFoodItemsFinalRowList =
                                         snapshot.data!;
-                                    return ListView.builder(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      itemCount:
-                                          listViewFoodItemsChopsRowList.length,
-                                      itemBuilder: (context, listViewIndex) {
-                                        final listViewFoodItemsChopsRow =
-                                            listViewFoodItemsChopsRowList[
-                                                listViewIndex];
+                                    return Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: List.generate(
+                                          columnChopsFoodItemsFinalRowList
+                                              .length, (columnIndex) {
+                                        final columnChopsFoodItemsFinalRow =
+                                            columnChopsFoodItemsFinalRowList[
+                                                columnIndex];
                                         return Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
@@ -382,7 +381,7 @@ class _ListMenuItemsEnglishWidgetState
                                                 'ItemDetailsExpanded',
                                                 queryParameters: {
                                                   'itemDetails': serializeParam(
-                                                    listViewFoodItemsChopsRow,
+                                                    columnChopsFoodItemsFinalRow,
                                                     ParamType.SupabaseRow,
                                                   ),
                                                 }.withoutNulls,
@@ -434,12 +433,8 @@ class _ListMenuItemsEnglishWidgetState
                                                                           0.0,
                                                                           10.0),
                                                               child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  listViewFoodItemsChopsRow
-                                                                      .name,
-                                                                  'name',
-                                                                ),
+                                                                columnChopsFoodItemsFinalRow
+                                                                    .nameEnglish!,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -470,8 +465,8 @@ class _ListMenuItemsEnglishWidgetState
                                                                 text: TextSpan(
                                                                   children: [
                                                                     TextSpan(
-                                                                      text: listViewFoodItemsChopsRow
-                                                                          .shortDescription!,
+                                                                      text: columnChopsFoodItemsFinalRow
+                                                                          .shortdescription!,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -512,7 +507,7 @@ class _ListMenuItemsEnglishWidgetState
                                                                           0.0,
                                                                           10.0),
                                                               child: Text(
-                                                                listViewFoodItemsChopsRow
+                                                                columnChopsFoodItemsFinalRow
                                                                     .price!
                                                                     .maybeHandleOverflow(
                                                                         maxChars:
@@ -568,8 +563,9 @@ class _ListMenuItemsEnglishWidgetState
                                                                 child:
                                                                     FlutterFlowExpandedImageView(
                                                                   image: Image
-                                                                      .asset(
-                                                                    'assets/images/ezgif-3-cbfca200ec.gif',
+                                                                      .network(
+                                                                    columnChopsFoodItemsFinalRow
+                                                                        .image!,
                                                                     fit: BoxFit
                                                                         .contain,
                                                                     alignment:
@@ -579,8 +575,8 @@ class _ListMenuItemsEnglishWidgetState
                                                                   ),
                                                                   allowRotation:
                                                                       false,
-                                                                  tag:
-                                                                      'itemImageTag',
+                                                                  tag: columnChopsFoodItemsFinalRow
+                                                                      .image!,
                                                                   useHeroAnimation:
                                                                       true,
                                                                 ),
@@ -588,7 +584,9 @@ class _ListMenuItemsEnglishWidgetState
                                                             );
                                                           },
                                                           child: Hero(
-                                                            tag: 'itemImageTag',
+                                                            tag:
+                                                                columnChopsFoodItemsFinalRow
+                                                                    .image!,
                                                             transitionOnUserGestures:
                                                                 true,
                                                             child: ClipRRect(
@@ -597,12 +595,13 @@ class _ListMenuItemsEnglishWidgetState
                                                                       .circular(
                                                                           8.0),
                                                               child:
-                                                                  Image.asset(
-                                                                'assets/images/ezgif-3-cbfca200ec.gif',
-                                                                width: 150.0,
-                                                                height: 150.0,
+                                                                  Image.network(
+                                                                columnChopsFoodItemsFinalRow
+                                                                    .image!,
+                                                                width: 170.0,
+                                                                height: 100.0,
                                                                 fit: BoxFit
-                                                                    .contain,
+                                                                    .fitHeight,
                                                                 alignment:
                                                                     Alignment(
                                                                         0.00,
@@ -619,7 +618,7 @@ class _ListMenuItemsEnglishWidgetState
                                             ),
                                           ),
                                         );
-                                      },
+                                      }),
                                     );
                                   },
                                 ),

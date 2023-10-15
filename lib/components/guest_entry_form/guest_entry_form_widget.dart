@@ -114,10 +114,6 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                   textCapitalization: TextCapitalization.words,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText:
-                                        FFLocalizations.of(context).getText(
-                                      '7dp0t92y' /* Guest Name */,
-                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -376,10 +372,6 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          'swdd6w9y' /* Mobile Num */,
-                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -454,6 +446,9 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium,
+                                      maxLength: 8,
+                                      maxLengthEnforcement:
+                                          MaxLengthEnforcement.enforced,
                                       keyboardType: TextInputType.phone,
                                       cursorColor:
                                           FlutterFlowTheme.of(context).info,
@@ -1482,7 +1477,7 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                 onPressed: () async {
                   setState(() {
                     _model.messageContentController?.text =
-                        'Hi ${_model.guestNameController.text}, Chops Restaurant added you to the waiting list.  Please click the link to check your waiting time: https://city.chopskw.com/gd?guestId=${_model.submissionIdController.text}';
+                        'Hi ${_model.guestNameController.text}, Chops Restaurant added you to the waiting list.  Please click the link to check your waiting time: https://title.flutterflow.app/gd?guestId=${_model.submissionIdController.text}';
                   });
                   setState(() {
                     _model.fullMobilenoController?.text =
@@ -1505,13 +1500,6 @@ class _GuestEntryFormWidgetState extends State<GuestEntryFormWidget> {
                     'created_at': supaSerialize<DateTime>(getCurrentTimestamp),
                     'messageContent': _model.messageContentController.text,
                     'onlyMobile': _model.guestMobileController.text,
-                  });
-                  await CustomersDetailsTable().insert({
-                    'name': _model.guestNameController.text,
-                    'type': _model.typeChipValue,
-                    'mobile': _model.fullMobilenoController.text,
-                    'age': _model.ageChipValue,
-                    'category': _model.categoryChipValue,
                   });
                   setState(() {
                     _model.guestNameController?.clear();

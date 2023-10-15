@@ -131,7 +131,7 @@ class _VisitedCompWidgetState extends State<VisitedCompWidget> {
                     Navigator.pop(context);
                   },
                   text: FFLocalizations.of(context).getText(
-                    'k9rbz14f' /* Update */,
+                    'k9rbz14f' /* Confirm */,
                   ),
                   options: FFButtonOptions(
                     height: 40.0,

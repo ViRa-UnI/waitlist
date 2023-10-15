@@ -111,7 +111,7 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                               );
                             },
                             text: FFLocalizations.of(context).getText(
-                              'j7hdgy5x' /* English */,
+                              'qsetdfvj' /* English */,
                             ),
                             options: FFButtonOptions(
                               height: 40.0,
@@ -150,7 +150,7 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans Arabic',
+                                          fontFamily: 'Noto Sans Grantha',
                                           color: Colors.black,
                                           fontSize: 20.0,
                                           fontWeight: FontWeight.bold,
@@ -231,52 +231,59 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                                         child: Card(
                                           clipBehavior:
                                               Clip.antiAliasWithSaveLayer,
-                                          elevation: 1.0,
+                                          color: Colors.white,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(0.0),
                                           ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Flexible(
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
-                                                      listViewCategoryChopsRestaurantRow
-                                                          .image,
-                                                      'https://media.finedinemenu.com/filters:strip_exif()/filters:format(webp)/360x240/Ci27lbBw/bf40ff19-319f-44a9-b063-fc26cdd2b20d.jpg',
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    2.0, 2.0, 2.0, 2.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Flexible(
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    child: Image.network(
+                                                      valueOrDefault<String>(
+                                                        listViewCategoryChopsRestaurantRow
+                                                            .image,
+                                                        'https://media.finedinemenu.com/filters:strip_exif()/filters:format(webp)/360x240/Ci27lbBw/bf40ff19-319f-44a9-b063-fc26cdd2b20d.jpg',
+                                                      ),
+                                                      height: 200.0,
+                                                      fit: BoxFit.scaleDown,
                                                     ),
-                                                    height: 200.0,
-                                                    fit: BoxFit.scaleDown,
                                                   ),
                                                 ),
-                                              ),
-                                              Text(
-                                                listViewCategoryChopsRestaurantRow
-                                                    .categoryArabic!
-                                                    .maybeHandleOverflow(
-                                                        maxChars: 10),
-                                                maxLines: 3,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          color: Colors.black,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                            ],
+                                                Text(
+                                                  listViewCategoryChopsRestaurantRow
+                                                      .categoryArabic!
+                                                      .maybeHandleOverflow(
+                                                    maxChars: 10,
+                                                    replacement: '…',
+                                                  ),
+                                                  maxLines: 3,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       );
@@ -291,130 +298,119 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                     ],
                   ),
                   SingleChildScrollView(
+                    primary: false,
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Align(
-                          alignment: AlignmentDirectional(0.00, 0.00),
+                        Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 15.0),
-                            child: Text(
-                              FFAppState().selectedCategoryArabic,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.black,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                            ),
-                          ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Container(
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).info,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      offset: Offset(0.0, 2.0),
-                                    )
-                                  ],
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context).info,
-                                    width: 3.0,
-                                  ),
-                                ),
-                                child: FutureBuilder<List<FoodItemsChopsRow>>(
-                                  future: FoodItemsChopsTable().queryRows(
-                                    queryFn: (q) => q.eq(
-                                      'Category',
-                                      FFAppState().selectedCategory,
+                                2.0, 0.0, 2.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 15.0),
+                                    child: Text(
+                                      FFAppState().selectedCategoryArabic,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans Grantha',
+                                            color: Colors.black,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                     ),
                                   ),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              Color(0xFF011D1A),
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                    List<FoodItemsChopsRow>
-                                        listViewFoodItemsChopsRowList =
-                                        snapshot.data!;
-                                    return ListView.builder(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      itemCount:
-                                          listViewFoodItemsChopsRowList.length,
-                                      itemBuilder: (context, listViewIndex) {
-                                        final listViewFoodItemsChopsRow =
-                                            listViewFoodItemsChopsRowList[
-                                                listViewIndex];
-                                        return Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 5.0, 5.0, 5.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'ItemDetailsExpanded',
-                                                queryParameters: {
-                                                  'itemDetails': serializeParam(
-                                                    listViewFoodItemsChopsRow,
-                                                    ParamType.SupabaseRow,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            child: Card(
-                                              clipBehavior:
-                                                  Clip.antiAliasWithSaveLayer,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: SingleChildScrollView(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Container(
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .info,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 4.0,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .info,
+                                                    offset: Offset(0.0, 2.0),
+                                                  )
+                                                ],
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .info,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                  width: 3.0,
+                                                ),
                                               ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Column(
+                                              child: FutureBuilder<
+                                                  List<ChopsFoodItemsFinalRow>>(
+                                                future:
+                                                    ChopsFoodItemsFinalTable()
+                                                        .queryRows(
+                                                  queryFn: (q) => q.eq(
+                                                    'arabic_category',
+                                                    FFAppState()
+                                                        .selectedCategoryArabic,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            Color(0xFF011D1A),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<ChopsFoodItemsFinalRow>
+                                                      columnChopsFoodItemsFinalRowList =
+                                                      snapshot.data!;
+                                                  return Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
+                                                    children: List.generate(
+                                                        columnChopsFoodItemsFinalRowList
+                                                            .length,
+                                                        (columnIndex) {
+                                                      final columnChopsFoodItemsFinalRow =
+                                                          columnChopsFoodItemsFinalRowList[
+                                                              columnIndex];
+                                                      return Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
                                                                     5.0,
-                                                                    10.0,
+                                                                    5.0,
+                                                                    5.0,
                                                                     5.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -426,202 +422,223 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            await Navigator
-                                                                .push(
-                                                              context,
-                                                              PageTransition(
-                                                                type:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                child:
-                                                                    FlutterFlowExpandedImageView(
-                                                                  image: Image
-                                                                      .asset(
-                                                                    'assets/images/ezgif-3-cbfca200ec.gif',
-                                                                    fit: BoxFit
-                                                                        .contain,
-                                                                    alignment:
-                                                                        Alignment(
-                                                                            0.00,
-                                                                            0.00),
-                                                                  ),
-                                                                  allowRotation:
-                                                                      false,
-                                                                  tag:
-                                                                      'itemImageTag',
-                                                                  useHeroAnimation:
-                                                                      true,
+                                                            context.pushNamed(
+                                                              'ItemDetailsExpandedArabic',
+                                                              queryParameters: {
+                                                                'itemDetails':
+                                                                    serializeParam(
+                                                                  columnChopsFoodItemsFinalRow,
+                                                                  ParamType
+                                                                      .SupabaseRow,
                                                                 ),
-                                                              ),
+                                                              }.withoutNulls,
                                                             );
                                                           },
-                                                          child: Hero(
-                                                            tag: 'itemImageTag',
-                                                            transitionOnUserGestures:
-                                                                true,
-                                                            child: ClipRRect(
+                                                          child: Card(
+                                                            clipBehavior: Clip
+                                                                .antiAliasWithSaveLayer,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            shape:
+                                                                RoundedRectangleBorder(
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
                                                                           8.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/ezgif-3-cbfca200ec.gif',
-                                                                width: 150.0,
-                                                                height: 150.0,
-                                                                fit: BoxFit
-                                                                    .contain,
-                                                                alignment:
-                                                                    Alignment(
-                                                                        0.00,
-                                                                        0.00),
-                                                              ),
+                                                            ),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceEvenly,
+                                                              children: [
+                                                                Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          5.0,
+                                                                          10.0,
+                                                                          5.0),
+                                                                      child:
+                                                                          InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          await Navigator
+                                                                              .push(
+                                                                            context,
+                                                                            PageTransition(
+                                                                              type: PageTransitionType.fade,
+                                                                              child: FlutterFlowExpandedImageView(
+                                                                                image: Image.network(
+                                                                                  valueOrDefault<String>(
+                                                                                    columnChopsFoodItemsFinalRow.image,
+                                                                                    'https://epicfilestore.s3.me-south-1.amazonaws.com/cat+images+-+chops/steaks.webp',
+                                                                                  ),
+                                                                                  fit: BoxFit.contain,
+                                                                                  alignment: Alignment(0.00, 0.00),
+                                                                                ),
+                                                                                allowRotation: false,
+                                                                                tag: valueOrDefault<String>(
+                                                                                  columnChopsFoodItemsFinalRow.image,
+                                                                                  'https://epicfilestore.s3.me-south-1.amazonaws.com/cat+images+-+chops/steaks.webp' + '$columnIndex',
+                                                                                ),
+                                                                                useHeroAnimation: true,
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Hero(
+                                                                          tag: valueOrDefault<
+                                                                              String>(
+                                                                            columnChopsFoodItemsFinalRow.image,
+                                                                            'https://epicfilestore.s3.me-south-1.amazonaws.com/cat+images+-+chops/steaks.webp' +
+                                                                                '$columnIndex',
+                                                                          ),
+                                                                          transitionOnUserGestures:
+                                                                              true,
+                                                                          child:
+                                                                              ClipRRect(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
+                                                                            child:
+                                                                                Image.network(
+                                                                              valueOrDefault<String>(
+                                                                                columnChopsFoodItemsFinalRow.image,
+                                                                                'https://epicfilestore.s3.me-south-1.amazonaws.com/cat+images+-+chops/steaks.webp',
+                                                                              ),
+                                                                              width: 170.0,
+                                                                              height: 100.0,
+                                                                              fit: BoxFit.contain,
+                                                                              alignment: Alignment(0.00, 0.00),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Expanded(
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        SingleChildScrollView(
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.spaceBetween,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.end,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                10.0,
+                                                                                0.0,
+                                                                                10.0),
+                                                                            child:
+                                                                                Text(
+                                                                              columnChopsFoodItemsFinalRow.itemNameArabic!,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    color: Colors.black,
+                                                                                    fontWeight: FontWeight.bold,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                10.0),
+                                                                            child:
+                                                                                RichText(
+                                                                              textScaleFactor: MediaQuery.of(context).textScaleFactor,
+                                                                              text: TextSpan(
+                                                                                children: [
+                                                                                  TextSpan(
+                                                                                    text: columnChopsFoodItemsFinalRow.arabicShortDescription!,
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Montserrat',
+                                                                                          color: Colors.black,
+                                                                                          fontWeight: FontWeight.normal,
+                                                                                        ),
+                                                                                  )
+                                                                                ],
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Colors.black,
+                                                                                      fontWeight: FontWeight.w500,
+                                                                                    ),
+                                                                              ),
+                                                                              textAlign: TextAlign.end,
+                                                                              maxLines: 3,
+                                                                            ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                10.0),
+                                                                            child:
+                                                                                Text(
+                                                                              columnChopsFoodItemsFinalRow.arabicPrice!.maybeHandleOverflow(maxChars: 20),
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    color: Colors.black,
+                                                                                    fontWeight: FontWeight.bold,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  5.0,
-                                                                  0.0),
-                                                      child:
-                                                          SingleChildScrollView(
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .end,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0),
-                                                              child: Text(
-                                                                listViewFoodItemsChopsRow
-                                                                    .itemNameArabic!,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Montserrat',
-                                                                      color: Colors
-                                                                          .black,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          10.0),
-                                                              child: RichText(
-                                                                textScaleFactor:
-                                                                    MediaQuery.of(
-                                                                            context)
-                                                                        .textScaleFactor,
-                                                                text: TextSpan(
-                                                                  children: [
-                                                                    TextSpan(
-                                                                      text: listViewFoodItemsChopsRow
-                                                                          .arabicshortDescription!,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            color:
-                                                                                Colors.black,
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    )
-                                                                  ],
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Montserrat',
-                                                                        color: Colors
-                                                                            .black,
-                                                                        fontWeight:
-                                                                            FontWeight.w500,
-                                                                      ),
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .start,
-                                                                maxLines: 3,
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
-                                                              child: Text(
-                                                                listViewFoodItemsChopsRow
-                                                                    .arabicprice!
-                                                                    .maybeHandleOverflow(
-                                                                        maxChars:
-                                                                            20),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Montserrat',
-                                                                      color: Colors
-                                                                          .black,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                                      );
+                                                    }),
+                                                  );
+                                                },
                                               ),
                                             ),
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  },
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ],
                     ),

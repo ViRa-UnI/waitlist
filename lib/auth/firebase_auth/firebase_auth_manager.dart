@@ -284,7 +284,7 @@ class FirebaseAuthManager extends AuthManager
       final userCredential = await signInFunc();
       return userCredential == null
           ? null
-          : TitleWaitListFirebaseUser.fromUserCredential(userCredential);
+          : ChopsFirebaseUser.fromUserCredential(userCredential);
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(

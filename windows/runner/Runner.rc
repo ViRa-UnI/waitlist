@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "TitleWaitList" "\0"
+            VALUE "CompanyName", "Chops" "\0"
             VALUE "FileDescription", "A new Flutter project." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "TitleWaitList" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 TitleWaitList. All rights reserved." "\0"
-            VALUE "OriginalFilename", "title_wait_list.exe" "\0"
-            VALUE "ProductName", "TitleWaitList" "\0"
+            VALUE "InternalName", "Chops" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 Chops. All rights reserved." "\0"
+            VALUE "OriginalFilename", "chops.exe" "\0"
+            VALUE "ProductName", "Chops" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

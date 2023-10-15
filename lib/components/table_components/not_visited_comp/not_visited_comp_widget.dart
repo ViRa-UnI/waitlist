@@ -222,7 +222,7 @@ class _NotVisitedCompWidgetState extends State<NotVisitedCompWidget> {
                             _model.updatePage(() {});
                           },
                           text: FFLocalizations.of(context).getText(
-                            'v48ykxmh' /* Update */,
+                            'v48ykxmh' /* Confirm */,
                           ),
                           options: FFButtonOptions(
                             height: 40.0,

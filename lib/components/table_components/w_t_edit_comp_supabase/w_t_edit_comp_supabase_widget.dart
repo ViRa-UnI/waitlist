@@ -262,7 +262,7 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
                         setState(() {});
                       },
                       text: FFLocalizations.of(context).getText(
-                        't5vzv1l5' /* Update */,
+                        't5vzv1l5' /* Confirm */,
                       ),
                       options: FFButtonOptions(
                         height: 40.0,
