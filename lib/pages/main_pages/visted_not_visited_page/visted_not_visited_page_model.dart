@@ -1,13 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/table_components/edit_table_comp/edit_table_comp_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'visted_not_visited_page_widget.dart' show VistedNotVisitedPageWidget;
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 

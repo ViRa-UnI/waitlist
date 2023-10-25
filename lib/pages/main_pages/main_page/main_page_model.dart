@@ -1,9 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/guest_entry_form/guest_entry_form_widget.dart';
+import '/components/table_components/entry_details_editing/entry_details_editing_widget.dart';
 import '/components/table_components/not_visited_comp/not_visited_comp_widget.dart';
 import '/components/table_components/visited_comp/visited_comp_widget.dart';
-import '/components/table_components/w_t_edit_comp_supabase/w_t_edit_comp_supabase_widget.dart';
 import '/components/time_calculation_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -18,6 +18,7 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 

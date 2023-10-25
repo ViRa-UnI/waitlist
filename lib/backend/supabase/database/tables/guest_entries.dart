@@ -56,4 +56,10 @@ class GuestEntriesRow extends SupabaseDataRow {
 
   String? get onlyMobile => getField<String>('onlyMobile');
   set onlyMobile(String? value) => setField<String>('onlyMobile', value);
+
+  String? get userlog => getField<String>('userlog');
+  set userlog(String? value) => setField<String>('userlog', value);
+
+  String? get tableField => getField<String>('Table');
+  set tableField(String? value) => setField<String>('Table', value);
 }

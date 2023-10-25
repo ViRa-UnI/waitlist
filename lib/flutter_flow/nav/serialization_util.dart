@@ -249,8 +249,6 @@ dynamic deserializeParam<T>(
             return FoodItemsRow(data);
           case ChopsFoodItemsFinalRow:
             return ChopsFoodItemsFinalRow(data);
-          case CategoryRow:
-            return CategoryRow(data);
           case ItemsDuplicateRow:
             return ItemsDuplicateRow(data);
           case ItemscategoryRow:
@@ -263,6 +261,8 @@ dynamic deserializeParam<T>(
             return ItemsRow(data);
           case GuestentriesformRow:
             return GuestentriesformRow(data);
+          case CategoryChopsFinalRow:
+            return CategoryChopsFinalRow(data);
           case GuestEntriesNotVisitedRow:
             return GuestEntriesNotVisitedRow(data);
           default:

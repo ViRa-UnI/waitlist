@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'w_t_edit_comp_supabase_model.dart';
@@ -85,6 +86,7 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       FFLocalizations.of(context).getText(
@@ -159,8 +161,7 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
                               onChanged: (val) => setState(
                                   () => _model.wTChipValue = val?.first),
                               selectedChipStyle: ChipStyle(
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).secondary,
+                                backgroundColor: Color(0xFFF15D2A),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -270,7 +271,7 @@ class _WTEditCompSupabaseWidgetState extends State<WTEditCompSupabaseWidget> {
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xFF231F20),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Montserrat',

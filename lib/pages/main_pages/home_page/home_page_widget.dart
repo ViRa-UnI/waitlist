@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
@@ -26,7 +27,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     _model = createModel(context, () => HomePageModel());
 
     _model.emailFieldController ??= TextEditingController();
+    _model.emailFieldFocusNode ??= FocusNode();
     _model.passwordFieldController ??= TextEditingController();
+    _model.passwordFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -39,6 +42,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -94,6 +106,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         width: 450.0,
                         child: TextFormField(
                           controller: _model.emailFieldController,
+                          focusNode: _model.emailFieldFocusNode,
                           autofocus: true,
                           obscureText: false,
                           decoration: InputDecoration(
@@ -169,6 +182,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           width: 450.0,
                           child: TextFormField(
                             controller: _model.passwordFieldController,
+                            focusNode: _model.passwordFieldFocusNode,
                             autofocus: true,
                             obscureText: !_model.passwordFieldVisibility,
                             decoration: InputDecoration(

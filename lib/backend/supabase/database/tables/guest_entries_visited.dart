@@ -54,4 +54,10 @@ class GuestEntriesVisitedRow extends SupabaseDataRow {
 
   String? get vistedNotes => getField<String>('vistedNotes');
   set vistedNotes(String? value) => setField<String>('vistedNotes', value);
+
+  String? get userlog => getField<String>('userlog');
+  set userlog(String? value) => setField<String>('userlog', value);
+
+  String? get tableField => getField<String>('Table');
+  set tableField(String? value) => setField<String>('Table', value);
 }

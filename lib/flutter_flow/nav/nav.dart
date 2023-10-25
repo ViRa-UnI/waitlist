@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '/backend/supabase/supabase.dart';
-import '../../auth/base_auth_user_provider.dart';
+import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
@@ -186,6 +186,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 itemDetails: params.getParam<ChopsFoodItemsFinalRow>(
                     'itemDetails', ParamType.SupabaseRow),
               ),
+            ),
+            FFRoute(
+              name: 'TodaySummary',
+              path: 'summary',
+              requireAuth: true,
+              builder: (context, params) => TodaySummaryWidget(),
+            ),
+            FFRoute(
+              name: 'AddUser',
+              path: 'adduser',
+              builder: (context, params) => AddUserWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

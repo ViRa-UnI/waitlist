@@ -8,7 +8,8 @@ export '/pages/guest_details_page/guest_details_page_widget.dart'
     show GuestDetailsPageWidget;
 export '/pages/main_pages/main_page/main_page_widget.dart' show MainPageWidget;
 export '/pages/app_menu_page/app_menu_page_widget.dart' show AppMenuPageWidget;
-export '/pages/add_menu_item/add_menu_item_widget.dart' show AddMenuItemWidget;
+export '/pages/main_pages/add_menu_item/add_menu_item_widget.dart'
+    show AddMenuItemWidget;
 export '/pages/main_pages/list_menu_items_english/list_menu_items_english_widget.dart'
     show ListMenuItemsEnglishWidget;
 export '/test_page/test_page_widget.dart' show TestPageWidget;
@@ -24,3 +25,6 @@ export '/pages/main_pages/list_menu_items_arabic/list_menu_items_arabic_widget.d
     show ListMenuItemsArabicWidget;
 export '/pages/item_details_expanded_arabic/item_details_expanded_arabic_widget.dart'
     show ItemDetailsExpandedArabicWidget;
+export '/pages/main_pages/today_summary/today_summary_widget.dart'
+    show TodaySummaryWidget;
+export '/pages/add_user/add_user_widget.dart' show AddUserWidget;

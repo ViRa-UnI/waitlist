@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -5,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'not_visited_comp_model.dart';
@@ -135,8 +137,8 @@ class _NotVisitedCompWidgetState extends State<NotVisitedCompWidget> {
                                 'f23722ni' /* Other */,
                               ))
                             ],
-                            onChanged: (val) =>
-                                setState(() => _model.wTChipValue = val?.first),
+                            onChanged: (val) => setState(
+                                () => _model.reasonChipValue = val?.first),
                             selectedChipStyle: ChipStyle(
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
@@ -179,7 +181,7 @@ class _NotVisitedCompWidgetState extends State<NotVisitedCompWidget> {
                             rowSpacing: 15.0,
                             multiselect: false,
                             alignment: WrapAlignment.start,
-                            controller: _model.wTChipValueController ??=
+                            controller: _model.reasonChipValueController ??=
                                 FormFieldController<List<String>>(
                               [],
                             ),
@@ -193,7 +195,6 @@ class _NotVisitedCompWidgetState extends State<NotVisitedCompWidget> {
                         child: FFButtonWidget(
                           onPressed: () async {
                             await GuestEntriesNotVisitedTable().insert({
-                              'id': widget.rowDetailsNotVisited?.id,
                               'created_at':
                                   supaSerialize<DateTime>(getCurrentTimestamp),
                               'name': widget.rowDetailsNotVisited?.name,
@@ -210,7 +211,12 @@ class _NotVisitedCompWidgetState extends State<NotVisitedCompWidget> {
                               'messageContent': widget
                                   .rowDetailsNotVisited?.createdAt
                                   ?.toString(),
-                              'vistedNotes': _model.wTChipValue,
+                              'userlog': currentUserEmail,
+                              'id': widget.rowDetailsNotVisited?.id,
+                              'vistedNotes': valueOrDefault<String>(
+                                _model.reasonChipValue,
+                                'Null',
+                              ),
                             });
                             await GuestEntriesTable().delete(
                               matchingRows: (rows) => rows.eq(
@@ -219,7 +225,6 @@ class _NotVisitedCompWidgetState extends State<NotVisitedCompWidget> {
                               ),
                             );
                             Navigator.pop(context);
-                            _model.updatePage(() {});
                           },
                           text: FFLocalizations.of(context).getText(
                             'v48ykxmh' /* Confirm */,

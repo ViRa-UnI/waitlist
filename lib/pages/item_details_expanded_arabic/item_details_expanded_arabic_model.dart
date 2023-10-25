@@ -7,6 +7,7 @@ import 'item_details_expanded_arabic_widget.dart'
     show ItemDetailsExpandedArabicWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';

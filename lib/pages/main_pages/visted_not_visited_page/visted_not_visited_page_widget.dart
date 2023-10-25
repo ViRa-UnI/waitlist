@@ -1,12 +1,15 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/table_components/edit_table_comp/edit_table_comp_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'visted_not_visited_page_model.dart';
@@ -48,6 +51,15 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -605,7 +617,7 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   fixedWidth:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.08,
+                                                          0.1,
                                                 ),
                                                 DataColumn2(
                                                   label: DefaultTextStyle.merge(
@@ -634,7 +646,7 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        's4cc0o7h' /* Message Content */,
+                                                        's4cc0o7h' /* Entry Time */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -729,23 +741,15 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                               ),
                                                             ),
                                                             Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                dataTableGuestEntriesNotVisitedRow
-                                                                    .waitingTime,
-                                                                'waittime',
-                                                              ),
+                                                              dataTableGuestEntriesNotVisitedRow
+                                                                  .waitingTime!,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge,
                                                             ),
                                                             Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                dataTableGuestEntriesNotVisitedRow
-                                                                    .vistedNotes,
-                                                                'waittime',
-                                                              ),
+                                                              dataTableGuestEntriesNotVisitedRow
+                                                                  .vistedNotes!,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge,
@@ -1142,7 +1146,9 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                     ..complete(
                                                         GuestEntriesVisitedTable()
                                                             .queryRows(
-                                                      queryFn: (q) => q,
+                                                      queryFn: (q) => q.order(
+                                                          'created_at',
+                                                          ascending: true),
                                                     )))
                                               .future,
                                           builder: (context, snapshot) {
@@ -1206,7 +1212,7 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   fixedWidth:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.07,
+                                                          0.05,
                                                 ),
                                                 DataColumn2(
                                                   label: DefaultTextStyle.merge(
@@ -1276,7 +1282,7 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '5e9dsen4' /* WT */,
+                                                        '5e9dsen4' /* Table */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -1292,22 +1298,32 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                 DataColumn2(
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '34q70wlk' /* Notes */,
+                                                    child: Visibility(
+                                                      visible:
+                                                          responsiveVisibility(
+                                                        context: context,
+                                                        phone: false,
+                                                        tablet: false,
+                                                        tabletLandscape: false,
+                                                        desktop: false,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '34q70wlk' /* Notes */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge,
+                                                      ),
                                                     ),
                                                   ),
                                                   fixedWidth:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.08,
+                                                          0.02,
                                                 ),
                                                 DataColumn2(
                                                   label: DefaultTextStyle.merge(
@@ -1327,7 +1343,7 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                   fixedWidth:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.07,
+                                                          0.05,
                                                 ),
                                                 DataColumn2(
                                                   label: DefaultTextStyle.merge(
@@ -1352,22 +1368,27 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                 DataColumn2(
                                                   label: DefaultTextStyle.merge(
                                                     softWrap: true,
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'yujyofnk' /* Actions */,
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.00, 0.00),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'yujyofnk' /* Actions */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge,
                                                     ),
                                                   ),
                                                   fixedWidth:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.09,
+                                                          0.25,
                                                 ),
                                               ],
                                               rows:
@@ -1376,29 +1397,45 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                               dataTableGuestEntriesVisitedRow) =>
                                                           [
                                                             Text(
-                                                              dataTableGuestEntriesVisitedRow
-                                                                  .name!,
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                dataTableGuestEntriesVisitedRow
+                                                                    .name,
+                                                                'Null',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge,
                                                             ),
                                                             Text(
-                                                              dataTableGuestEntriesVisitedRow
-                                                                  .type!,
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                dataTableGuestEntriesVisitedRow
+                                                                    .type,
+                                                                'Null',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge,
                                                             ),
                                                             Text(
-                                                              dataTableGuestEntriesVisitedRow
-                                                                  .mobile!,
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                dataTableGuestEntriesVisitedRow
+                                                                    .mobile,
+                                                                'Null',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge,
                                                             ),
                                                             Text(
-                                                              dataTableGuestEntriesVisitedRow
-                                                                  .category!,
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                dataTableGuestEntriesVisitedRow
+                                                                    .category,
+                                                                'Null',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge,
@@ -1423,8 +1460,12 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                                 });
                                                               },
                                                               child: Text(
-                                                                dataTableGuestEntriesVisitedRow
-                                                                    .seatingArea!,
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  dataTableGuestEntriesVisitedRow
+                                                                      .seatingArea,
+                                                                  'Null',
+                                                                ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge,
@@ -1434,8 +1475,42 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 dataTableGuestEntriesVisitedRow
-                                                                    .waitingTime,
-                                                                'waittime',
+                                                                    .tableField,
+                                                                'NA',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge,
+                                                            ),
+                                                            Visibility(
+                                                              visible:
+                                                                  responsiveVisibility(
+                                                                context:
+                                                                    context,
+                                                                phone: false,
+                                                                tablet: false,
+                                                                tabletLandscape:
+                                                                    false,
+                                                                desktop: false,
+                                                              ),
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  dataTableGuestEntriesVisitedRow
+                                                                      .vistedNotes,
+                                                                  'waittime',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge,
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                dataTableGuestEntriesVisitedRow
+                                                                    .partySize,
+                                                                'Null',
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1445,23 +1520,9 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 dataTableGuestEntriesVisitedRow
-                                                                    .vistedNotes,
-                                                                'waittime',
+                                                                    .messageContent,
+                                                                'Null',
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge,
-                                                            ),
-                                                            Text(
-                                                              dataTableGuestEntriesVisitedRow
-                                                                  .partySize!,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge,
-                                                            ),
-                                                            Text(
-                                                              dataTableGuestEntriesVisitedRow
-                                                                  .messageContent!,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge,
@@ -1518,82 +1579,197 @@ class _VistedNotVisitedPageWidgetState extends State<VistedNotVisitedPageWidget>
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      await GuestEntriesTable()
-                                                                          .insert({
-                                                                        'id': dataTableGuestEntriesVisitedRow
-                                                                            .id,
-                                                                        'created_at':
-                                                                            supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                        'name':
-                                                                            dataTableGuestEntriesVisitedRow.name,
-                                                                        'type':
-                                                                            dataTableGuestEntriesVisitedRow.type,
-                                                                        'mobile':
-                                                                            dataTableGuestEntriesVisitedRow.mobile,
-                                                                        'age': dataTableGuestEntriesVisitedRow
-                                                                            .age,
-                                                                        'category':
-                                                                            dataTableGuestEntriesVisitedRow.category,
-                                                                        'seatingArea':
-                                                                            dataTableGuestEntriesVisitedRow.seatingArea,
-                                                                        'waitingTime':
-                                                                            dataTableGuestEntriesVisitedRow.waitingTime,
-                                                                        'partySize':
-                                                                            dataTableGuestEntriesVisitedRow.partySize,
-                                                                        'messageContent':
-                                                                            dataTableGuestEntriesVisitedRow.messageContent,
-                                                                      });
-                                                                      await GuestEntriesVisitedTable()
-                                                                          .delete(
-                                                                        matchingRows:
-                                                                            (rows) =>
-                                                                                rows.eq(
-                                                                          'id',
+                                                                FFButtonWidget(
+                                                                  onPressed:
+                                                                      () async {
+                                                                    await GuestEntriesTable()
+                                                                        .insert({
+                                                                      'id': dataTableGuestEntriesVisitedRow
+                                                                          .id,
+                                                                      'created_at':
+                                                                          supaSerialize<DateTime>(
+                                                                              getCurrentTimestamp),
+                                                                      'name': dataTableGuestEntriesVisitedRow
+                                                                          .name,
+                                                                      'type': dataTableGuestEntriesVisitedRow
+                                                                          .type,
+                                                                      'mobile':
                                                                           dataTableGuestEntriesVisitedRow
-                                                                              .id,
+                                                                              .mobile,
+                                                                      'age': dataTableGuestEntriesVisitedRow
+                                                                          .age,
+                                                                      'category':
+                                                                          dataTableGuestEntriesVisitedRow
+                                                                              .category,
+                                                                      'seatingArea':
+                                                                          dataTableGuestEntriesVisitedRow
+                                                                              .seatingArea,
+                                                                      'waitingTime':
+                                                                          dataTableGuestEntriesVisitedRow
+                                                                              .waitingTime,
+                                                                      'partySize':
+                                                                          dataTableGuestEntriesVisitedRow
+                                                                              .partySize,
+                                                                      'messageContent':
+                                                                          dataTableGuestEntriesVisitedRow
+                                                                              .messageContent,
+                                                                    });
+                                                                    await GuestEntriesVisitedTable()
+                                                                        .delete(
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        dataTableGuestEntriesVisitedRow
+                                                                            .id,
+                                                                      ),
+                                                                    );
+                                                                    setState(() =>
+                                                                        _model.requestCompleter =
+                                                                            null);
+                                                                    await _model
+                                                                        .waitForRequestCompleted();
+                                                                  },
+                                                                  text: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'nqik3l3y' /* Add */,
+                                                                  ),
+                                                                  options:
+                                                                      FFButtonOptions(
+                                                                    height:
+                                                                        40.0,
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15.0,
+                                                                            0.0,
+                                                                            15.0,
+                                                                            0.0),
+                                                                    iconPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          color:
+                                                                              Colors.white,
                                                                         ),
-                                                                      );
+                                                                    elevation:
+                                                                        3.0,
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: Colors
+                                                                          .transparent,
+                                                                      width:
+                                                                          1.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                ),
+                                                                Builder(
+                                                                  builder:
+                                                                      (context) =>
+                                                                          FFButtonWidget(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await showAlignedDialog(
+                                                                        context:
+                                                                            context,
+                                                                        isGlobal:
+                                                                            true,
+                                                                        avoidOverflow:
+                                                                            false,
+                                                                        targetAnchor:
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                        followerAnchor:
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                        builder:
+                                                                            (dialogContext) {
+                                                                          return Material(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            child:
+                                                                                GestureDetector(
+                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                              child: Container(
+                                                                                height: MediaQuery.sizeOf(context).height * 0.7,
+                                                                                width: MediaQuery.sizeOf(context).width * 0.7,
+                                                                                child: EditTableCompWidget(
+                                                                                  rowDetails: dataTableGuestEntriesVisitedRow,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          setState(
+                                                                              () {}));
+
                                                                       setState(() =>
                                                                           _model.requestCompleter =
                                                                               null);
                                                                       await _model
                                                                           .waitForRequestCompleted();
                                                                     },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .person_add,
+                                                                    text: FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'fglg9mk4' /* Edit Table */,
+                                                                    ),
+                                                                    options:
+                                                                        FFButtonOptions(
+                                                                      height:
+                                                                          40.0,
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          15.0,
+                                                                          0.0,
+                                                                          15.0,
+                                                                          0.0),
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .info,
-                                                                      size:
-                                                                          24.0,
+                                                                          .primary,
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            color:
+                                                                                Colors.white,
+                                                                          ),
+                                                                      elevation:
+                                                                          3.0,
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Colors
+                                                                            .transparent,
+                                                                        width:
+                                                                            1.0,
+                                                                      ),
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              8.0),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ],
+                                                              ].divide(SizedBox(
+                                                                  width: 10.0)),
                                                             ),
                                                           ]
                                                               .map((c) =>

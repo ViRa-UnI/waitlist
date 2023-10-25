@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -41,6 +42,15 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -178,10 +188,8 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
-                              child: FutureBuilder<
-                                  List<CategoryChopsRestaurantRow>>(
-                                future:
-                                    CategoryChopsRestaurantTable().queryRows(
+                              child: FutureBuilder<List<CategoryChopsFinalRow>>(
+                                future: CategoryChopsFinalTable().queryRows(
                                   queryFn: (q) =>
                                       q.order('Category', ascending: true),
                                 ),
@@ -201,19 +209,18 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                                       ),
                                     );
                                   }
-                                  List<CategoryChopsRestaurantRow>
-                                      listViewCategoryChopsRestaurantRowList =
+                                  List<CategoryChopsFinalRow>
+                                      listViewCategoryChopsFinalRowList =
                                       snapshot.data!;
                                   return ListView.builder(
                                     padding: EdgeInsets.zero,
                                     shrinkWrap: true,
                                     scrollDirection: Axis.horizontal,
-                                    itemCount:
-                                        listViewCategoryChopsRestaurantRowList
-                                            .length,
+                                    itemCount: listViewCategoryChopsFinalRowList
+                                        .length,
                                     itemBuilder: (context, listViewIndex) {
-                                      final listViewCategoryChopsRestaurantRow =
-                                          listViewCategoryChopsRestaurantRowList[
+                                      final listViewCategoryChopsFinalRow =
+                                          listViewCategoryChopsFinalRowList[
                                               listViewIndex];
                                       return InkWell(
                                         splashColor: Colors.transparent,
@@ -224,7 +231,7 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                                           setState(() {
                                             FFAppState()
                                                     .selectedCategoryArabic =
-                                                listViewCategoryChopsRestaurantRow
+                                                listViewCategoryChopsFinalRow
                                                     .categoryArabic!;
                                           });
                                         },
@@ -254,7 +261,7 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                                                             8.0),
                                                     child: Image.network(
                                                       valueOrDefault<String>(
-                                                        listViewCategoryChopsRestaurantRow
+                                                        listViewCategoryChopsFinalRow
                                                             .image,
                                                         'https://media.finedinemenu.com/filters:strip_exif()/filters:format(webp)/360x240/Ci27lbBw/bf40ff19-319f-44a9-b063-fc26cdd2b20d.jpg',
                                                       ),
@@ -264,9 +271,11 @@ class _ListMenuItemsArabicWidgetState extends State<ListMenuItemsArabicWidget> {
                                                   ),
                                                 ),
                                                 Text(
-                                                  listViewCategoryChopsRestaurantRow
-                                                      .categoryArabic!
-                                                      .maybeHandleOverflow(
+                                                  valueOrDefault<String>(
+                                                    listViewCategoryChopsFinalRow
+                                                        .categoryArabic,
+                                                    'catArabic',
+                                                  ).maybeHandleOverflow(
                                                     maxChars: 10,
                                                     replacement: '…',
                                                   ),

@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'time_calculation_model.dart';
@@ -53,7 +54,11 @@ class _TimeCalculationWidgetState extends State<TimeCalculationWidget> {
       functions
           .calculateRemainingTime(widget.parameter1!, widget.parameter2!)
           .toString(),
-      style: FlutterFlowTheme.of(context).bodyLarge,
+      style: FlutterFlowTheme.of(context).bodyLarge.override(
+            fontFamily: 'Montserrat',
+            letterSpacing: 0.3,
+            fontWeight: FontWeight.bold,
+          ),
     );
   }
 }

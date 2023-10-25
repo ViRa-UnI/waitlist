@@ -304,16 +304,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'ملاحظة',
     },
     'gb0lfzes': {
-      'en': 'SMS ',
+      'en': 'Entry Time',
       'ar': 'رسالة قصيرة',
     },
     'oc0tl23k': {
       'en': 'Actions',
       'ar': 'أجراءات',
-    },
-    'v50kjoux': {
-      'en': 'W Time',
-      'ar': 'تمت زيارتها',
     },
     '9dxg9c5o': {
       'en': 'Visited',
@@ -322,6 +318,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4wwjwaqk': {
       'en': 'Not Visited',
       'ar': 'لم تتم زيارتها',
+    },
+    'sq0c6uxb': {
+      'en': 'Edit',
+      'ar': '',
     },
     'x2fol8mp': {
       'en': 'Waiting List',
@@ -342,15 +342,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // AppMenuPage
   {
+    'j82oq3sx': {
+      'en': 'Today\'s Summary',
+      'ar': 'قائمة القائمة',
+    },
     'iewqrfc4': {
-      'en': 'Removed Entries',
+      'en': 'History',
       'ar': 'الإدخالات التي تمت إزالتها',
     },
     '881u7hsj': {
       'en': 'Customers',
       'ar': 'عملاء',
     },
-    'j82oq3sx': {
+    'dspshrzl': {
       'en': 'Menu List',
       'ar': 'قائمة القائمة',
     },
@@ -367,6 +371,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التقارير',
     },
     'k8fm0fqy': {
+      'en': 'Add User',
+      'ar': 'إعدادات',
+    },
+    '504d30po': {
       'en': 'Settings',
       'ar': 'إعدادات',
     },
@@ -511,45 +519,61 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Test Page',
       'ar': 'صفحة الاختبار',
     },
-    'zi2ucelg': {
+    'qbnncp0j': {
       'en': 'Name',
       'ar': 'اسم',
     },
-    'kkv06y7x': {
+    'm7zpbgtl': {
       'en': 'Type',
-      'ar': 'يكتب',
+      'ar': '',
     },
-    'b6zh9jyo': {
+    '87fpvln6': {
       'en': 'Mobile',
-      'ar': 'متحرك',
+      'ar': '',
     },
-    '2gm4t1tw': {
+    'mnq4chdw': {
       'en': 'Category',
-      'ar': 'فئة',
+      'ar': '',
     },
-    'a2ve9qh2': {
+    '61tvlvkj': {
       'en': 'Seating Area',
-      'ar': 'منطقة الجلوس',
+      'ar': '',
     },
-    'u152gdmt': {
+    'og4d29k6': {
+      'en': 'Table',
+      'ar': '',
+    },
+    '8bef1s4y': {
       'en': 'WT',
-      'ar': 'وزن',
+      'ar': '',
     },
-    'v0h6bmex': {
+    'z3azq0mh': {
       'en': 'RT',
-      'ar': 'ر.ت',
+      'ar': '',
     },
-    'i9beu763': {
+    'ae3ql4ns': {
       'en': 'PS',
-      'ar': 'ملاحظة',
+      'ar': '',
     },
-    '3kk2lm3x': {
-      'en': 'SMS Status',
-      'ar': 'حالة الرسائل القصيرة',
+    'bkfc1s72': {
+      'en': 'Entry Time',
+      'ar': '',
     },
-    '3fdnoryy': {
+    'aphwv7wa': {
       'en': 'Actions',
-      'ar': 'أجراءات',
+      'ar': '',
+    },
+    's9ue60qv': {
+      'en': 'Visited',
+      'ar': 'تمت زيارتها',
+    },
+    '3dqfyf46': {
+      'en': 'Not Visited',
+      'ar': 'لم تتم زيارتها',
+    },
+    'nq625wrq': {
+      'en': 'Edit',
+      'ar': '',
     },
     'lefprfp3': {
       'en': 'Home',
@@ -576,6 +600,146 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '242lc6iz': {
       'en': 'Test Page',
       'ar': 'صفحة الاختبار',
+    },
+    'q6pyxvlk': {
+      'en': 'Today\'s Summary',
+      'ar': '',
+    },
+    '7r87o53s': {
+      'en': 'Visited',
+      'ar': '',
+    },
+    'f7fmrkg6': {
+      'en': 'TOTAL: ',
+      'ar': '',
+    },
+    'l2xboj94': {
+      'en': '30',
+      'ar': '',
+    },
+    '98yiqyxs': {
+      'en': 'Not Visited',
+      'ar': '',
+    },
+    '12sq8sg3': {
+      'en': 'Left to other Restaurant: ',
+      'ar': '',
+    },
+    'rhtch0sm': {
+      'en': '30',
+      'ar': '',
+    },
+    '6bpkffdj': {
+      'en': 'Too Late: ',
+      'ar': '',
+    },
+    '5jk0uuna': {
+      'en': '30',
+      'ar': '',
+    },
+    '6u4dzwe2': {
+      'en': 'Not Answering: ',
+      'ar': '',
+    },
+    '9a2gq5lv': {
+      'en': '30',
+      'ar': '',
+    },
+    'n1yyeipf': {
+      'en': 'Other: ',
+      'ar': '',
+    },
+    'ewi1q33x': {
+      'en': '30',
+      'ar': '',
+    },
+    '7ccqzw36': {
+      'en': 'TOTAL: ',
+      'ar': '',
+    },
+    'l936c1t7': {
+      'en': '30',
+      'ar': '',
+    },
+    'imf7fugx': {
+      'en': 'Type',
+      'ar': '',
+    },
+    '2b46nqp5': {
+      'en': 'Male: ',
+      'ar': '',
+    },
+    '57ph7o67': {
+      'en': '30',
+      'ar': '',
+    },
+    'eg29vgqb': {
+      'en': 'Female: ',
+      'ar': '',
+    },
+    'b3vd1pvv': {
+      'en': '30',
+      'ar': '',
+    },
+    'f895yj96': {
+      'en': 'Couple: ',
+      'ar': '',
+    },
+    'l02tin9k': {
+      'en': '30',
+      'ar': '',
+    },
+    'a6suy001': {
+      'en': 'Family: ',
+      'ar': '',
+    },
+    'cxh7vt9z': {
+      'en': '30',
+      'ar': '',
+    },
+    'h2noyl2l': {
+      'en': 'TOTAL: ',
+      'ar': '',
+    },
+    'xew0wwdt': {
+      'en': '30',
+      'ar': '',
+    },
+    't3iovt13': {
+      'en': 'Category',
+      'ar': '',
+    },
+    'i6waauhr': {
+      'en': 'Guest: ',
+      'ar': '',
+    },
+    'nlcoc9ow': {
+      'en': '30',
+      'ar': '',
+    },
+    'et35r6tj': {
+      'en': 'Visitor: ',
+      'ar': '',
+    },
+    'jc4zjfyi': {
+      'en': '30',
+      'ar': '',
+    },
+    '7drni8ap': {
+      'en': 'Client: ',
+      'ar': '',
+    },
+    '0mo5z5o8': {
+      'en': '30',
+      'ar': '',
+    },
+    'elcmc8kn': {
+      'en': 'TOTAL: ',
+      'ar': '',
+    },
+    '7utcgmxe': {
+      'en': '30',
+      'ar': '',
     },
     'g9zz27eh': {
       'en': 'Home',
@@ -637,7 +801,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'ملاحظة',
     },
     's4cc0o7h': {
-      'en': 'Message Content',
+      'en': 'Entry Time',
       'ar': 'محتوى الرسالة',
     },
     'nleuebur': {
@@ -685,7 +849,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'منطقة الجلوس',
     },
     '5e9dsen4': {
-      'en': 'WT',
+      'en': 'Table',
       'ar': 'وزن',
     },
     '34q70wlk': {
@@ -703,6 +867,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'yujyofnk': {
       'en': 'Actions',
       'ar': 'أجراءات',
+    },
+    'nqik3l3y': {
+      'en': 'Add',
+      'ar': '',
+    },
+    'fglg9mk4': {
+      'en': 'Edit Table',
+      'ar': '',
     },
     't2m7suib': {
       'en': 'Waiting List',
@@ -789,6 +961,208 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'خلف',
     },
     '27p066xf': {
+      'en': 'Home',
+      'ar': 'بيت',
+    },
+  },
+  // TodaySummary
+  {
+    'is6i6743': {
+      'en': 'Today\'s Summary',
+      'ar': '',
+    },
+    '0jmmrh0a': {
+      'en': 'Visited',
+      'ar': '',
+    },
+    'clebgerw': {
+      'en': 'TOTAL: ',
+      'ar': '',
+    },
+    'lgg5gsut': {
+      'en': '30',
+      'ar': '',
+    },
+    'g3c4yg7z': {
+      'en': 'Not Visited',
+      'ar': '',
+    },
+    'bjmwycut': {
+      'en': 'Left to other Restaurant: ',
+      'ar': '',
+    },
+    'jjt97zja': {
+      'en': '30',
+      'ar': '',
+    },
+    '5hmlwkgu': {
+      'en': 'Too Late: ',
+      'ar': '',
+    },
+    'stxln4l0': {
+      'en': '30',
+      'ar': '',
+    },
+    '6il0pfwr': {
+      'en': 'Not Answering: ',
+      'ar': '',
+    },
+    '8ks2j2oi': {
+      'en': '30',
+      'ar': '',
+    },
+    'y9jzl8oy': {
+      'en': 'Other: ',
+      'ar': '',
+    },
+    'x7q7bocv': {
+      'en': '30',
+      'ar': '',
+    },
+    'c6oip5xx': {
+      'en': 'TOTAL: ',
+      'ar': '',
+    },
+    'ih0n6qz7': {
+      'en': '30',
+      'ar': '',
+    },
+    'nbbepmax': {
+      'en': 'Type',
+      'ar': '',
+    },
+    'zmq3pmnm': {
+      'en': 'Male: ',
+      'ar': '',
+    },
+    'l3hspu5h': {
+      'en': '30',
+      'ar': '',
+    },
+    'yayjhq1w': {
+      'en': 'Female: ',
+      'ar': '',
+    },
+    'z5lqqwr2': {
+      'en': '30',
+      'ar': '',
+    },
+    'zxomerxc': {
+      'en': 'Couple: ',
+      'ar': '',
+    },
+    'l8qacpzq': {
+      'en': '30',
+      'ar': '',
+    },
+    'i2xl1zif': {
+      'en': 'Family: ',
+      'ar': '',
+    },
+    'b2xpkuw6': {
+      'en': '30',
+      'ar': '',
+    },
+    'cp4lpdt7': {
+      'en': 'TOTAL: ',
+      'ar': '',
+    },
+    'ndau695e': {
+      'en': '30',
+      'ar': '',
+    },
+    '6a8asn7u': {
+      'en': 'Category',
+      'ar': '',
+    },
+    'k1h3hxvz': {
+      'en': 'Guest: ',
+      'ar': '',
+    },
+    'qoasr7fi': {
+      'en': '30',
+      'ar': '',
+    },
+    'r8wicqjj': {
+      'en': 'Visitor: ',
+      'ar': '',
+    },
+    'wcvgr6pf': {
+      'en': '30',
+      'ar': '',
+    },
+    '7pbi9f8i': {
+      'en': 'Client: ',
+      'ar': '',
+    },
+    '875n11sk': {
+      'en': '30',
+      'ar': '',
+    },
+    'q85td67d': {
+      'en': 'TOTAL: ',
+      'ar': '',
+    },
+    '9aat5hiu': {
+      'en': '30',
+      'ar': '',
+    },
+    'ewnbaymy': {
+      'en': 'Waiting List',
+      'ar': 'قائمة الانتظار',
+    },
+    'q2wrqfjz': {
+      'en': 'Menu',
+      'ar': 'قائمة طعام',
+    },
+    'euyi527h': {
+      'en': 'Log Out',
+      'ar': 'تسجيل خروج',
+    },
+    'iq1zyw5r': {
+      'en': 'Home',
+      'ar': 'بيت',
+    },
+  },
+  // AddUser
+  {
+    'dsb15qz9': {
+      'en': 'Email',
+      'ar': '',
+    },
+    'jxrgo08d': {
+      'en': 'Enter Staff Email',
+      'ar': '',
+    },
+    '2d50ojo1': {
+      'en': 'Password',
+      'ar': '',
+    },
+    'an8gfx73': {
+      'en': 'Enter Password',
+      'ar': '',
+    },
+    '3c577dyu': {
+      'en': 'Confirm Password',
+      'ar': '',
+    },
+    '9f5rvgyi': {
+      'en': 'Enter Password Again',
+      'ar': '',
+    },
+    'klouy585': {
+      'en': 'Add User',
+      'ar': '',
+    },
+    'i6ot508b': {
+      'en': 'Waiting List',
+      'ar': 'قائمة الانتظار',
+    },
+    'jxoegc86': {
+      'en': 'Log Out',
+      'ar': 'تسجيل خروج',
+    },
+    '6mtwqm5k': {
       'en': 'Home',
       'ar': 'بيت',
     },
@@ -1019,6 +1393,62 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Status',
       'ar': 'حالة',
     },
+    'v8dnxwm6': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'f8o2tc1b': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'avjqya7r': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'u6d4s25z': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'jd5ukmwp': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'm5hip4gm': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'hyeqaz9e': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'fxs4y4o7': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '3kphdcgl': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '7lom7wd1': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '69sjmczh': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'rkh6x4sc': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '2x58mx3p': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'z3s5nfxf': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
     'bbwy7u5y': {
       'en': 'Add Guest',
       'ar': 'إضافة ضيف',
@@ -1123,8 +1553,168 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // VisitedComp
   {
     'x0z6vt11': {
-      'en': 'Are you sure to seat the Guest ?',
+      'en': 'Select the Table and confirm',
       'ar': 'هل أنت متأكد من جلوس الضيف؟',
+    },
+    'p91649aj': {
+      'en': '01',
+      'ar': '',
+    },
+    '0whwf7v9': {
+      'en': '02',
+      'ar': '',
+    },
+    's26xw5vf': {
+      'en': '03',
+      'ar': '',
+    },
+    's8tk6ev5': {
+      'en': '04',
+      'ar': '',
+    },
+    '30jbji9a': {
+      'en': '05',
+      'ar': '',
+    },
+    '2xvc072y': {
+      'en': '06',
+      'ar': '',
+    },
+    '2ykrj2nm': {
+      'en': '07',
+      'ar': '',
+    },
+    '43m2tfnu': {
+      'en': '08',
+      'ar': '',
+    },
+    'c0j9lbq2': {
+      'en': '09',
+      'ar': '',
+    },
+    '6xp0q1jo': {
+      'en': '10',
+      'ar': '',
+    },
+    'szlkyavl': {
+      'en': '11',
+      'ar': '',
+    },
+    'l61pzpn9': {
+      'en': '12',
+      'ar': '',
+    },
+    'x2nnaiei': {
+      'en': '13',
+      'ar': '',
+    },
+    '6ln5c3sb': {
+      'en': '14',
+      'ar': '',
+    },
+    'o4hjuuo2': {
+      'en': '15',
+      'ar': '',
+    },
+    'hayqzask': {
+      'en': '16',
+      'ar': '',
+    },
+    '5poja5xf': {
+      'en': '17',
+      'ar': '',
+    },
+    'qtuasn2d': {
+      'en': '18',
+      'ar': '',
+    },
+    'etbc9cj4': {
+      'en': '19',
+      'ar': '',
+    },
+    'nbacpopn': {
+      'en': '20',
+      'ar': '',
+    },
+    'fzepmhbm': {
+      'en': '21',
+      'ar': '',
+    },
+    'yr0n41so': {
+      'en': '22',
+      'ar': '',
+    },
+    'czgmktig': {
+      'en': '23',
+      'ar': '',
+    },
+    '36c2dgl9': {
+      'en': '24',
+      'ar': '',
+    },
+    's88xm94x': {
+      'en': '25',
+      'ar': '',
+    },
+    '2na84w60': {
+      'en': '26',
+      'ar': '',
+    },
+    '1q5kbof5': {
+      'en': '27',
+      'ar': '',
+    },
+    'ieo6m5st': {
+      'en': '28',
+      'ar': '',
+    },
+    '8jo1onjo': {
+      'en': '29',
+      'ar': '',
+    },
+    'o56ic57j': {
+      'en': '30',
+      'ar': '',
+    },
+    'm5ydvkrw': {
+      'en': '31',
+      'ar': '',
+    },
+    'wv1usbgu': {
+      'en': '32',
+      'ar': '',
+    },
+    'kdfs8k4u': {
+      'en': '33',
+      'ar': '',
+    },
+    'uoc4z35q': {
+      'en': '34',
+      'ar': '',
+    },
+    'w9vkv9c7': {
+      'en': '35',
+      'ar': '',
+    },
+    '0tjqsiy7': {
+      'en': '36',
+      'ar': '',
+    },
+    'jy1622ym': {
+      'en': '37',
+      'ar': '',
+    },
+    'xtw7b3wj': {
+      'en': '38',
+      'ar': '',
+    },
+    'h4b69csv': {
+      'en': '39',
+      'ar': '',
+    },
+    't5u7a0lu': {
+      'en': '40',
+      'ar': '',
     },
     'k9rbz14f': {
       'en': 'Confirm',
@@ -1232,6 +1822,297 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'q7yruk4g': {
       'en': 'Update',
+      'ar': 'تحديث',
+    },
+  },
+  // EntryDetailsEditing
+  {
+    '54urvmi3': {
+      'en': 'Choose the Field',
+      'ar': 'حدد السبب',
+    },
+    'usgs94oa': {
+      'en': 'W Time',
+      'ar': 'تمت زيارتها',
+    },
+    'z3kq6o3s': {
+      'en': 'Seating',
+      'ar': 'تمت زيارتها',
+    },
+    'rfikcnqp': {
+      'en': 'Party Size',
+      'ar': 'تمت زيارتها',
+    },
+    'ugax97av': {
+      'en': 'Category',
+      'ar': 'تمت زيارتها',
+    },
+  },
+  // SeatingEditingSupabase
+  {
+    'fcx100sd': {
+      'en': 'Choose the Seating Area',
+      'ar': 'اختر وقت الانتظار',
+    },
+    '5bubdygl': {
+      'en': 'Indoor',
+      'ar': 'داخلي',
+    },
+    'j727dspd': {
+      'en': 'Outdoor',
+      'ar': 'في الخارج',
+    },
+    'vwxg2szc': {
+      'en': 'Any',
+      'ar': 'أي',
+    },
+    'lmcc2hoa': {
+      'en': 'Confirm',
+      'ar': 'تحديث',
+    },
+  },
+  // CategoryEditingSupabase
+  {
+    '1tv5oqj1': {
+      'en': 'Choose the Category',
+      'ar': 'اختر وقت الانتظار',
+    },
+    '6sabio7u': {
+      'en': 'Visitor',
+      'ar': 'زائر',
+    },
+    '6k8gjx6i': {
+      'en': 'Guest',
+      'ar': 'ضيف',
+    },
+    'omur5yfp': {
+      'en': 'Client',
+      'ar': 'عميل',
+    },
+    'p4gibrbg': {
+      'en': 'Confirm',
+      'ar': 'تحديث',
+    },
+  },
+  // PartySizeEditingSupabase
+  {
+    '1w6a5qw8': {
+      'en': 'Choose the Party Size',
+      'ar': 'اختر وقت الانتظار',
+    },
+    'w1cwqr4s': {
+      'en': '1',
+      'ar': '1',
+    },
+    'frl0pkgh': {
+      'en': '2',
+      'ar': '2',
+    },
+    'q5n94sfr': {
+      'en': '3',
+      'ar': '3',
+    },
+    'jzhnn6ff': {
+      'en': '4',
+      'ar': '4',
+    },
+    'ga2e44ed': {
+      'en': '5',
+      'ar': '5',
+    },
+    '14knscvk': {
+      'en': '6',
+      'ar': '6',
+    },
+    'bq7oo79j': {
+      'en': '7',
+      'ar': '7',
+    },
+    'noazgys9': {
+      'en': '8',
+      'ar': '8',
+    },
+    '7w9p5eql': {
+      'en': '9',
+      'ar': '9',
+    },
+    'j9n2ryqi': {
+      'en': 'More',
+      'ar': 'أكثر',
+    },
+    'oi31otwo': {
+      'en': 'Confirm',
+      'ar': 'تحديث',
+    },
+  },
+  // editTableComp
+  {
+    'q3l72rht': {
+      'en': 'Update the Table and confirm',
+      'ar': 'هل أنت متأكد من جلوس الضيف؟',
+    },
+    '5hwfxndb': {
+      'en': '01',
+      'ar': '',
+    },
+    'bkxn1jyl': {
+      'en': '02',
+      'ar': '',
+    },
+    'hifd2jjn': {
+      'en': '03',
+      'ar': '',
+    },
+    'g5b86gno': {
+      'en': '04',
+      'ar': '',
+    },
+    'f67kksut': {
+      'en': '05',
+      'ar': '',
+    },
+    'nn8coyi3': {
+      'en': '06',
+      'ar': '',
+    },
+    's20i78nz': {
+      'en': '07',
+      'ar': '',
+    },
+    'n8syize3': {
+      'en': '08',
+      'ar': '',
+    },
+    'bxlqf69u': {
+      'en': '09',
+      'ar': '',
+    },
+    '7v9yl15j': {
+      'en': '10',
+      'ar': '',
+    },
+    'qum15fmh': {
+      'en': '11',
+      'ar': '',
+    },
+    'zlhcrwst': {
+      'en': '12',
+      'ar': '',
+    },
+    'ocgbshdh': {
+      'en': '13',
+      'ar': '',
+    },
+    'xl0gpvh7': {
+      'en': '14',
+      'ar': '',
+    },
+    'kv3sqg4f': {
+      'en': '15',
+      'ar': '',
+    },
+    '2ecxi4jj': {
+      'en': '16',
+      'ar': '',
+    },
+    '8mu1okj3': {
+      'en': '17',
+      'ar': '',
+    },
+    'kxkffent': {
+      'en': '18',
+      'ar': '',
+    },
+    '4l2jb5y6': {
+      'en': '19',
+      'ar': '',
+    },
+    '4riby3ew': {
+      'en': '20',
+      'ar': '',
+    },
+    '2p8h171i': {
+      'en': '21',
+      'ar': '',
+    },
+    '6mavb0wr': {
+      'en': '22',
+      'ar': '',
+    },
+    '8crqxpti': {
+      'en': '23',
+      'ar': '',
+    },
+    'izizo3u5': {
+      'en': '24',
+      'ar': '',
+    },
+    '67r9hkzv': {
+      'en': '25',
+      'ar': '',
+    },
+    'lzq9ijks': {
+      'en': '26',
+      'ar': '',
+    },
+    'eyykjfzg': {
+      'en': '27',
+      'ar': '',
+    },
+    '7a9gcc1z': {
+      'en': '28',
+      'ar': '',
+    },
+    'pm7chddv': {
+      'en': '29',
+      'ar': '',
+    },
+    'h5m6fcto': {
+      'en': '30',
+      'ar': '',
+    },
+    'cxvitbvs': {
+      'en': '31',
+      'ar': '',
+    },
+    '65gr0m3j': {
+      'en': '32',
+      'ar': '',
+    },
+    'ciooi5xg': {
+      'en': '33',
+      'ar': '',
+    },
+    'jefxk4aa': {
+      'en': '34',
+      'ar': '',
+    },
+    'stnzcqq9': {
+      'en': '35',
+      'ar': '',
+    },
+    '7x5btu55': {
+      'en': '36',
+      'ar': '',
+    },
+    'rpe3fyco': {
+      'en': '37',
+      'ar': '',
+    },
+    'hbpy6dck': {
+      'en': '38',
+      'ar': '',
+    },
+    '1vv1sygf': {
+      'en': '39',
+      'ar': '',
+    },
+    'rdma7cd1': {
+      'en': '40',
+      'ar': '',
+    },
+    '3exoukss': {
+      'en': 'Confirm',
       'ar': 'تحديث',
     },
   },

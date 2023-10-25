@@ -48,11 +48,11 @@ int calculateRemainingTime(
   totalDiffMinutes = math.max(0, totalDiffMinutes);
 
   // Log the values
-  print('Created Time: $createdTime');
-  print('Waiting Time: $waitingTime');
-  print('Expiry Time: $expiryTime');
-  print('Current Time: ${DateTime.now()}');
-  print('Manually Calculated Remaining Time: $totalDiffMinutes');
+  // print('Created Time: $createdTime');
+  // print('Waiting Time: $waitingTime');
+  // print('Expiry Time: $expiryTime');
+  // print('Current Time: ${DateTime.now()}');
+  // print('Manually Calculated Remaining Time: $totalDiffMinutes');
 
   return totalDiffMinutes;
 }

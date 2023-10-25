@@ -1,9 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/guest_entry_form/guest_entry_form_widget.dart';
+import '/components/table_components/entry_details_editing/entry_details_editing_widget.dart';
 import '/components/table_components/not_visited_comp/not_visited_comp_widget.dart';
 import '/components/table_components/visited_comp/visited_comp_widget.dart';
-import '/components/table_components/w_t_edit_comp_supabase/w_t_edit_comp_supabase_widget.dart';
 import '/components/time_calculation_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -17,6 +17,7 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'main_page_model.dart';
@@ -57,6 +58,15 @@ class _MainPageWidgetState extends State<MainPageWidget>
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -677,7 +687,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                         ..complete(
                                                             GuestEntriesTable()
                                                                 .queryRows(
-                                                          queryFn: (q) => q,
+                                                          queryFn: (q) =>
+                                                              q.order(
+                                                                  'created_at',
+                                                                  ascending:
+                                                                      true),
                                                         )))
                                                   .future,
                                               builder: (context, snapshot) {
@@ -813,7 +827,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .width *
-                                                                0.08,
+                                                                0.09,
                                                       ),
                                                       DataColumn2(
                                                         label: DefaultTextStyle
@@ -990,7 +1004,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'gb0lfzes' /* SMS  */,
+                                                                'gb0lfzes' /* Entry Time */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1062,36 +1076,76 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                     dataTableGuestEntriesRow) =>
                                                                 [
                                                                   Text(
-                                                                    dataTableGuestEntriesRow
-                                                                        .name!,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      dataTableGuestEntriesRow
+                                                                          .name,
+                                                                      'Null',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyLarge,
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          letterSpacing:
+                                                                              0.3,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
                                                                   ),
                                                                   Text(
-                                                                    dataTableGuestEntriesRow
-                                                                        .type!,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      dataTableGuestEntriesRow
+                                                                          .type,
+                                                                      'Null',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyLarge,
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
                                                                   ),
                                                                   Text(
                                                                     valueOrDefault<
                                                                         String>(
                                                                       dataTableGuestEntriesRow
                                                                           .onlyMobile,
-                                                                      'mobile',
+                                                                      'Null',
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyLarge,
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          letterSpacing:
+                                                                              0.3,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
                                                                   ),
                                                                   Text(
-                                                                    dataTableGuestEntriesRow
-                                                                        .category!,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      dataTableGuestEntriesRow
+                                                                          .category,
+                                                                      'Null',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyLarge,
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
                                                                   ),
                                                                   InkWell(
                                                                     splashColor:
@@ -1116,11 +1170,21 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                       });
                                                                     },
                                                                     child: Text(
-                                                                      dataTableGuestEntriesRow
-                                                                          .seatingArea!,
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        dataTableGuestEntriesRow
+                                                                            .seatingArea,
+                                                                        'Null',
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyLarge,
+                                                                          .bodyLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                          ),
                                                                     ),
                                                                   ),
                                                                   Text(
@@ -1128,11 +1192,17 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                         String>(
                                                                       dataTableGuestEntriesRow
                                                                           .waitingTime,
-                                                                      'waittime',
+                                                                      'Null',
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyLarge,
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
                                                                   ),
                                                                   TimeCalculationWidget(
                                                                     key: Key(
@@ -1145,244 +1215,197 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                             .waitingTime,
                                                                   ),
                                                                   Text(
-                                                                    dataTableGuestEntriesRow
-                                                                        .partySize!,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      dataTableGuestEntriesRow
+                                                                          .partySize,
+                                                                      'Null',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyLarge,
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
                                                                   ),
-                                                                  Visibility(
-                                                                    visible:
-                                                                        responsiveVisibility(
-                                                                      context:
-                                                                          context,
-                                                                      phone:
-                                                                          false,
-                                                                      tablet:
-                                                                          false,
-                                                                      tabletLandscape:
-                                                                          false,
-                                                                      desktop:
-                                                                          false,
-                                                                    ),
-                                                                    child: Text(
-                                                                      dateTimeFormat(
-                                                                        'jms',
-                                                                        dataTableGuestEntriesRow
-                                                                            .createdAt,
-                                                                        locale:
-                                                                            FFLocalizations.of(context).languageCode,
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
+                                                                  Text(
+                                                                    dateTimeFormat(
+                                                                      'jms',
+                                                                      dataTableGuestEntriesRow
+                                                                          .createdAt,
+                                                                      locale: FFLocalizations.of(
                                                                               context)
-                                                                          .bodyLarge,
+                                                                          .languageCode,
                                                                     ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
                                                                   ),
                                                                   Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
                                                                             .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceEvenly,
                                                                     children: [
-                                                                      Builder(
-                                                                        builder:
-                                                                            (context) =>
+                                                                      Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.spaceEvenly,
+                                                                        children:
+                                                                            [
+                                                                          Builder(
+                                                                            builder: (context) =>
                                                                                 FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await showAlignedDialog(
-                                                                              context: context,
-                                                                              isGlobal: true,
-                                                                              avoidOverflow: false,
-                                                                              targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              builder: (dialogContext) {
-                                                                                return Material(
-                                                                                  color: Colors.transparent,
-                                                                                  child: GestureDetector(
-                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                    child: Container(
-                                                                                      height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                                      width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                                      child: WTEditCompSupabaseWidget(
-                                                                                        uID: dataTableGuestEntriesRow,
+                                                                              onPressed: () async {
+                                                                                await showAlignedDialog(
+                                                                                  context: context,
+                                                                                  isGlobal: true,
+                                                                                  avoidOverflow: false,
+                                                                                  targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                  followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                  builder: (dialogContext) {
+                                                                                    return Material(
+                                                                                      color: Colors.transparent,
+                                                                                      child: GestureDetector(
+                                                                                        onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                        child: Container(
+                                                                                          height: MediaQuery.sizeOf(context).height * 0.6,
+                                                                                          width: MediaQuery.sizeOf(context).width * 0.7,
+                                                                                          child: VisitedCompWidget(
+                                                                                            rowDetails: dataTableGuestEntriesRow,
+                                                                                          ),
+                                                                                        ),
                                                                                       ),
-                                                                                    ),
-                                                                                  ),
-                                                                                );
+                                                                                    );
+                                                                                  },
+                                                                                ).then((value) => setState(() {}));
                                                                               },
-                                                                            ).then((value) =>
-                                                                                setState(() {}));
-                                                                          },
-                                                                          text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            'v50kjoux' /* W Time */,
-                                                                          ),
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  color: Colors.white,
+                                                                              text: FFLocalizations.of(context).getText(
+                                                                                '9dxg9c5o' /* Visited */,
+                                                                              ),
+                                                                              options: FFButtonOptions(
+                                                                                height: 40.0,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                elevation: 3.0,
+                                                                                borderSide: BorderSide(
+                                                                                  color: Colors.transparent,
+                                                                                  width: 1.0,
                                                                                 ),
-                                                                            elevation:
-                                                                                3.0,
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: Colors.transparent,
-                                                                              width: 1.0,
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                              ),
                                                                             ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
                                                                           ),
-                                                                        ),
-                                                                      ),
-                                                                      Builder(
-                                                                        builder:
-                                                                            (context) =>
+                                                                          Builder(
+                                                                            builder: (context) =>
                                                                                 FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await showAlignedDialog(
-                                                                              context: context,
-                                                                              isGlobal: true,
-                                                                              avoidOverflow: false,
-                                                                              targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              builder: (dialogContext) {
-                                                                                return Material(
-                                                                                  color: Colors.transparent,
-                                                                                  child: GestureDetector(
-                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                    child: Container(
-                                                                                      height: MediaQuery.sizeOf(context).height * 0.6,
-                                                                                      width: MediaQuery.sizeOf(context).width * 0.7,
-                                                                                      child: VisitedCompWidget(
-                                                                                        rowDetails: dataTableGuestEntriesRow,
+                                                                              onPressed: () async {
+                                                                                await showAlignedDialog(
+                                                                                  context: context,
+                                                                                  isGlobal: true,
+                                                                                  avoidOverflow: false,
+                                                                                  targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                  followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                  builder: (dialogContext) {
+                                                                                    return Material(
+                                                                                      color: Colors.transparent,
+                                                                                      child: GestureDetector(
+                                                                                        onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                        child: Container(
+                                                                                          height: MediaQuery.sizeOf(context).height * 0.6,
+                                                                                          width: MediaQuery.sizeOf(context).width * 0.7,
+                                                                                          child: NotVisitedCompWidget(
+                                                                                            rowDetailsNotVisited: dataTableGuestEntriesRow,
+                                                                                          ),
+                                                                                        ),
                                                                                       ),
-                                                                                    ),
-                                                                                  ),
-                                                                                );
+                                                                                    );
+                                                                                  },
+                                                                                ).then((value) => setState(() {}));
                                                                               },
-                                                                            ).then((value) =>
-                                                                                setState(() {}));
-                                                                          },
-                                                                          text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '9dxg9c5o' /* Visited */,
-                                                                          ),
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  color: Colors.white,
+                                                                              text: FFLocalizations.of(context).getText(
+                                                                                '4wwjwaqk' /* Not Visited */,
+                                                                              ),
+                                                                              options: FFButtonOptions(
+                                                                                height: 40.0,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                elevation: 3.0,
+                                                                                borderSide: BorderSide(
+                                                                                  color: Colors.transparent,
+                                                                                  width: 1.0,
                                                                                 ),
-                                                                            elevation:
-                                                                                3.0,
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: Colors.transparent,
-                                                                              width: 1.0,
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                              ),
                                                                             ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
                                                                           ),
-                                                                        ),
-                                                                      ),
-                                                                      Builder(
-                                                                        builder:
-                                                                            (context) =>
+                                                                          Builder(
+                                                                            builder: (context) =>
                                                                                 FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await showAlignedDialog(
-                                                                              context: context,
-                                                                              isGlobal: true,
-                                                                              avoidOverflow: false,
-                                                                              targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              builder: (dialogContext) {
-                                                                                return Material(
-                                                                                  color: Colors.transparent,
-                                                                                  child: GestureDetector(
-                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                    child: Container(
-                                                                                      height: MediaQuery.sizeOf(context).height * 0.6,
-                                                                                      width: MediaQuery.sizeOf(context).width * 0.7,
-                                                                                      child: NotVisitedCompWidget(
-                                                                                        rowDetailsNotVisited: dataTableGuestEntriesRow,
+                                                                              onPressed: () async {
+                                                                                await showAlignedDialog(
+                                                                                  context: context,
+                                                                                  isGlobal: true,
+                                                                                  avoidOverflow: false,
+                                                                                  targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                  followerAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                  builder: (dialogContext) {
+                                                                                    return Material(
+                                                                                      color: Colors.transparent,
+                                                                                      child: GestureDetector(
+                                                                                        onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                        child: Container(
+                                                                                          width: MediaQuery.sizeOf(context).width * 0.5,
+                                                                                          child: EntryDetailsEditingWidget(
+                                                                                            entryEditing: dataTableGuestEntriesRow,
+                                                                                          ),
+                                                                                        ),
                                                                                       ),
-                                                                                    ),
-                                                                                  ),
-                                                                                );
+                                                                                    );
+                                                                                  },
+                                                                                ).then((value) => setState(() {}));
                                                                               },
-                                                                            ).then((value) =>
-                                                                                setState(() {}));
-                                                                          },
-                                                                          text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '4wwjwaqk' /* Not Visited */,
-                                                                          ),
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  color: Colors.white,
+                                                                              text: FFLocalizations.of(context).getText(
+                                                                                'sq0c6uxb' /* Edit */,
+                                                                              ),
+                                                                              options: FFButtonOptions(
+                                                                                height: 40.0,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                elevation: 3.0,
+                                                                                borderSide: BorderSide(
+                                                                                  color: Colors.transparent,
+                                                                                  width: 1.0,
                                                                                 ),
-                                                                            elevation:
-                                                                                3.0,
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: Colors.transparent,
-                                                                              width: 1.0,
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                              ),
                                                                             ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
                                                                           ),
-                                                                        ),
+                                                                        ].divide(SizedBox(width: 8.0)),
                                                                       ),
                                                                     ],
                                                                   ),

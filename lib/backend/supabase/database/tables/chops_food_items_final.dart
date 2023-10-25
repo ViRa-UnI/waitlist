@@ -58,4 +58,11 @@ class ChopsFoodItemsFinalRow extends SupabaseDataRow {
 
   String? get image => getField<String>('image');
   set image(String? value) => setField<String>('image', value);
+
+  String? get categoryDup => getField<String>('categoryDup');
+  set categoryDup(String? value) => setField<String>('categoryDup', value);
+
+  String? get arabicCategoryDup => getField<String>('arabic_categoryDup');
+  set arabicCategoryDup(String? value) =>
+      setField<String>('arabic_categoryDup', value);
 }
